@@ -1,0 +1,6 @@
+k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\01FillMatrix\bin\Debug\01FillMatrix.exe.config
+k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\01FillMatrix\bin\Debug\01FillMatrix.exe
+k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\01FillMatrix\bin\Debug\01FillMatrix.pdb
+k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\01FillMatrix\obj\Debug\01FillMatrix.csprojResolveAssemblyReference.cache
+k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\01FillMatrix\obj\Debug\01FillMatrix.exe
+k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\01FillMatrix\obj\Debug\01FillMatrix.pdb
