@@ -1,0 +1,7 @@
+1,Dimitar,Dimitrov,17,Kaspichan
+2,Silviya,Alexandrova,15,Shumen
+3,Dinko,Gospodinov,19,Gulubovo
+4,Stefan,Borisov,16,Kazanluk
+5,Georgi,Ivanov,14,Novi Pazar
+6,Nevena,Stoyanova,18,Omurtag
+7,Georgi,Mamarchev,19,Sofia
