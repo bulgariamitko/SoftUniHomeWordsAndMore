@@ -1,6 +1,0 @@
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\03MatrixShuffling\bin\Debug\03MatrixShuffling.exe.config
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\03MatrixShuffling\bin\Debug\03MatrixShuffling.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\03MatrixShuffling\bin\Debug\03MatrixShuffling.pdb
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\03MatrixShuffling\obj\Debug\03MatrixShuffling.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\03MatrixShuffling\obj\Debug\03MatrixShuffling.pdb
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\03MatrixShuffling\obj\Debug\03MatrixShuffling.csprojResolveAssemblyReference.cache

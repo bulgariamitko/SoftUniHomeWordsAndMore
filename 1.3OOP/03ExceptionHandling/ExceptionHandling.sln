@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exers", "Exers\Exers.csproj", "{1120D9E1-12AC-4299-BCE8-CD0FFC42419B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01SquareRoot", "01SquareRoot\01SquareRoot.csproj", "{67957B2F-D1ED-4C2D-A2F6-5DB0C0E0C27B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02EnterNumbers", "02EnterNumbers\02EnterNumbers.csproj", "{4FD21F2F-D005-439F-884B-ED3A598CB4DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1120D9E1-12AC-4299-BCE8-CD0FFC42419B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1120D9E1-12AC-4299-BCE8-CD0FFC42419B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1120D9E1-12AC-4299-BCE8-CD0FFC42419B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1120D9E1-12AC-4299-BCE8-CD0FFC42419B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67957B2F-D1ED-4C2D-A2F6-5DB0C0E0C27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67957B2F-D1ED-4C2D-A2F6-5DB0C0E0C27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67957B2F-D1ED-4C2D-A2F6-5DB0C0E0C27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67957B2F-D1ED-4C2D-A2F6-5DB0C0E0C27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FD21F2F-D005-439F-884B-ED3A598CB4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FD21F2F-D005-439F-884B-ED3A598CB4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FD21F2F-D005-439F-884B-ED3A598CB4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FD21F2F-D005-439F-884B-ED3A598CB4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

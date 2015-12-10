@@ -1,0 +1,123 @@
+body > div:first-child {
+	width: 80%;
+	height: 400px;
+	margin: 20px;
+	border-top: 10px dotted yellow;
+	border-left: 10px dashed red;
+	border-bottom: 10px double blue;
+	border-right: 10px solid green;
+	box-shadow: 20px 20px 5px #888888;
+}
+
+body > div:first-child > p {
+	text-align: center;
+    font-size: 45px;
+    text-shadow: 10px 10px 8px rgba(128, 128, 128, 0.5);
+}
+
+.first {
+	width: 80%;
+    height: 150px;
+    border-radius: 80px;
+    margin: auto;
+	border: 3px solid blue;
+}
+
+.second {
+	width: 99.2%;
+    height: 144px;
+    border-radius: 80px;
+    margin: auto;
+    border: 3px solid yellow;
+}
+
+.third {
+	width: 99.2%;
+    height: 138px;
+    border-radius: 80px;
+    margin: auto;
+    border: 3px solid red;
+}
+
+.third p {
+	text-align: center;
+}
+
+.third p:first-child {
+    font-size: 24px;
+    text-shadow: 10px 10px 15px grey;
+}
+
+.third span {
+	font-size: 24px;
+	background-color: orange;
+    border-top: 2px solid #FFD400;
+    border-left: 2px solid #FFD400;
+    padding: 5px;
+    border-right: 2px solid #FF8100;
+    border-bottom: 2px solid #FF8100;
+}
+
+.think-outside {
+	position: absolute;
+	width: 30px;
+    height: 30px;
+    top: 220px;
+    left: 770px;
+    border-radius: 50%;
+	border: 5px dashed white;
+}
+
+.think-inside {
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 215px;
+    left: 765px;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.35);
+}
+
+.thinking-outside {
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 155px;
+    left: 845px;
+    border-radius: 50%;
+    border: 5px dashed white;
+}
+
+.thinking-inside {
+	position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 150px;
+    left: 840px;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.35);
+}
+
+.thinkIt-outside {
+	position: absolute;
+    width: 150px;
+    height: 50px;
+    top: 85px;
+    left: 945px;
+    border-radius: 50px;
+    border: 5px dashed white;
+}
+
+.thinkIt-inside {
+	position: absolute;
+    width: 170px;
+    height: 70px;
+    top: 80px;
+    left: 940px;
+    border-radius: 50px;
+    background-color: rgba(128, 128, 128, 0.35);
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}

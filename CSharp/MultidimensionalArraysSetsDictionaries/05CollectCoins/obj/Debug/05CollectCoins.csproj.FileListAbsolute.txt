@@ -1,5 +1,0 @@
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\05CollectCoins\bin\Debug\05CollectCoins.exe.config
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\05CollectCoins\bin\Debug\05CollectCoins.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\05CollectCoins\bin\Debug\05CollectCoins.pdb
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\05CollectCoins\obj\Debug\05CollectCoins.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\05CollectCoins\obj\Debug\05CollectCoins.pdb

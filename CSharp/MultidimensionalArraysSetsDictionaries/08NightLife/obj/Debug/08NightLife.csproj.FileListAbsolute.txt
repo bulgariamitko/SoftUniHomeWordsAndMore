@@ -1,6 +1,0 @@
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\08NightLife\bin\Debug\08NightLife.exe.config
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\08NightLife\bin\Debug\08NightLife.exe
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\08NightLife\bin\Debug\08NightLife.pdb
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\08NightLife\obj\Debug\08NightLife.csprojResolveAssemblyReference.cache
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\08NightLife\obj\Debug\08NightLife.exe
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\08NightLife\obj\Debug\08NightLife.pdb

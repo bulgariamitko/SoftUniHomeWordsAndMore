@@ -1,6 +1,0 @@
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\07Phonebook\bin\Debug\07Phonebook.exe.config
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\07Phonebook\bin\Debug\07Phonebook.exe
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\07Phonebook\bin\Debug\07Phonebook.pdb
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\07Phonebook\obj\Debug\07Phonebook.csprojResolveAssemblyReference.cache
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\07Phonebook\obj\Debug\07Phonebook.exe
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\07Phonebook\obj\Debug\07Phonebook.pdb

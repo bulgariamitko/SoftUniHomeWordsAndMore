@@ -1,0 +1,7 @@
+Cordinate x: -5, y: 55, z: 444
+Cordinate x: 44, y: -5, z: 77
+Cordinate x: 10, y: 20, z: 30
+Cordinate x: 47, y: 74, z: -4
+Cordinate x: 21, y: 45, z: -4
+Cordinate x: -5, y: -7, z: -55
+Cordinate x: 45, y: 54, z: 77

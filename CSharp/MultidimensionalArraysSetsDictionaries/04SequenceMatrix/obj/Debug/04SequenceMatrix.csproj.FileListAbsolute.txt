@@ -1,6 +1,0 @@
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\04SequenceMatrix\bin\Debug\04SequenceMatrix.exe.config
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\04SequenceMatrix\bin\Debug\04SequenceMatrix.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\04SequenceMatrix\bin\Debug\04SequenceMatrix.pdb
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\04SequenceMatrix\obj\Debug\04SequenceMatrix.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\04SequenceMatrix\obj\Debug\04SequenceMatrix.pdb
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\04SequenceMatrix\obj\Debug\04SequenceMatrix.csprojResolveAssemblyReference.cache

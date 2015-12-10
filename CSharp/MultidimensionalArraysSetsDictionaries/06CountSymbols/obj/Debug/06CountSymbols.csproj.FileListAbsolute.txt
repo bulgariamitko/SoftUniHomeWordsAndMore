@@ -1,6 +1,0 @@
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\06CountSymbols\bin\Debug\06CountSymbols.exe.config
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\06CountSymbols\bin\Debug\06CountSymbols.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\06CountSymbols\bin\Debug\06CountSymbols.pdb
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\06CountSymbols\obj\Debug\06CountSymbols.exe
-k:\drive\документи\visual studio 2015\Projects\MultidimensionalArraysSetsDictionaries\06CountSymbols\obj\Debug\06CountSymbols.pdb
-K:\Drive\Документи\Visual Studio 2015\Projects\MultidimensionalArraysSetsDictionaries\06CountSymbols\obj\Debug\06CountSymbols.csprojResolveAssemblyReference.cache

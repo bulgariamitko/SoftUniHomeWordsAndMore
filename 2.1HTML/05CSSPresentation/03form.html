@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Styling a Form</title>
+	<link rel="stylesheet" href="03form.css">
+</head>
+<body>
+        <section>            
+            <form method="get">            
+		<h3>Step 1: Your details</h3>                    
+                <div>
+                <label for="name">Name</label>
+                <input name ="name" type="text" placeholder="First and last name" />
+                </div>
+                <div>
+                <label for="email">Email</label>
+                <input name="email" type="email" placeholder="example@domain.com" >
+                </div>
+                <div>
+                <label for="phone">Phone</label>
+                <input name="phone" type="email" placeholder="eg. +447500000000" >
+                </div>
+            <h3>Step 1: Delivery address</h3>
+            <div>
+                <label class="address" for="address">Address</label>
+                <textarea name="address"></textarea>
+                </div>
+                    <div>
+                <label for="Post code">Post code</label>
+                <input name="Post code" type="text">
+                </div>
+                    <div>
+                <label for="Country">Country</label>
+                <input name="Country" type="text">
+            </div>
+            <h3>Step 1: Card details</h3>
+            <div>
+                Card type <br>
+                <p class="cards">
+                	<input type="radio"><img src="http://www.gothiacup.se/swe/wp-content/uploads/visa_64.png" height="22"> VISA
+                	<input type="radio"><img src="https://cdn0.iconfinder.com/data/icons/credit_card_icons/32/amex.png" height="22"> AmEx
+                	<input type="radio"><img src="https://clients.eurowag.com/images/login-mastercard.png" height="22"> Mastercard
+                </p>
+                </div>
+                <div>
+                <label for="number">Card number</label>
+                <input name="number" type="number">
+                </div>
+                <div>
+                <label for="Security">Security code</label>
+                <input name="Security" type="text">
+                </div>
+                <div>
+                <label for="Card Name">Name on card</label>
+                <input name="Card Name" type="number" placeholder="exact name as on the card" />            
+            </div>
+            <br>
+            <div>
+            	<input class="Buy" type="submit" value="BUY IT" />
+            </div>
+        </form>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+﻿body {
+    background-image: url("colorful_dots_on_black.jpg");
+}
+
+.header {
+    background: linear-gradient(to right, #ff0300 33.33%, #007b08 33.34%, #007b08 66.67%, #1500fc 66.68%);
+    color: #ffff40;
+    line-height: 1.5em;
+    font-size: 3.5em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    margin-left: -30px;
+    margin-right: -30px;
+
+}
+
+aside {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 15%;
+    float: left;
+    border-radius: 20px;
+}
+
+section {
+    width: 80%;
+    float: right;
+}
+
+nav > header {
+    font-size: 24px;
+    text-decoration: underline;
+    margin-bottom: -10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 1px;
+}
+
+ul li {
+    padding: 2px 0px;
+}
+
+li:first-child:hover{
+    background-color: red;
+    border-radius: 10px;
+}
+li:nth-child(2):hover{
+    background-color: orange;
+    border-radius: 10px;
+}
+li:nth-child(3):hover{
+    background-color: yellow;
+    border-radius: 10px;
+}
+li:nth-child(4):hover{
+    background-color: green;
+    border-radius: 10px;
+}
+li:nth-child(5):hover{
+    background-color: blue;
+    border-radius: 10px;
+}
+li:nth-child(6):hover{
+    background-color: purple;
+    border-radius: 10px;
+}
+
+ul li a:visited {
+    color: #6F6F6F;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:last-child {
+    /*color: grey;*/
+}
+
+section article {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 5px 0px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+section article a {
+    font-style: italic;
+    color: grey;
+}
+
+section article header {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.letter {
+    font-size: 40px;
+    font-style: italic;
+}
+
+#webColors {
+    color: white;
+    background-color: red;
+}
+
+#webSafeColors {
+    color: black;
+    background-color: #FF6600;
+}
+
+#RGB {
+    color: black;
+    background-color: rgb(255,255,0);
+}
+
+#RGBA {
+    color: white;
+    background-color: rgba(0, 255, 0, 1);
+}
+
+#HSLHSV {
+    color: white;
+    background-color: hsla(240, 100%, 50%, 1);
+}
+
+#lorem {
+    color: white;
+    background-color: purple;
+}
+
+span[lang='la'] {
+    color: blue;
+    font-style: italic;
+}

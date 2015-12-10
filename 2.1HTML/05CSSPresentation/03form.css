@@ -1,0 +1,69 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(resources/formBackground.jpg)
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
+}
+
+section form {
+    box-sizing: border-box;    
+}
+
+div {
+    padding: 5px 0px 5px 10px;
+    width: 370px;
+    border: 1px solid white;
+    
+    border-radius: 5px;
+    margin-bottom: 2px;
+    background-color:  rgba(255, 255, 255, 0.2);
+}
+
+section form label {
+    display: inline-block;
+    width: 100px;
+}
+
+input, textarea {
+	text-align: left;
+	padding-left: 5px;
+}
+
+.address {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cards {
+	margin: auto;
+	text-align: center;
+}
+
+.Buy {
+    width: 85px;
+    background-color: #051934;
+    border: 0px;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+}
+
+.noBorder {
+    border: none;
+    background-color:inherit; 
+    width: 350px;
+}
+
+form > div:last-child {
+	padding: inherit;
+    width: 370px;
+    border: none;
+    background-color: inherit;
+	text-align: center;
+}
