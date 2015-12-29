@@ -1,0 +1,53 @@
+#container{
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #234465;
+    color: white;
+    height: 20em;
+}
+
+div{
+    display: inline-block;
+    margin: 0 1em;
+}
+
+#first-col, #second-col, #third-col{
+    width: 14.5em;
+    vertical-align: top;
+    float: left;
+}
+
+#fourth{
+    width: 17em;
+    vertical-align: top;
+    float: left;
+    margin-left: 4em;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+   line-height: 2em;
+}
+
+#first-col div{
+    display: block;
+    width:10em;
+    height: 2em;
+    border: 2px solid #FF9C1F;
+    text-align: center;
+    margin: 1em;
+}
+
+h3{
+    color: #FF9C1F;
+    font-size: 16px;
+}
+
+#fb-col{
+    width: 5em;
+    height: 5em;
+}

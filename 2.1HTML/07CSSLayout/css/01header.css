@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+#container{
+    color: #ffffff;
+    background-color: #234465;
+    width: 100%;
+    height: 25%;
+}
+
+#logo{
+    float: left;
+    margin-left: 7em;
+    margin-top: 2em;
+    margin-right: 6em;
+}
+
+div{
+    display: inline-block;
+}
+
+#search{
+    float: right;
+    display: table-cell;
+    vertical-align: bottom;
+    margin-top: 0em;
+}
+
+#bell{
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border: none;
+    margin-right: -2em;
+}
+
+input{
+    height: 1.7em;
+    margin-right: 0;
+}
+
+#search-button{
+   background-image: url("../images/search-button.png");
+    height:2.1em;
+    width: 2.5em;
+    margin-left:-0.2em;
+    margin-bottom:-0.02em;
+    vertical-align: bottom;
+    border: none;
+}
+
+span{
+    color: #ffffff;
+}
+
+li{
+    height: 1.5em;
+}
+
+#nav{
+   float: right;
+}
+
+#about{
+    margin: 0 1em;
+}
+
+#companies{
+    margin:0 4em;
+}
+
+#forum{
+    margin-right: 4em;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+li ul{
+    display: none;
+}
+
+ul{
+    list-style: none;
+}
+
+div ul li:hover{
+    height: 1.5em;
+    background: #FF9C00;
+}
+
+li:hover ul{
+    position: absolute;
+    display: block;
+}
+ul li a{
+    display: block;
+    width: 10em;
+    background: #234465;
+    font-size: 1.1em;
+    padding: 0.2em;
+    border-bottom: 1px solid #435F7B;
+}
+
+ul li a:hover{
+    background-color: #FF9C00;
+}

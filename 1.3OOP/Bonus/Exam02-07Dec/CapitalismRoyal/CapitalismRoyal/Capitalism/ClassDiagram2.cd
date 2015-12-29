@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Capitalism.Core.Commands.CommandAbstract" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Commands\CommandAbstract.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Capitalism.Core.Commands.CreateCompanyCommand" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIAQABAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Core\Commands\CreateCompanyCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Core.Commands.CreateDepartmentCommand" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAAAEAoEA=</HashCode>
+      <FileName>Core\Commands\CreateDepartmentCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Core.Commands.CreateEmployeeCommand" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAQAAAAAIAAAAAAAAAAAAAAACAEAAEA=</HashCode>
+      <FileName>Core\Commands\CreateEmployeeCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Core.Commands.PaySalariesCommand" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgQAAAAABAAACAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Core\Commands\PaySalariesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Core.Commands.ShowEmployiesCommand" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAQAAAAABAAACAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Core\Commands\ShowEmployiesCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Core.Database" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAgAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Database.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Capitalism.Core.Engines.ConsoleCapitalismEngine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Core\Engines\ConsoleCapitalismEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Capitalism.Core.Facturies.EmployeeFactory" Collapsed="true">
+    <Position X="18.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Facturies\EmployeeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.Accountant" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employee\Accountant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.Ceo" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAIAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employee\Ceo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.ChiefTelephoneOfficer" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employee\ChiefTelephoneOfficer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.CleaningLady" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employee\CleaningLady.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.Employee" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAEAg=</HashCode>
+      <FileName>Models\Employee\Employee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Capitalism.Models.Manager" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employee\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.Regular" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employee\Regular.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.Salesmen" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employee\Salesmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitalism.Models.OrganizationalUnit.Company" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAEEAAAAAAIABAACIAQQACAAAAAQAAAAEAAABAAA=</HashCode>
+      <FileName>Models\OrganizationalUnit\Company.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Capitalism.Models.OrganizationalUnit.Department" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIABAACIAQQACAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\OrganizationalUnit\Department.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Capitalism.Program" Collapsed="true">
+    <Position X="20.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Capitalism.Interfaces.IDatabase" Collapsed="true">
+    <Position X="16.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Capitalism.Interfaces.IExecutable" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IExecutable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Capitalism.Core.Engines.Interfaces.IEngine" Collapsed="true">
+    <Position X="20.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Interfaces\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Capitalism.Models.Interfaces.IEmployee" Collapsed="true">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAEAg=</HashCode>
+      <FileName>Models\Interfaces\IEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Capitalism.Models.Interfaces.IOrganizationalUnit" Collapsed="true">
+    <Position X="18.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIABAACAAAQACAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Interfaces\IOrganizationalUnit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

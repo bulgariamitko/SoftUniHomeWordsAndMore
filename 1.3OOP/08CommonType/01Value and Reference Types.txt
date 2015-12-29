@@ -1,0 +1,21 @@
+•	Which.NET data types are value types? Which types are reference types?
+        The value types directly contain data. Some examples are int, char, and float, which stores numbers, alphabets, and floating point numbers, respectively. When you declare an int type, the system allocates memory to store the value.
+        The reference types do not contain the actual data stored in a variable, but they contain a reference to the variables. In other words, they refer to a memory location.
+
+
+        •	How do value and reference types differ when assigned to a variable? 
+        •	How do value and reference types behave when passed as argument to a method?
+		
+		
+        •	Where in memory are value types allocated? Where are reference types allocated?
+	A value type stores its contents in memory allocated on the stack. 
+	In contrast, a reference type, such as an instance of a class or an array, is allocated in a different area of memory called the heap.
+		
+		
+        •	What is data mutation? Can value types be mutated? Can reference types be mutated?
+        •	What is the difference between mutating and setting(assigning) a variable? Give examples.
+		
+		
+        •	What are the out and ref keywords used for? In what do they differ?
+	Áy default the parameters are always passed by value to a method. If we want to pass them by reference then we can use either out or ref keyword.
+	Ref requires the variable to be initialized before it is passed.

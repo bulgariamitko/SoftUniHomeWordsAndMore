@@ -1,0 +1,17 @@
+11.12.2015 г. 15:31:22 - Info - Unused local variable 'name'
+11.12.2015 г. 15:34:37 - Critical - Out of memory
+11.12.2015 г. 15:34:37 - Info - Unused local variable 'name'
+11.12.2015 г. 15:53:24 - Critical -Out of memory
+11.12.2015 г. 15:53:24 - Info -Unused local variable 'name'
+<log>
+<message>Out of memory</message>
+<date>11.12.2015 г. 15:53:58</date>
+<level>Critical</level>
+</log>
+
+<log>
+<message>Unused local variable 'name'</message>
+<date>11.12.2015 г. 15:53:58</date>
+<level>Info</level>
+</log>
+

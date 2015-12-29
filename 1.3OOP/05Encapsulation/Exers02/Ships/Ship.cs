@@ -4,9 +4,9 @@ namespace Exers02.Ships
 {
     public abstract class Ship
     {
-        private string name;
-        private double lengthInMeters;
-        private double volume;
+        protected string name;
+        protected double lengthInMeters;
+        protected double volume;
 
         public string Name
         {

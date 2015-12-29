@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02Customer", "02Customer\02Customer.csproj", "{EB643250-B83F-443F-A9F4-E09A564D2F40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exers01", "Exers01\Exers01.csproj", "{5A6FF027-70F1-4CAF-A685-544ED0E5BCEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03StringDisperser", "03StringDisperser\03StringDisperser.csproj", "{0FABE084-37BB-4AF0-BB09-8C66D35CD1EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB643250-B83F-443F-A9F4-E09A564D2F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB643250-B83F-443F-A9F4-E09A564D2F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB643250-B83F-443F-A9F4-E09A564D2F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB643250-B83F-443F-A9F4-E09A564D2F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6FF027-70F1-4CAF-A685-544ED0E5BCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6FF027-70F1-4CAF-A685-544ED0E5BCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6FF027-70F1-4CAF-A685-544ED0E5BCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6FF027-70F1-4CAF-A685-544ED0E5BCEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FABE084-37BB-4AF0-BB09-8C66D35CD1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FABE084-37BB-4AF0-BB09-8C66D35CD1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FABE084-37BB-4AF0-BB09-8C66D35CD1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FABE084-37BB-4AF0-BB09-8C66D35CD1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
