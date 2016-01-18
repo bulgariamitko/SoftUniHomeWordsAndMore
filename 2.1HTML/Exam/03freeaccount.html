@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SoftUni - Free Account</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/03freeaccount.css">
+</head>
+<body>
+	<main>
+		<nav class="col-md-10">
+			<ul>
+				<li class="col-md-3 menu active"><img src="img/paraglider-icon.png">Paragliding</li>
+				<li class="col-md-3 menu"><img src="img/sky-diver.png">Skydiving</li>
+				<li class="col-md-3 menu"><img src="img/climbing.png">Climbing</li>
+				<li class="col-md-3 menu"><img src="img/about-us.png">About Us</li>
+			</ul>
+		</nav>
+		<div class="clearfix"></div>
+		<form method="post">
+			<div class="col-md-5 boxes left">
+			<!-- <fieldset> -->
+				<!-- <legend style="color:blue;font-weight:bold;">Personal Info</legend> -->
+				<span class="textBox">Personal Info</span>
+				<input type="text" class="person" placeholder="Enter your full name">
+				<input type="email" class="email" placeholder="Enter a valid e-mail">
+				<input type="tel" class="phone" placeholder="Enter a phone number">
+			<!-- </fieldset> -->
+			</div>
+			<div class="col-md-5 boxes right">
+				<span class="textBox">Flight Info</span>
+				<span class="col-md-12">Are flying for first time?</span>
+				<div class="col-md-6 checkbox">
+				    <label>
+				      <input type="checkbox"> Yes
+				    </label>
+				</div>
+				<div class="col-md-6 checkbox">
+				    <label>
+				      <input type="checkbox"> No
+				    </label>
+				</div>
+				<span class="col-md-12">Choose Destination</span>
+				<select class="col-md-12">
+				  <optgroup label="Bulgaria">
+					  <option value="dobrostan" selected>Dobrostan</option>
+					  <option value="sopot">Sopot</option>
+					  <option value="sofia">Sofia</option>
+					  <option value="bourgas">Bourgas</option>
+				  </optgroup>
+				  <optgroup label="Rest of the world">
+					  <option value="nepal">Nepal</option>
+					  <option value="turkey">Turkey</option>
+					  <option value="france">France</option>
+				  </optgroup>
+				</select>
+				<span class="col-md-12">Choose Date</span>
+				<input type="date">
+			</div>
+			<div class="clearfix"></div>
+			
+			<input type="submit" class="send" value="Send"></input>
+			<input type="reset" class="clear" value="Clear"></input>
+		</form>
+	</main>
+	</div>
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

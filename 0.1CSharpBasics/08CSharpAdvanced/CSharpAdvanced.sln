@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Answer01", "CSharpAdvanced\Answer01.csproj", "{A61EACB6-B4A9-4928-A09B-A45345070098}"
 EndProject
@@ -50,6 +50,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo1234", "demo1234\demo1234.csproj", "{E0F2A756-5B6A-4B8E-8D8A-983273EFE189}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exam", "looptrough\exam.csproj", "{1C95B1CC-066A-44B1-9CB9-73B4E39E1A6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{5257C578-ABF5-4CC5-9D16-57261F33F4F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{1C95B1CC-066A-44B1-9CB9-73B4E39E1A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C95B1CC-066A-44B1-9CB9-73B4E39E1A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C95B1CC-066A-44B1-9CB9-73B4E39E1A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5257C578-ABF5-4CC5-9D16-57261F33F4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5257C578-ABF5-4CC5-9D16-57261F33F4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5257C578-ABF5-4CC5-9D16-57261F33F4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5257C578-ABF5-4CC5-9D16-57261F33F4F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

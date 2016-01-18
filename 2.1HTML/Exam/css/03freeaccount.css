@@ -1,0 +1,158 @@
+body {
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-size: 20px;
+	background-image: url("../img/background.jpg");
+	color: #296D9C;
+}
+
+main {
+	margin: 10px auto;
+    width: 800px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+    padding-bottom: 60px;
+}
+
+nav {
+	margin: 0px 50px;
+	/*font-weight: 600;*/
+}
+
+.menu {
+	margin: 20px 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.active {
+	background-color: #76ACD2;
+	color: #296D9C;
+	border-radius: 10px;
+}
+
+li {
+	cursor: pointer;
+}
+
+li:hover {
+	background-color: #76ACD2;
+	color: #296D9C;
+	border-radius: 10px;
+}
+
+
+.boxes {
+	border: 2px solid #296D9C;
+	border-radius: 10px;
+	height: 300px;
+	margin: 0px auto;
+}
+
+.left {
+	margin-left: 70px;
+	margin-right: 2px;
+}
+
+.left input {
+	margin: 10px 0px;
+	padding-left: 30px;
+}
+
+.person {
+	background: url(../img/user1.png) no-repeat scroll 7px 7px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.email {
+	background: url(../img/email.png) no-repeat scroll 7px 7px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.phone {
+	background: url(../img/phone.png) no-repeat scroll 7px 7px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+input, span {
+	font-size: 22px;
+}
+
+input, select {
+	border: 1px solid #296D9C;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.4);
+	text-align: center;
+}
+
+.textBox {
+	text-align: center;
+}
+
+select {
+	padding: 8px;
+}
+
+input[type="date"] {
+	padding-left: 70px;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+.right {
+	margin-right: 10px;
+	margin-left: 2px;
+}
+
+select {
+	font-size: 14px;
+}
+
+.checkbox+.checkbox, .radio+.radio {
+	margin-top: 10px;
+}
+
+.clear, .send {
+	font-size: 24px;
+	float: right;
+}
+
+.clear {
+	color: red;
+	border: 2px solid red;
+	border-radius: 10px;
+	padding: 2px 15px;
+    margin: 5px;
+}
+
+.clear:hover {
+	background-color: red;
+	color: white;
+}
+
+.send {
+	color: #01B400;
+	border: 2px solid #01B400;
+	border-radius: 10px;
+	padding: 2px 15px;
+    margin: 5px 60px 5px 5px;
+}
+
+.send:hover {
+	background-color: #01B400;
+	color: white;
+}

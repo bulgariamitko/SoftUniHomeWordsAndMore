@@ -43,7 +43,7 @@ namespace LongestNon
                 for (int prevIndex = 0; prevIndex < currIndex; prevIndex++)
                 {
                     expression = arr[prevIndex] < arr[currIndex];
-                    if (equal == true)
+                    if (equal)
                     {
                         expression = arr[prevIndex] == arr[currIndex];
                     }

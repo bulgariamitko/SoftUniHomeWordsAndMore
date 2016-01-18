@@ -1,0 +1,138 @@
+@font-face {
+    font-family: RicksAmericanNF;
+    src: url(../fonts/RicksAmericanNF.ttf);
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	background-color: black;
+	color: #F9AA10;
+}
+
+.mycontainer {
+	width: 960px;
+	margin: 0px auto;
+}
+
+.upLetters {
+	text-transform: uppercase;
+}
+
+h1 {
+	font-family: RicksAmericanNF;
+	font-size: 60px;
+	text-align: center;
+	letter-spacing: 15px;
+	font-weight: 600;
+}
+
+menu {
+	font-family: RicksAmericanNF;
+	font-size: 30px;
+	margin: 20px 0px;
+}
+
+ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #F9AA10;
+    text-align: center;
+    padding: 0px 70px;
+    text-decoration: none;
+}
+
+li a:hover {
+	color: inherit;
+	text-decoration: none;
+	background-color: #F9AA10;
+	color: black;
+	border-radius: 20px;
+}
+
+main {
+	background-color: #3C3C3C;
+	display: flex;
+	padding: 20px 0px;
+}
+
+article {
+	padding-bottom: 20px;
+}
+
+.readMore {
+	font-style: italic;
+    text-shadow: 2px 2px black;
+    font-weight: 600;
+}
+
+.title {
+	font-size: 23px;
+	text-align: center;
+	text-shadow: 2px 2px black;
+    font-weight: 600;
+}
+
+.articleText {
+	line-height: 100%;
+	text-align: justify;
+	text-indent: 30px;
+}
+
+.asideImg, .asideImg2 {
+	position: relative;
+	cursor: pointer;
+}
+
+.asideImg span {
+    position: absolute;
+    top: 199px;
+    left: 1.5px;
+    width: 98.5%;
+    background-color: rgba(0,0,0, 0.5);
+    text-align: center;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-weight: 600;
+    text-shadow: 2px 2px black;
+}
+
+.asideImg2 span {
+    position: absolute;
+    top: 140px;
+    left: 1.5px;
+    width: 98.5%;
+    background-color: rgba(0,0,0, 0.5);
+    text-align: center;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-weight: 600;
+    text-shadow: 2px 2px black;
+}
+
+.asideImg span:hover, .asideImg2 span:hover {
+	background-color: #F9AA10;
+	color: #4B2C18;
+	text-shadow: inherit;
+}
+
+aside img {
+	margin: 15px 0px;
+	border: 2px solid #F9AA10;
+	border-radius: 10px;
+}
+
+footer {
+	text-align: center;
+	margin: 10px 0px;
+}
