@@ -1,5 +1,5 @@
 function replaceTag(input) {
-	var output = input.replace(/(<a)( href=.*)(>)(\w+)(<\/a>)/,  '[URL$2]$4[\/URL]');
+	var output = input.replace(/(<a)( href=.*)(>)(\w+)(<\/a>)/g,  '[URL$2]$4[\/URL]');
 
 	console.log(output);
 }

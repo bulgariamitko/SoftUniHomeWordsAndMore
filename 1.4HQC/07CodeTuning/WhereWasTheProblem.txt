@@ -1,0 +1,1 @@
+Problem was at class OrbitsCalculator.cs on line 96 it was decimal and i convert it to double.

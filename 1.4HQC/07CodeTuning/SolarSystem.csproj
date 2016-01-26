@@ -86,7 +86,9 @@
     <Compile Include="Surface.cs" />
     <Compile Include="Trackball.cs" />
     <Compile Include="TrackballDecorator.cs" />
-    <Compile Include="Viewport3DDecorator.cs" />
+    <Compile Include="Viewport3DDecorator.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
