@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Problem 1.	Webinar registration form</title>
+</head>
+<style type="text/css">
+	body {
+		background-color: pink;
+	}
+	span {
+		color: red;
+	}
+	input[type="submit"] {
+		margin-top: 20px;
+	}
+</style>
+<body>
+	<h3>Регистрация за уебинар</h3>
+	<form method="post" id="form">
+		<label for="name">Име и Фамилия:<span>*</span></label><br>
+		<input type="text" id="name"><br>
+		<label for="address">Адрес:</label><br>
+		<input type="text" id="address"><br>
+		<label for="city">Населено място:</label><br>
+		<input type="text" id="city"><br>
+		<label for="postcode">Пощенски код:</label><br>
+		<input type="number" id="postcode"><br>
+		<label for="email">Email:<span>*</span></label><br>
+		<input type="email" id="email"><br>
+		<label for="tel">Телефон:<span>*</span></label><br>
+		<input type="tel" id="tel"><br>
+		<label for="date">Дата на семинара:<span>*</span></label><br>
+		<input type="date" id="date"><br>
+		<input type="checkbox" id="invoice" onclick="handleClick(this);">
+		<label for="invoice">Желая фактура</label><br>
+		
+		<div id="addition">
+			
+		</div>
+
+		<input type="submit" value="Регистрация">
+		<input type="reset" value="Изчисти">
+	</form>
+	<script type="text/javascript" src="01webinarRegistrationForm.js"></script>
+</body>
+</html>

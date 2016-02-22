@@ -1,0 +1,53 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 1.   TODO List Module</title>
+    <link rel="stylesheet" type="text/css" href="TODOListModule.css">
+    <script src="TODOListModule.js"></script>
+</head>
+<body onload="getDay()">
+    <div id="todoList">
+        <h1 id="dayOfWeek" class="center"></h1>
+
+        <div id="container">
+            <div id="shoping">
+                <header id="sectionHeader">
+                    Shoping List
+                </header>
+                <input type="checkbox" class="checkBox" id="Air-freshenerBox" onclick="listModule.changeColor('Air-freshenerDiv', 'Air-freshenerBox')"><div class="itemTittle" id="Air-freshenerDiv"><label for="Air-freshenerBox">Air-freshener</label></div><br>
+                <input type="checkbox" class="checkBox" id="PampersBox" onclick="listModule.changeColor('PampersDiv', 'PampersBox')"><div id="PampersDiv" class="itemTittle"><label for="PampersBox">Pampers</label></div><br>
+                <input type="checkbox" class="checkBox" id="NewspaperBox" onclick="listModule.changeColor('NewspaperDiv', 'NewspaperBox')"><div id="NewspaperDiv" class="itemTittle"><label for="NewspaperBox">Newspaper</label></div><br>
+                <input type="checkbox" class="checkBox" id="Toilet paperBox" onclick="listModule.changeColor('Toilet paperDiv', 'Toilet paperBox')"><div id="Toilet paperDiv" class="itemTittle"><label for="Toilet paperBox">Toilet paper</label></div><br>
+            </div>
+            <div id="sectionFooter">
+                <input type="text" placeholder="Add Item...." id="shopingItem">
+                <button type="button" id="shopingButton" onclick="listModule.addItem('shoping', 'shopingItem')">+</button>
+            </div>
+            <div id="business">
+                <header id="sectionHeader">
+                    Business
+                </header>
+                <input type="checkbox" class="checkBox" id="InspectfiscalyearBox" onclick="listModule.changeColor('InspectfiscalyearDiv', 'InspectfiscalyearBox')"><div class="itemTittle" id="InspectfiscalyearDiv"><label for="InspectfiscalyearBox">Inspect fiscal year report</label></div><br>
+                <input type="checkbox" class="checkBox" id="LunchBox" onclick="listModule.changeColor('LunchDiv', 'LunchBox')"><div id="LunchDiv" class="itemTittle"><label for="LunchBox">Lunch with board of directors</label></div><br>
+                <input type="checkbox" class="checkBox" id="JacksonBox" onclick="listModule.changeColor('JacksonDiv', 'JacksonBox')"><div id="JacksonDiv" class="itemTittle"><label for="JacksonBox">Fire Jackson</label></div><br>
+                <input type="checkbox" class="checkBox" id="NapBox" onclick="listModule.changeColor('NapDiv', 'NapBox')"><div id="NapDiv" class="itemTittle"><label for="NapBox">Take a nap</label></div><br>
+                <input type="checkbox" class="checkBox" id="ArrangeBox" onclick="listModule.changeColor('ArrangeDiv', 'ArrangeBox')"><div id="ArrangeDiv" class="itemTittle"><label for="ArrangeBox">Arrange meeting with investors</label></div><br>
+            </div>
+            <div id="sectionFooter">
+                <input type="text" placeholder="Add Item...." id="businessItem">
+                <button type="button" id="businessButton" onclick="listModule.addItem('business', 'businessItem')">+</button>
+            </div>    
+        </div>
+
+        <footer id="listFooter">
+            <input type="text" placeholder="Title" id="sectionItem">
+            <button type="button" id="addSectionButton" onclick="listModule.addSection()">New Section</button>
+        </footer>
+    </div>
+
+</body>
+</html>
