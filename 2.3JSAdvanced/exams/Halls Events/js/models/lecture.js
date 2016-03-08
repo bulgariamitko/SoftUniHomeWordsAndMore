@@ -5,8 +5,8 @@ var app = app || {};
 		// extand class
 		scope._Event.call(this, options);
 
-        this.setTrainer = options.trainer;
-        this.setCourse = options.course;
+        this.setTrainer(options.trainer);
+        this.setCourse(options.course);
 	}
 
 	// extend class

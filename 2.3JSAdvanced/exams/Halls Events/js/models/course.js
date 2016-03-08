@@ -2,8 +2,8 @@ var app = app || {};
 
 (function (scope) {
 	function Course(name, numberOfLectures) {
-        this.setName = name;
-        this.setNumberOfLectures = numberOfLectures;
+        this.setName(name);
+        this.setNumberOfLectures(numberOfLectures);
 	}
 
 	Course.prototype.getName = function() {

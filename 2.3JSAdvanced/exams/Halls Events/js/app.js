@@ -2,6 +2,15 @@ var app = app || {};
 
 (function (eventSystem) {
 	//TODO: Dynamicaly add options to select HTML tag
+    var fragment = document.createDocumentFragment();
+    var select = document.getElementById("halls");
+    eventSystem.halls.forEach(function(hall){
+        var myOption = document.createElement("option");
+        myOption.text = hall.getName();
+        myOption.value = hall.getName();
+        fragment.appendChild(myOption);
+    });
+    select.appendChild(fragment);
 	
     select.addEventListener('change', function (ev) {
         if($('#halls option:first-child').val() === 'Choose Hall') {
@@ -67,7 +76,7 @@ var app = app || {};
                     { name: "isBirthday", title: 'Is a birthday party?', type:'checkbox'},
                     { type: 'control', editButton: false}
                 ]
-            })
+            });
         }
     });
 
@@ -83,7 +92,7 @@ var app = app || {};
             if(lecture) {
                 obj.course = el.getCourse().getName() + ' [Numbers of Lectures: ' + el.getCourse().getNumberOfLectures() + ']';
                 obj.trainer = el.getTrainer().getName() + ' [Workhours: ' + el.getTrainer().getWorkhours() +
-                    ', Feedbacks: ' + el.getTrainer().feedbacks.join(', ') + ']'
+                    ', Feedbacks: ' + el.getTrainer().feedbacks.join(', ') + ']';
             } else {
                 obj.isBirthday = el.checkIsBirthday();
                 obj.isCatered = el.checkIsCatered();

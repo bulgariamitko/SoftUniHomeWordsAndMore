@@ -2,8 +2,8 @@ var app = app || {};
 
 (function (scope) {
 	function Hall(name, capacity) {
-        this.setName = name;
-        this.setCapacity = capacity;
+        this.setName(name);
+        this.setCapacity(capacity);
         this.parties = [];
         this.lectures = [];
 	}
@@ -40,8 +40,6 @@ var app = app || {};
 		
 	};
 
-	scope.hall = function(name, capacity) {
-		return new Hall(name, capacity);
-	};
+	app.hall = Hall;
 
 }(app));

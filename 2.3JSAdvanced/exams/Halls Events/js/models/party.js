@@ -5,13 +5,17 @@ var app = app || {};
 		// extand class
 		scope._Event.call(this, options);
 
-        this.checkIsCatered = options.isCatered;
-        this.checkIsBirthday = options.isBirthday;
-        this.setOrganiser = options.organiser;
+        this.checkIsCatered(options.isCatered);
+        this.checkIsBirthday(options.isBirthday);
+        this.setOrganiser(options.organiser);
 	}
 
 	// extend class
 	Party.extends(scope._Event);
+
+	Party.prototype.checkIsCatered = function() {
+        return this._isCatered;
+    };
 
 	Party.prototype.checkIsCatered = function(catered) {
 		if (catered == true) {
@@ -22,13 +26,14 @@ var app = app || {};
 		}
     };
 
-    Party.prototype.checkIsBirthday = function(birthday) {
-		if (birthday == true) {
-			this._isBirthday = true;
-		}
-		if (birthday == false) {
-			this._isBirthday = false;
-		}
+    Party.prototype.checkIsBirthday = function() {
+        return this._isBirthday;
+    };
+
+    Party.prototype.setIsBirthday = function(birthday) {
+		var bool = Boolean(birthday);
+		this._isBirthday = birthday;
+
     };
 
     Party.prototype.getOrganiser = function() {

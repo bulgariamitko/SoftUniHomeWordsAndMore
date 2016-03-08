@@ -5,10 +5,10 @@ var app = app || {};
 		if (this.constructor === Event) {
             throw new Error("Can't instantiate abstract class Event.");
         }
-        this.setTitle = options.title;
-        this.setType = options.type;
-        this.setDuration = options.duration;
-        this.setDate = options.date;
+        this.setTitle(options.title);
+        this.setType(options.type);
+        this.setDuration(options.duration);
+        this.setDate(options.date);
 	}
 
 	// class to be able to be extanded: 

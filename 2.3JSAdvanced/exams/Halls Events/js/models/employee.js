@@ -2,8 +2,8 @@ var app = app || {};
 
 (function (scope) {
 	function Employee(name, workHours) {
-        this.setName = name;
-        this.setWorkHours = workHours;
+        this.setName(name);
+        this.setWorkhours(workHours);
 	}
 
 	Employee.prototype.getName = function() {
@@ -17,11 +17,11 @@ var app = app || {};
         this._name = name;
     };
 
-    Employee.prototype.getWorkHours = function() {
+    Employee.prototype.getWorkhours = function() {
         return this._workHours;
     };
 
-    Employee.prototype.setWorkHours = function(workHours) {
+    Employee.prototype.setWorkhours = function(workHours) {
         if (!(/^[0-9]+$/.test(workHours))) {
             throw new Error("Work hours should contains only numbers.");
         }
