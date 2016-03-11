@@ -9,7 +9,6 @@ app.CollectionRequester = (function() {
 		var requestUrl = this.serviceUrl + '/' + collection;
 
 		app.requester.makeRequest('GET', requestUrl, null, true).then(function(success) {
-			var result = success;
 			// add to DOM:
 			if (collection === 'Books') {
 					// delete elements
