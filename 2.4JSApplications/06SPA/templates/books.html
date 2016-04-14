@@ -1,0 +1,14 @@
+<a href="#/logout">Logout</a>
+<h3>List of all books added so far:</h3>
+<!-- TODO data is taken from the controller -->
+{{#books}}
+<input type="text" id="{{bookId}}" value="{{name}}">
+<input type="submit" class="edit" value="Edit">
+<input type="submit" class="delete" value="Delete">
+<input type="submit" class="get" value="Display All Tags">
+<br>
+{{/books}}
+<h3>Add a new book:</h3>
+<label for="book">Enter the name of the new book:</label>
+<input type="text" id="book" placeholder="Book name" required autofocus></input>
+<input type="submit" id="addBook" value="Add"></input>

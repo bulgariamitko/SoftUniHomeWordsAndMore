@@ -1,0 +1,9 @@
+<h3>Add a new tag:</h3>
+<label for="country">Enter the name of the new tag:</label>
+<input type="text" id="tag" placeholder="Tag name" required></input>
+<select id="chooseBook" required>
+	{{#books}}
+	<option value="{{bookId}}">{{name}}</option>
+	{{/books}}
+</select>
+<input type="submit" id="addTag" value="Add"></input>
