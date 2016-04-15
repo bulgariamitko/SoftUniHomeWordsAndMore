@@ -20,7 +20,9 @@ angular.module('issueTracker.users.identity', []).factory('identity', ['$http', 
 			}
 		},
 		isAuth: function() {
-			return true;
+			if (document.cookie) {
+				return true;
+			}
 		}
 	};
 }]);
