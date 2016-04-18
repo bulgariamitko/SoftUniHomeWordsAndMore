@@ -1,10 +1,11 @@
 <h1>Project page</h1>
 <div class="col-md-6">
-	<span class="project">{{getProjectById.ProjectKey}}</span> <span class="btn btn-success">Edit</span> <span class="btn btn-success">Add Issue</span> <br>
+	<span class="project">{{getProjectById.ProjectKey}}</span> <a href="#/projects/{{getProjectById.Id}}/edit" class="btn btn-success">Edit</a> <a href="#/projects/{{getProjectById.Id}}/add-issue" class="btn btn-success">Add Issue</a> <br>
 	Product key: {{getProjectById.ProjectKey}} <br>
-	Name <input type="text" value="{{getProjectById.Name}}"></input> <br>
-	Description <input type="text" value="{{getProjectById.Description}}"></input> <br>
-	LeadId (current id: {{getProjectById.Lead.Id}}) <input type="text" value="{{getProjectById.Lead.Username}}"></input> <br>
+	Name: {{getProjectById.Name}} <br>
+	Description: {{getProjectById.Description}} <br>
+	LeadId: {{getProjectById.Lead.Id}} <br>
+	LeadUsername: {{getProjectById.Lead.Username}} <br>
 	Labels: <span ng-repeat="label in getProjectById.Labels">{{label.Name}}, </span> <br>
 	Priorities: <span ng-repeat="priority in getProjectById.Priorities">{{priority.Name}}, </span> <br>
 </div>

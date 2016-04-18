@@ -1,7 +1,12 @@
 angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'issueTracker.users.getUsers']).config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/projects/add/', {
-		templateUrl: 'app/projects/addNewProject.html',
+		templateUrl: 'app/projects/add.html',
 		controller: 'AddProjectController'
+	});
+
+	$routeProvider.when('/projects/:id/edit', {
+		templateUrl: 'app/projects/edit.html',
+		controller: 'EditProjectController'
 	});
 
 	$routeProvider.when('/projects', {
@@ -18,7 +23,7 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 	getProjects.allProjects().then(function(allProjectsResult) {
 		$scope.allProjectsResult = allProjectsResult.data;
 	});
-}]).controller('ProjectController', ['$scope', 'getProjects', '$routeParams', function($scope, getProjects, $routeParams) {
+}]).controller('ProjectController', ['$scope', '$routeParams', 'getProjects', function($scope, $routeParams, getProjects) {
 	var id = $routeParams.id;
 	getProjects.getProject(id).then(function(getProjectById) {
 		console.log(getProjectById);
@@ -27,8 +32,50 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 	getProjects.getIssuesByProject(id).then(function(getAllIssuesByProjectID) {
 		$scope.issues = getAllIssuesByProjectID.data;
 	});
-}]).controller('AddProjectController', ['$scope', 'getUsers', function($scope, getUsers) {
+}]).controller('AddProjectController', ['$scope', '$location', 'getUsers', 'getProjects', function($scope, $location, getUsers, getProjects) {
 	getUsers.getAllUsers().then(function(allUsers) {
 		$scope.allUsers = allUsers;
 	});
+
+	$scope.project = function(project) {
+		getProjects.addProject(project).then(function(newProject) {
+			console.log(newProject);
+			$location.path('/projects');
+		});
+	};
+}]).controller('EditProjectController', ['$scope', '$routeParams', '$location', 'getUsers', 'getProjects', function($scope, $routeParams, $location, getUsers, getProjects) {
+	getUsers.getAllUsers().then(function(allUsers) {
+		$scope.allUsers = allUsers;
+	});
+
+	var id = $routeParams.id;
+	getProjects.getProject(id).then(function(getProjectById) {
+		console.log(getProjectById);
+		var prioritiesData = getProjectById.data.Priorities;
+		var prioritiesArr = [];
+		for (var i = 0; i < prioritiesData.length; i++) {
+			prioritiesArr.push(prioritiesData[i].Name);
+		}
+		var labelsData = getProjectById.data.Labels;
+		var labelsArr = [];
+		for (var i2 = 0; i2 < labelsData.length; i2++) {
+			labelsArr.push(labelsData[i2].Name);
+		}
+
+		$scope.editProject = {
+			name: getProjectById.data.Name,
+			description: getProjectById.data.Description,
+			projectKey: getProjectById.data.ProjectKey,
+			leadId: getProjectById.data.Lead.Id,
+			priorities: prioritiesArr.join(','),
+			labels: labelsArr.join(',')
+		};
+	});
+
+	$scope.project = function(project) {
+		getProjects.editProject(project, id).then(function(editedProject) {
+			console.log(editedProject);
+			$location.path('/projects');
+		});
+	};
 }]);
