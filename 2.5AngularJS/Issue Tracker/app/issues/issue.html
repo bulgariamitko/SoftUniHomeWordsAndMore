@@ -1,11 +1,11 @@
 <h1>Issue page</h1>
 <div class="col-md-6">
-	<span class="project">{{issue.IssueKey}}</span> <span class="btn btn-success">Edit</span> <br>
-	<strong>Title</strong> <input type="text" value="{{issue.Title}}"></input> <br>
-	<strong>Description</strong> <input type="text" value="{{issue.Description}}"></input> <br>
-	<strong>AssigneeId</strong> (current id: {{issue.Assignee.Id}}) <input type="text" value="{{issue.Assignee.Username}}"></input> <br>
-	<strong>PriorityId</strong> (current id: {{issue.Id}}) <input type="text" value="{{issue.Priority.Name}}"></input> <br>
-	<strong>DueDate</strong> <input type="text" value="{{issue.DueDate}}"></input> <br>
+	<span class="project">{{issue.IssueKey}}</span> <a href="#/issues/{{issue.Id}}/edit" class="btn btn-success">Edit</a> <br>
+	<strong>Title</strong> {{issue.Title}}<br>
+	<strong>Description</strong> {{issue.Description}}<br>
+	<strong>AssigneeId</strong> (current id: {{issue.Assignee.Id}}) {{issue.Assignee.Username}}<br>
+	<strong>PriorityId</strong> (current id: {{issue.Id}}) {{issue.Priority.Name}}<br>
+	<strong>DueDate</strong> {{issue.DueDate}}<br>
 	Author: {{issue.Author.Username}} <br>
 	Project: {{issue.Project.Name}} <br>
 	Status: {{issue.Status.Name}} <br>
@@ -15,5 +15,22 @@
 </div>
 <div class="col-md-6">
 	Available statuses: <br>
-	<span ng-repeat="status in issue.AvailableStatuses">-----{{status.Name}} <span class="btn btn-success">Change</span><br></span>
+	<form name="changeStatusForm">
+		<div ng-repeat="status in issue.AvailableStatuses">
+				-----{{status.Name}} {{status.Id}}
+				<input type="hidden" ng-model="changeStatus.id" value="{{status.Id}}"></input>
+			 	<button class="btn btn-lg btn-success" ng-click="status(changeStatus)">Change</button>
+		</div>
+	</form>
 </div>
+<div class="row"></div>
+<div ng-repeat="comment in comments | orderBy:'-CreatedOn'">
+	{{comment.Author.Username}} - {{comment.CreatedOn}} 
+	<div>{{comment.Text}}</div>
+</div>
+<div class="row"></div>
+<form name="addCommentForm">
+	<label for="text">Text:</label>
+	<input type="textarea" id="text" ng-model="addComment.text" class="form-control" required></input> <br>
+	<button class="btn btn-lg btn-success" ng-disabled="addCommentForm.$invalid" ng-click="comment(addComment)">Add Comment</button>
+</form>

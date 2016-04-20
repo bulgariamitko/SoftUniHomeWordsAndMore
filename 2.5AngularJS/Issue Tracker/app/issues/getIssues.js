@@ -1,8 +1,9 @@
 angular.module('issueTracker.issues.getIssues', []).factory('getIssues', ['$http', '$q', 'BASE_URL', function($http, $q, BASE_URL) {
 	function getIssue(id) {
 		var deferred = $q.defer();
-		$http.get(BASE_URL + 'Issues/' + id + '/').then(function(getIssues) {
-			deferred.resolve(getIssues);
+		$http.get(BASE_URL + 'Issues/' + id + '/').then(function(getIssue) {
+			console.log(getIssue);
+			deferred.resolve(getIssue);
 		});
 		return deferred.promise;
 	}
@@ -42,8 +43,67 @@ angular.module('issueTracker.issues.getIssues', []).factory('getIssues', ['$http
 		return deferred.promise;
 	}
 
+	function editIssue(issue, id) {
+		var deferred = $q.defer();
+		console.log(issue);
+		$http({
+		    method: 'PUT',
+		    url: BASE_URL + 'Issues/' + id,
+		    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+		    transformRequest: function(obj) {
+		        var str = [];
+		        for (var p in obj) {
+		        	if (p === 'PriorityId') {
+	        			var PriorityId = obj[p].split(',');
+	        			for (var i = 0; i < PriorityId.length; i++) {
+		        			str.push('PriorityId[' + i + '].name=' + encodeURIComponent(PriorityId[i]));
+	        			}
+		        	} else {
+		        		str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+		        	}
+		        }
+		    	console.log(str.join("&"));
+		        return str.join("&");
+		    },
+		    data: issue
+		}).then(function(response) {
+			deferred.resolve(response.data);
+			console.log(response.data);
+		}, function(error) {
+			console.log(error);
+		});
+		return deferred.promise;
+	}
+
+	function changeStatus(status, id) {
+		var deferred = $q.defer();
+		console.log(status);
+		$http({
+		    method: 'PUT',
+		    url: BASE_URL + 'Issues/' + id + '/changestatus?statusid={statusId}',
+		    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+		    transformRequest: function(obj) {
+		        var str = [];
+		        for (var p in obj) {
+		        	str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+		        }
+		    	console.log(str.join("&"));
+		        return str.join("&");
+		    },
+		    data: status
+		}).then(function(response) {
+			deferred.resolve(response.data);
+			console.log(response.data);
+		}, function(error) {
+			console.log(error);
+		});
+		return deferred.promise;
+	}
+
 	return {
 		getIssue: getIssue,
-		addIssue: addIssue
+		addIssue: addIssue,
+		editIssue: editIssue,
+		changeStatus: changeStatus
 	};
 }]);

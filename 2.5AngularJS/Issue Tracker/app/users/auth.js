@@ -42,9 +42,18 @@ angular.module('issueTracker.users.auth', []).factory('auth', ['$http', '$q', 'B
 		return deferred.promise;
 	}
 
+	function me() {
+		var deferred = $q.defer();
+		$http.get(BASE_URL + 'users/me').then(function(response) {
+			deferred.resolve(response.data);
+		});
+		return deferred.promise;
+	}
+
 	return {
 		registerUser: registerUser,
 		loginUser: loginUser,
-		logout: logout
+		logout: logout,
+		me: me
 	};
 }]);

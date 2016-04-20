@@ -75,7 +75,7 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 	$scope.project = function(project) {
 		getProjects.editProject(project, id).then(function(editedProject) {
 			console.log(editedProject);
-			$location.path('/projects');
+			$location.path('/projects/' + id);
 		});
 	};
 }]);

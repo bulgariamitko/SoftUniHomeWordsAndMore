@@ -1,5 +1,23 @@
-<ul>
-	<li ng-repeat="project in allProjectsResult">
-		{{ project.Name }}
-	</li>
-</ul>
+<h1>Dashboard</h1>
+<div class="col-md-6">
+	<div ng-repeat="projects in myProjects">
+		{{projects.Name}}
+	</div>
+	<a href="#/projects/add" class="btn btn-lg btn-success">Add New Project</a>
+</div>
+<div class="col-md-6">
+	<table class="table">
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Due Date</th>
+			<th>Assignee</th>
+		</tr>
+		<tr ng-repeat="issues in myIssues">
+			<td><a href="#/issues/{{issues.Id}}">{{issues.Title}}</a></td>
+			<td>{{issues.Description}}</td>
+			<td>{{issues.DueDate}}</td>
+			<th>{{issues.Assignee.Username}}</th>
+		</tr>
+	</table>
+</div>
