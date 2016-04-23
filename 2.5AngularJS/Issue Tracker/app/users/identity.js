@@ -2,7 +2,7 @@ angular.module('issueTracker.users.identity', []).factory('identity', ['$http', 
 	var deferred = $q.defer();
 	var currentUser = undefined;
 	if (document.cookie) {
-		var accessToken = document.cookie.substring(6);
+		var accessToken = document.cookie.split('=')[1];
 		$http.defaults.headers.common.Authorization = 'Bearer ' + accessToken;
 		$http.get(BASE_URL + 'api/Account/UserInfo').then(function(response) {
 			currentUser = response.data;
@@ -22,6 +22,8 @@ angular.module('issueTracker.users.identity', []).factory('identity', ['$http', 
 		isAuth: function() {
 			if (document.cookie) {
 				return true;
+			} else {
+				return false;
 			}
 		}
 	};

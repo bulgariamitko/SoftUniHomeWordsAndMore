@@ -53,9 +53,21 @@ angular.module('issueTracker.projects.getProjects', []).factory('getProjects', [
 		    data: project
 		}).then(function(response) {
 			deferred.resolve(response.data);
-			console.log(response.data);
+			noty({
+                text: response.data.Name + ' was added successful.',
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		}, function(error) {
+			deferred.reject(error);
 			console.log(error);
+			noty({
+                text:  'There was some error and the project was not added.',
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		});
 		return deferred.promise;
 	}
@@ -91,9 +103,20 @@ angular.module('issueTracker.projects.getProjects', []).factory('getProjects', [
 		    data: project
 		}).then(function(response) {
 			deferred.resolve(response.data);
-			console.log(response.data);
+			noty({
+                text: response.data.Name + ' was edited successful.',
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		}, function(error) {
-			console.log(error);
+			deferred.reject(error);
+			noty({
+                text:  'There was some error and the project was not added.',
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		});
 		return deferred.promise;
 	}

@@ -1,4 +1,5 @@
-angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'issueTracker.users.getUsers']).config(['$routeProvider', function($routeProvider) {
+angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'issueTracker.users.getUsers'])
+.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/projects/add/', {
 		templateUrl: 'app/projects/add.html',
 		controller: 'AddProjectController'
@@ -9,9 +10,25 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 		controller: 'EditProjectController'
 	});
 
-	$routeProvider.when('/projects', {
+	$routeProvider.when('/projects/', {
 		templateUrl: 'app/projects/projects.html',
-		controller: 'ProjectsController'
+		controller: 'ProjectsController',
+		resolve: {
+		    auth: ["$q", "getUsers", function($q, getUsers) {
+		    	var userExists = document.currentUser;
+		    	var isAdmin = document.isAdmin;
+		    	console.log(userExists, isAdmin);
+			    if (isAdmin) {
+			    	return $q.when(userExists);
+			    } else if (userExists && isAdmin) {
+			      return $q.when(userExists);
+			    } else if (userExists || isAdmin) {
+			      return $q.reject({isAdmin: false});
+			    } else {
+			      return $q.reject({isAuth: false});
+			    }
+		    }]
+		}
 	});
 
 	$routeProvider.when('/projects/:id/', {
@@ -40,7 +57,7 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 	$scope.project = function(project) {
 		getProjects.addProject(project).then(function(newProject) {
 			console.log(newProject);
-			$location.path('/projects');
+			$location.path('/projects/');
 		});
 	};
 }]).controller('EditProjectController', ['$scope', '$routeParams', '$location', 'getUsers', 'getProjects', function($scope, $routeParams, $location, getUsers, getProjects) {
@@ -75,7 +92,7 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 	$scope.project = function(project) {
 		getProjects.editProject(project, id).then(function(editedProject) {
 			console.log(editedProject);
-			$location.path('/projects/' + id);
+			$location.path('/projects/' + id + '/');
 		});
 	};
 }]);

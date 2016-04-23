@@ -1,7 +1,7 @@
 <h1>Dashboard</h1>
 <div class="col-md-6">
-	<div ng-repeat="projects in myProjects">
-		{{projects.Name}}
+	<div ng-repeat="projects in myProjects | filter:searchProjects">
+		<p class="project">{{projects.Name}} <a href="#/projects/{{projects.Id}}/" class="btn btn-info"> View</a></p>
 	</div>
 	<a href="#/projects/add" class="btn btn-lg btn-success">Add New Project</a>
 </div>

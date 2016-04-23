@@ -13,7 +13,7 @@ angular.module('issueTracker.issues', ['issueTracker.issues.getIssues', 'issueTr
 		templateUrl: 'app/issues/edit.html',
 		controller: 'EditIssueController'
 	});
-}]).controller('IssueController', ['$scope', '$routeParams', 'getIssues', 'getComments', function($scope, $routeParams, getIssues, getComments) {
+}]).controller('IssueController', ['$scope', '$route', '$routeParams', 'getIssues', 'getComments', function($scope, $route, $routeParams, getIssues, getComments) {
 	var id = $routeParams.id;
 	getIssues.getIssue(id).then(function(getIssueById) {
 		$scope.issue = getIssueById.data;
@@ -28,7 +28,7 @@ angular.module('issueTracker.issues', ['issueTracker.issues.getIssues', 'issueTr
 		getIssues.changeStatus(status, id).then(function(statusChanged) {
 			console.log(statusChanged);
 			// TODO: refresh dosent work...
-			$window.location.reload();
+			$route.reload();
 		});
 	};
 
@@ -36,7 +36,7 @@ angular.module('issueTracker.issues', ['issueTracker.issues.getIssues', 'issueTr
 		getComments.addComment(comment, id).then(function(addedComment) {
 			console.log(addedComment);
 			// TODO: refresh dosent work...
-			$window.location.reload();
+			$route.reload();
 		});
 	};
 }]).controller('AddIssueController', ['$scope', '$location', '$routeParams', 'getIssues', 'getProjects', 'getUsers', function($scope, $location, $routeParams, getIssues, getProjects, getUsers) {

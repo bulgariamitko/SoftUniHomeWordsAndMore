@@ -36,9 +36,20 @@ angular.module('issueTracker.issues.getIssues', []).factory('getIssues', ['$http
 		    data: issue
 		}).then(function(response) {
 			deferred.resolve(response.data);
-			console.log(response.data);
+			noty({
+                text: response.data.Title + ' was added successful.',
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		}, function(error) {
-			console.log(error);
+			deferred.reject(error);
+			noty({
+                text: 'There was error adding this issue.',
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		});
 		return deferred.promise;
 	}
@@ -68,9 +79,20 @@ angular.module('issueTracker.issues.getIssues', []).factory('getIssues', ['$http
 		    data: issue
 		}).then(function(response) {
 			deferred.resolve(response.data);
-			console.log(response.data);
+			noty({
+                text: response.data.Title + ' was edited successful.',
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		}, function(error) {
-			console.log(error);
+			deferred.reject(error);
+			noty({
+                text: 'There was error editing this issue.',
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		});
 		return deferred.promise;
 	}
@@ -95,6 +117,7 @@ angular.module('issueTracker.issues.getIssues', []).factory('getIssues', ['$http
 			deferred.resolve(response.data);
 			console.log(response.data);
 		}, function(error) {
+			deferred.reject(error);
 			console.log(error);
 		});
 		return deferred.promise;

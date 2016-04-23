@@ -1,7 +1,7 @@
 <h1 class="info">Projects</h1>
 <a href="#/projects/add" class="btn btn-lg btn-success">Add New Project</a>
 <ul>
-	<li ng-repeat="project in allProjectsResult">
+	<li ng-repeat="project in allProjectsResult | filter:searchProjects">
 		<span class="project">{{ project.Name }}</span> <a href="#/projects/{{project.Id}}/" class="btn btn-info"> View</a>
 	</li>
 </ul>

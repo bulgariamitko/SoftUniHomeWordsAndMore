@@ -18,12 +18,27 @@ angular.module('issueTracker.comments.getComments', []).factory('getComments', [
 		        for (var p in obj) {
 		        	str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
 		        }
-		    	console.log(str.join("&"));
 		        return str.join("&");
 		    },
 		    data: comment
+		}).then(function(response) {
+			deferred.resolve(response.data);
+			console.log(response.data);
+			noty({
+                text: 'Comment was added successful.',
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		}, function(error) {
+			deferred.reject(error);
 			console.log(error);
+			noty({
+                text:  error.data.Message,
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		});
 		return deferred.promise;
 	}
