@@ -70,24 +70,29 @@ angular.module('issueTracker.users.getUsers', []).factory('getUsers', ['$http', 
 		return deferred.promise;
 	}
 
-	function me() {
+	//TODO: fix this function...
+	function identity(accessToken) {
 		var deferred = $q.defer();
-		$http.get(BASE_URL + 'users/me').then(function(response) {
-			console.log(response);
+		$http.defaults.headers.common.Authorization = 'Bearer ' + accessToken;
+		$http.get(BASE_URL + 'api/Account/UserInfo').then(function(response) {
 			deferred.resolve(response.data);
-		}, function (error) {
-			deferred.reject(error);
-			console.log(error);
 		});
 		return deferred.promise;
 	}
 
-	function isAdmin() {
+	function me() {
 		var deferred = $q.defer();
 		$http.get(BASE_URL + 'users/me').then(function(response) {
-			deferred.resolve(response.data.isAdmin);
+			deferred.resolve(response.data);
+			if (!localStorage.isAdmin && !localStorage.isNotAdmin) {
+				localStorage.username = response.data.Username;
+				localStorage.isAdmin = response.data.isAdmin;
+				localStorage.isNotAdmin = !response.data.isAdmin;
+			}
+			console.log(response);
 		}, function (error) {
 			deferred.reject(error);
+			console.log(error);
 		});
 		return deferred.promise;
 	}
@@ -130,8 +135,8 @@ angular.module('issueTracker.users.getUsers', []).factory('getUsers', ['$http', 
 		getAllUsers: getAllUsers,
 		registerUser: registerUser,
 		loginUser: loginUser,
+		identity: identity,
 		me: me,
-		changePassword: changePassword,
-		isAdmin: isAdmin
+		changePassword: changePassword
 	};
 }]);

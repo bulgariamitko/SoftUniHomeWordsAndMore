@@ -7,9 +7,17 @@ angular.module('issueTracker',
 	'issueTracker.issues',
 	'issueTracker.users.Password',
 	'issueTracker.users.identity'])
-.run(['$rootScope', '$location', function($rootScope, $location) {
+.run(['$rootScope', '$location', 'identity', 'getUsers', function($rootScope, $location, identity, getUsers) {
+	identity.then(function(currUser) {
+		getUsers.me().then(function(getMe) {
+			$rootScope.isAdmin = getMe.isAdmin;
+			$rootScope.loginedInUser = getMe.Username;
+		});
+	});
+
 	$rootScope.$on('$routeChangeError', function(event, next, previous, error) {
-		if (error.isAuth === undefined && !error.isAdmin) {
+	console.log(error);
+		if (error.isAuth === undefined && error.isNotAdmin) {
 			noty({
 		        text: 'Sorry you must be an admin in order to access this page',
 		        type: 'error',

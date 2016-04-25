@@ -99,10 +99,9 @@ angular.module('issueTracker.issues.getIssues', []).factory('getIssues', ['$http
 
 	function changeStatus(status, id) {
 		var deferred = $q.defer();
-		console.log(status);
 		$http({
 		    method: 'PUT',
-		    url: BASE_URL + 'Issues/' + id + '/changestatus?statusid={statusId}',
+		    url: BASE_URL + 'Issues/' + id + '/changestatus?statusid=' + status,
 		    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		    transformRequest: function(obj) {
 		        var str = [];
@@ -115,10 +114,20 @@ angular.module('issueTracker.issues.getIssues', []).factory('getIssues', ['$http
 		    data: status
 		}).then(function(response) {
 			deferred.resolve(response.data);
-			console.log(response.data);
+			noty({
+                text: 'Status have been successfuly changed',
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		}, function(error) {
 			deferred.reject(error);
-			console.log(error);
+			noty({
+                text: 'Something went wrong changing the status',
+                type: 'info',
+                layout: 'topCenter',
+                timeout: 5000
+            });
 		});
 		return deferred.promise;
 	}

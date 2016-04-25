@@ -16,9 +16,27 @@ angular.module('issueTracker.dashboard.getDashboard', []).factory('getDashboard'
 		return deferred.promise;
 	}
 
-	function myIssues() {
+	function myTotalIssues() {
 		var deferred = $q.defer();
-		$http.get(BASE_URL + 'Issues/me?orderBy=DueDate desc&pageSize=10&pageNumber=1').then(function(getMyIssues) {
+		// toFIX: this is not right and need to be done better
+		$http.get(BASE_URL + 'Issues/me?orderBy=DueDate desc&pageSize=10000&pageNumber=1').then(function(getMyIssues) {
+			console.log(getMyIssues.data);
+			deferred.resolve(getMyIssues);
+		}, function(error) {
+			deferred.reject(error);
+			noty({
+                text: error.data.Message,
+                type: 'error',
+                layout: 'topCenter',
+                timeout: 5000
+            });
+		});
+		return deferred.promise;
+	}
+
+	function myIssues(pNum) {
+		var deferred = $q.defer();
+		$http.get(BASE_URL + 'Issues/me?orderBy=DueDate desc&pageSize=10&pageNumber=' + pNum).then(function(getMyIssues) {
 			console.log(getMyIssues.data);
 			deferred.resolve(getMyIssues);
 		}, function(error) {
@@ -35,6 +53,7 @@ angular.module('issueTracker.dashboard.getDashboard', []).factory('getDashboard'
 
 	return {
 		myProjects: myProjects,
+		myTotalIssues: myTotalIssues,
 		myIssues: myIssues
 	};
 }]);

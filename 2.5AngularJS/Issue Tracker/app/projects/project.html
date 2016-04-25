@@ -1,6 +1,6 @@
 <h1>Project page</h1>
 <div class="col-md-6">
-	<span class="project">{{getProjectById.ProjectKey}}</span> <a href="#/projects/{{getProjectById.Id}}/edit" class="btn btn-success">Edit</a> <a href="#/projects/{{getProjectById.Id}}/add-issue" class="btn btn-success">Add Issue</a> <br>
+	<span class="project">{{getProjectById.ProjectKey}}</span> <a ng-if="loginedInUser === getProjectById.Lead.Username" href="#/projects/{{getProjectById.Id}}/edit/" class="btn btn-success">Edit</a> <a ng-if="loginedInUser === getProjectById.Lead.Username" href="#/projects/{{getProjectById.Id}}/add-issue/" class="btn btn-success">Add Issue</a> <br>
 	Product key: {{getProjectById.ProjectKey}} <br>
 	Name: {{getProjectById.Name}} <br>
 	Description: {{getProjectById.Description}} <br>
@@ -17,7 +17,7 @@
 			<th>Due Date</th>
 			<th>Assignee</th>
 		</tr>
-		<tr ng-repeat="issue in issues">
+		<tr ng-repeat="issue in issues | orderBy: '-DueDate'">
 			<td><a href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
 			<td>{{issue.Description}}</td>
 			<td>{{issue.DueDate}}</td>

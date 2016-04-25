@@ -8,8 +8,15 @@
 	<select class="form-control" id="AssigneeId" ng-model="editIssue.assigneeId" required>
 		<option ng-repeat="user in allUsers" value="{{user.Id}}">{{user.Username}}</option>
 	</select> <br>
+
 	<label for="priorities">Priorities</label>
-	<input type="text" id="priorities" ng-model="editIssue.priorityId" class="form-control" required></input> <br>
+	<select class="form-control" id="priorities" ng-model="editIssue.priorityId" required>
+		<option ng-repeat="priority in Priorities" value="{{priority.Id}}">{{priority.Name}}</option>
+	</select> <br>
+
+	<!-- <label for="priorities">Priorities</label>
+	<input type="text" id="priorities" ng-model="editIssue.priorityId" class="form-control" required></input> <br> -->
+	
 	<label for="duedate">DueDate</label>
 	<input type="text" id="duedate" ng-model="editIssue.duedate" class="form-control" required></input> <br>
 	

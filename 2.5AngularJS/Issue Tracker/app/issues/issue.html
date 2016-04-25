@@ -1,6 +1,6 @@
 <h1>Issue page</h1>
 <div class="col-md-6">
-	<span class="project">{{issue.IssueKey}}</span> <a href="#/issues/{{issue.Id}}/edit" class="btn btn-success">Edit</a> <br>
+	<span class="project">{{issue.IssueKey}}</span> <a ng-if="loginedInUser === project.Lead.Username" href="#/issues/{{issue.Id}}/edit/" class="btn btn-success">Edit</a> <br>
 	<strong>Title</strong> {{issue.Title}}<br>
 	<strong>Description</strong> {{issue.Description}}<br>
 	<strong>AssigneeId</strong> (current id: {{issue.Assignee.Id}}) {{issue.Assignee.Username}}<br>
@@ -15,13 +15,10 @@
 </div>
 <div class="col-md-6">
 	Available statuses: <br>
-	<form name="changeStatusForm">
-		<div ng-repeat="status in issue.AvailableStatuses">
-				-----{{status.Name}} {{status.Id}}
-				<input type="hidden" ng-model="changeStatus.id" value="{{status.Id}}"></input>
-			 	<button class="btn btn-lg btn-success" ng-click="status(changeStatus)">Change</button>
-		</div>
-	</form>
+	<div ng-repeat="status in issue.AvailableStatuses">
+			<p>-----{{status.Name}}</p>
+		 	<button ng-if="loginedInUser === issue.Assignee.Username" class="btn btn-lg btn-success" ng-click="changeStatus(status.Id)">Change</button>
+	</div>
 </div>
 <div class="row"></div>
 <div ng-repeat="comment in comments | orderBy:'-CreatedOn'">

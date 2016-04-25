@@ -2,28 +2,63 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/projects/add/', {
 		templateUrl: 'app/projects/add.html',
-		controller: 'AddProjectController'
+		controller: 'AddProjectController',
+		resolve: {
+		    auth: ['$q', function($q) {
+		    	var userExists = localStorage.username;
+		    	var isNotAdmin = localStorage.isNotAdmin;
+		    	var isAdmin = localStorage.isAdmin;
+		    	console.log("userExists:", userExists, "isNotAdmin:", isNotAdmin, "isAdmin:", isAdmin);
+			    if (isAdmin === 'true') {
+			    	return $q.when(userExists);
+			    } else if (userExists && isAdmin === 'true') {
+			      return $q.when(userExists);
+			    } else if (userExists || isNotAdmin) {
+			      return $q.reject({isAdmin: false, isNotAdmin: true});
+			    } else {
+			      return $q.reject({isAuth: false});
+			    }
+		    }]
+		}
 	});
 
-	$routeProvider.when('/projects/:id/edit', {
+	$routeProvider.when('/projects/:id/edit/', {
 		templateUrl: 'app/projects/edit.html',
-		controller: 'EditProjectController'
+		controller: 'EditProjectController',
+		resolve: {
+		    auth: ['$q', function($q) {
+		    	var userExists = localStorage.username;
+		    	var isNotAdmin = localStorage.isNotAdmin;
+		    	var isAdmin = localStorage.isAdmin;
+		    	console.log("userExists:", userExists, "isNotAdmin:", isNotAdmin, "isAdmin:", isAdmin);
+			    if (isAdmin === 'true') {
+			    	return $q.when(userExists);
+			    } else if (userExists && isAdmin === 'true') {
+			      return $q.when(userExists);
+			    } else if (userExists || isNotAdmin) {
+			      return $q.reject({isAdmin: false, isNotAdmin: true});
+			    } else {
+			      return $q.reject({isAuth: false});
+			    }
+		    }]
+		}
 	});
 
 	$routeProvider.when('/projects/', {
 		templateUrl: 'app/projects/projects.html',
 		controller: 'ProjectsController',
 		resolve: {
-		    auth: ["$q", "getUsers", function($q, getUsers) {
-		    	var userExists = document.currentUser;
-		    	var isAdmin = document.isAdmin;
-		    	console.log(userExists, isAdmin);
-			    if (isAdmin) {
+		    auth: ['$q', function($q) {
+		    	var userExists = localStorage.username;
+		    	var isNotAdmin = localStorage.isNotAdmin;
+		    	var isAdmin = localStorage.isAdmin;
+		    	console.log("userExists:", userExists, "isNotAdmin:", isNotAdmin, "isAdmin:", isAdmin);
+			    if (isAdmin === 'true') {
 			    	return $q.when(userExists);
-			    } else if (userExists && isAdmin) {
+			    } else if (userExists && isAdmin === 'true') {
 			      return $q.when(userExists);
-			    } else if (userExists || isAdmin) {
-			      return $q.reject({isAdmin: false});
+			    } else if (userExists || isNotAdmin) {
+			      return $q.reject({isAdmin: false, isNotAdmin: true});
 			    } else {
 			      return $q.reject({isAuth: false});
 			    }
@@ -33,7 +68,17 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 
 	$routeProvider.when('/projects/:id/', {
 		templateUrl: 'app/projects/project.html',
-		controller: 'ProjectController'
+		controller: 'ProjectController',
+		resolve: {
+		    auth: ['$q', function($q) {
+		    	var userExists = localStorage.username;
+			    if (userExists) {
+			    	return $q.when(userExists);
+			    } else {
+			      return $q.reject({isAuth: false});
+			    }
+		    }]
+		}
 	});
 
 }]).controller('ProjectsController', ['$scope', 'getProjects', function($scope, getProjects) {
@@ -61,13 +106,18 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 		});
 	};
 }]).controller('EditProjectController', ['$scope', '$routeParams', '$location', 'getUsers', 'getProjects', function($scope, $routeParams, $location, getUsers, getProjects) {
-	getUsers.getAllUsers().then(function(allUsers) {
-		$scope.allUsers = allUsers;
-	});
-
 	var id = $routeParams.id;
 	getProjects.getProject(id).then(function(getProjectById) {
 		console.log(getProjectById);
+		if (localStorage.username != getProjectById.data.Lead.Username) {
+			noty({
+		        text: 'Sorry you must be the project leader in order to access this page',
+		        type: 'error',
+		        layout: 'topCenter',
+		        timeout: 5000
+		    });
+			$location.path('/');
+		}
 		var prioritiesData = getProjectById.data.Priorities;
 		var prioritiesArr = [];
 		for (var i = 0; i < prioritiesData.length; i++) {
@@ -88,6 +138,11 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 			labels: labelsArr.join(',')
 		};
 	});
+
+	getUsers.getAllUsers().then(function(allUsers) {
+		$scope.allUsers = allUsers;
+	});
+
 
 	$scope.project = function(project) {
 		getProjects.editProject(project, id).then(function(editedProject) {
