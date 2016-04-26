@@ -10,6 +10,11 @@
 	Priorities: <span ng-repeat="priority in getProjectById.Priorities">{{priority.Name}}, </span> <br>
 </div>
 <div class="col-md-6">
+	<label for="issuesFiltering">Choose an option from the drop down menu to filter the issues</label>
+		<select class="form-control" id="issuesFiltering" ng-model="showAllIssues" required>
+			<option value="me">My Issues</option>
+			<option value="showAll">All Issues</option>
+		</select> <br>
 	<table class="table">
 		<tr>
 			<th>Title</th>
@@ -17,7 +22,13 @@
 			<th>Due Date</th>
 			<th>Assignee</th>
 		</tr>
-		<tr ng-repeat="issue in issues | orderBy: '-DueDate'">
+		<tr ng-if="showAllIssues == 'showAll'" ng-repeat="issue in issues | orderBy: '-DueDate'">
+			<td><a href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
+			<td>{{issue.Description}}</td>
+			<td>{{issue.DueDate}}</td>
+			<th>{{issue.Assignee.Username}}</th>
+		</tr>
+		<tr ng-if="showAllIssues == 'me'" ng-repeat="issue in issues | orderBy: '-DueDate' | filter: {Assignee: {Username: loginedInUser}}">
 			<td><a href="#/issues/{{issue.Id}}">{{issue.Title}}</a></td>
 			<td>{{issue.Description}}</td>
 			<td>{{issue.DueDate}}</td>

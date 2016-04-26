@@ -34,10 +34,11 @@
 <div ng-show="loginedInUser">
 	<h1>Dashboard</h1>
 	<div class="col-md-6">
+		<a ng-show="isAdmin" href="#/projects/add" class="btn btn-lg btn-success">Add New Project</a>
 		<div ng-repeat="projects in myProjects | filter:searchProjects">
 			<p class="project">{{projects.Name}} <a href="#/projects/{{projects.Id}}/" class="btn btn-info"> View</a></p>
 		</div>
-		<a ng-show="isAdmin" href="#/projects/add" class="btn btn-lg btn-success">Add New Project</a>
+		<button ng-if="projectPages != 1" ng-repeat="n in [] | range: projectPages" class="btn btn-info" ng-click="changeProjectPage(n)">{{n}}</button>
 	</div>
 	<div class="col-md-6">
 		<table class="table">

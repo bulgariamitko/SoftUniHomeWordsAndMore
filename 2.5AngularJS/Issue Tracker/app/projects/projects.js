@@ -28,15 +28,8 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 		resolve: {
 		    auth: ['$q', function($q) {
 		    	var userExists = localStorage.username;
-		    	var isNotAdmin = localStorage.isNotAdmin;
-		    	var isAdmin = localStorage.isAdmin;
-		    	console.log("userExists:", userExists, "isNotAdmin:", isNotAdmin, "isAdmin:", isAdmin);
-			    if (isAdmin === 'true') {
+			    if (userExists) {
 			    	return $q.when(userExists);
-			    } else if (userExists && isAdmin === 'true') {
-			      return $q.when(userExists);
-			    } else if (userExists || isNotAdmin) {
-			      return $q.reject({isAdmin: false, isNotAdmin: true});
 			    } else {
 			      return $q.reject({isAuth: false});
 			    }
@@ -94,6 +87,8 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 	getProjects.getIssuesByProject(id).then(function(getAllIssuesByProjectID) {
 		$scope.issues = getAllIssuesByProjectID.data;
 	});
+	// load default option
+	$scope.showAllIssues = 'me';
 }]).controller('AddProjectController', ['$scope', '$location', 'getUsers', 'getProjects', function($scope, $location, getUsers, getProjects) {
 	getUsers.getAllUsers().then(function(allUsers) {
 		$scope.allUsers = allUsers;
@@ -102,7 +97,7 @@ angular.module('issueTracker.projects', ['issueTracker.projects.getProjects', 'i
 	$scope.project = function(project) {
 		getProjects.addProject(project).then(function(newProject) {
 			console.log(newProject);
-			$location.path('/projects/');
+			$location.path('/');
 		});
 	};
 }]).controller('EditProjectController', ['$scope', '$routeParams', '$location', 'getUsers', 'getProjects', function($scope, $routeParams, $location, getUsers, getProjects) {

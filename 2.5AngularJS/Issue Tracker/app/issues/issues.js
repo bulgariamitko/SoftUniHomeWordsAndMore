@@ -105,6 +105,7 @@ angular.module('issueTracker.issues', ['issueTracker.issues.getIssues', 'issueTr
 	var id = $routeParams.id;
 	getIssues.getIssue(id).then(function(getIssueById) {
 		getProjects.getProject(getIssueById.data.Project.Id).then(function(getProjectById) {
+			$scope.project = getProjectById.data;
 			var projectLeader = getProjectById.data.Lead.Username;
 			console.log(projectLeader);
 			console.log(localStorage.username);

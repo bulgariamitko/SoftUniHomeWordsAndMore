@@ -43,11 +43,11 @@
       </ul>
       <form  class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input ng-show="isAdmin && (isActive('/projects/') || isActive('/'))" type="text" class="form-control" ng-model="searchProjects" placeholder="Search projects" focus>
+          <input ng-show="isAdmin && (isActive('/projects/') || isActive('/'))" type="text" class="form-control" ng-model="searchProjects" placeholder="Search projects" autofocus>
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/profile/password/">{{loginedInUser}}</a></li>
+        <li><a href="#/profile/password/">{{loginedInUser}} <span ng-if="isAdmin">(admin)</span></a></li>
         <li ng-show="loginedInUser"><a href="#/logout" ng-click="logout()">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -56,10 +56,13 @@
 	<div class="container">
 	  	<div ng-view></div>
   </div>
-  <div footer></div>
+  <div footer>
+    <hr>
+    <h3 class="text-center">coded by <a href="http://livecoding.tv/bulgaria_mitko">livecoding.tv/bulgaria_mitko</a></h3>
+  </div>
   <script type="text/javascript" src="app/app.js"></script>
   <script type="text/javascript" src="app/common/main-controller.js"></script>
-  <script type="text/javascript" src="app/home/home-controller.js"></script>
+  <script type="text/javascript" src="app/home/home-dashboard.js"></script>
   <script type="text/javascript" src="app/dashboard/getDashboard.js"></script>
   <script type="text/javascript" src="app/users/getUsers.js"></script>
   <script type="text/javascript" src="app/users/identity.js"></script>

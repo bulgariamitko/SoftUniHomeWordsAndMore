@@ -13,6 +13,12 @@ angular.module('issueTracker.common', ['issueTracker.users.getUsers'])
 			localStorage.clear();
 			$rootScope.loginedInUser = '';
 			$rootScope.isAdmin = '';
+			noty({
+		        text: 'You are successfully logged out. Come back again, please! ;)',
+		        type: 'info',
+		        layout: 'topCenter',
+		        timeout: 5000
+		    });
 			$location.path('/');
 		};
 }]);
