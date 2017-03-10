@@ -1,0 +1,45 @@
+<?php
+
+
+
+INSERT INTO, UPDATE, DELETE FROM
+
+"INSERT INTO"
+The name of the table
+So called 'fields' - the names of the fields that will be filled with the command, enclosed in brackets and separated by commas
+So called 'values' – the values of the fields in the corresponding order as the 'fields', enclosed in brackets and separated by commas
+Example:  "INSERT INTO users (user_id, login, gender, age) VALUES (1, yana, female, 20)"
+
+"UPDATE"
+The name of the table
+"SET"
+So called 'update field' – the name of the field and its new value, enclosed in brackets and separated by "="
+"WHERE"
+So called 'update condition' – a field name and a field value, enclosed in brackets and separated by "="
+Example: " UPDATE users SET (login = root) WHERE (user_id = 1)"
+Note: The command "UPDATE" can change only one field in the database table. It can have only one 'update condition' which will always be for equality. The field 'user_id' can not be updated. 
+
+"DELETE FROM"
+The name of the table
+"WHERE"
+So called 'delete condition' – a field name and a field value, enclosed in brackets and separated by "="
+Example: "DELETE FROM users WHERE (user_id = 178)"
+Note: The command "DELETE" can erase more than one entry (row) from the database table. It can only have one 'delete condition' which will always be for equality.
+
+
+"INSERT INTO" errors:
+The starting word 'INSERT' is missing
+There is no 'login' field
+The number of 'fields' and 'values' is different (if they are equal, they will always be arranged correctly: user_id, login, gender, age)
+"UPDATE" errors:
+The starting word "UPDATE" is missing
+The 'update condition' refers to existing 'field'
+The 'update field' is existing 'field'
+The 'update condition' is a combination of existing 'field' – 'value'
+"DELETE FROM" errors:
+The starting word "DELETE" is missing
+When you try to delete the field 'login'
+The field from 'delete condition' does not exist
+Note: Command "DELET FROM" – when the 'delete condition' is not valid, for example "DELETE FROM users WHERE (user_id = 1)" if we do not have 'field' 'user_id' with 'value' = '1', there is no error, just nothing happens. If on the same conditions the table is empty, nothing happens as well.
+
+
