@@ -1,0 +1,49 @@
+{% extends 'parent.html.twig' %}
+
+
+{% block content %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" align="center">
+      <div class="container">
+        <h1 class="display-4">{{ data["title"] }}</h1>
+        <p>{{ data["sub_title"] }}</p>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+        <h1 align="center" class="punch-line">Shop with us</h1>
+        <hr class="line">
+        
+      <div class="row make-some">
+        {% for category in categories %}
+
+        {% if loop.index0 > 1 and loop.index0 % 2 == 0 %} 
+        </div>
+        <div class="row make-some">
+        {% endif %} 
+        
+        <div class="col-md-4 shoppers offset-md-1">
+          <h2><i class="{{ category.favicon }}"></i> {{ category.name }}</h2>
+          <p>{{ category.description|slice(0,100) ~ "..." }}
+          <p>{{ category.id }}</p>
+          <p><a class="btn btn-success" href="/Products/Category/{{ category.id }}" role="button">Visit products &raquo;</a></p>
+        </div>
+          
+        {% endfor %} 
+
+      </div>
+    </div>
+
+      <div class="mumbotron" align="center">
+        <div class="container">
+          <h1 class="display-4">{{ mumbotron["title"] }}</h1>
+          <p>{{ mumbotron["sub_title"] }}</p>
+          <a href="{{ path("products_create") }}" class="btn btn-secondary btn-lg">Add a Product</a>
+          <a href="{{ path("products_index") }}" class="btn btn-secondary btn-lg">Visit Products</a>
+        </div>
+      </div>
+
+{% endblock %}

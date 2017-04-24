@@ -1,0 +1,24 @@
+AppBundle\Entity\Categories:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CategoriesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 100
+        favicon:
+            type: string
+            length: 100
+        description:
+            type: string
+            length: 500
+        promotionid:
+            type: integer
+            length: 10
+    lifecycleCallbacks: {  }

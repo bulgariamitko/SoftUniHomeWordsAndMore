@@ -1,0 +1,56 @@
+{% extends 'parent.html.twig' %}
+
+{% block content %}
+{% set images_dir = asset("/uploads/images/") %}
+
+<div class="container make-some-space">
+		{# List all Products #}
+			<h1 class="punch-line" align="center">Products on Symfony Shop</h1>
+                {% if category is defined %}
+                    <h5 align="center">List all products for category: {{ category.name }}</h5>
+                {% endif %}
+			<hr class="line">
+			
+			{# {% for flash_message in app.session.flashBag.get('notice') %}
+			    <div class="flash-notice">
+			        {{ flash_message }}
+			    </div>
+			{% endfor %} #}
+	<div class="row">
+
+			{% for product in products %}
+
+			{% if loop.index0 > 1 and loop.index0 % 3 == 0 %}
+				</div><div class="row">
+			{% endif %}
+			
+
+			<div class="col-md-4">
+				<div class="card" style="width: 20rem;">
+				  <img class="card-img-top img-fluid" src="{{ images_dir ~ product.image }}" alt="Card image cap">
+				  <div class="card-block">
+				    <h4 class="card-title">{{ product.name }}</h4>
+				    <p class="card-text">{{ product.description }}</p>
+					  Price: <p class="card-text">{{ product.price }}</p>
+                      <form action="{{ path('cart_add', {'id_product': product.id}) }}" method="POST">
+                          Quantity: <input type="number" name="qtty" min="1" value="1" class="qtty" style="width: 45px;">
+                          <br>
+                          <input type="submit" class="btn btn-info" value="Add Product" />
+                      </form>
+                  </div>
+                    <div class="card-block">
+                        {#<a href="{{ path("cart_add", { 'id_product': product.id }) }}" class="btn btn-info">Add Product</a>#}
+                    </div>
+                </div>
+			</div>
+			{% endfor %}
+
+		
+			
+
+	</div>
+</div>
+
+<script type="text/javascript">
+</script>
+{% endblock %}

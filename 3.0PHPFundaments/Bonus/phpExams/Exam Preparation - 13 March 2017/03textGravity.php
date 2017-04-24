@@ -1,7 +1,7 @@
 <?php
 
-// $_GET['text'] = 'The Milky Way is the galaxy that contains our star system';
-// $_GET['lineLength'] = '10';
+$_GET['text'] = 'The Milky Way is the galaxy that contains our star system';
+$_GET['lineLength'] = '10';
 
 $text = $_GET['text'];
 $cols = (int)$_GET['lineLength'];
@@ -16,28 +16,30 @@ for ($i=0; $i < $rows; $i++) {
 		$matrix[$i] = [];
 	}
 	for ($y=0; $y < $cols; $y++) {
-		$matrix[$i][$y] = $text[$num] ?? '';
+		$matrix[$i][$y] = $text[$num] ?? ' ';
 		$num++;
 	}
 }
 
-$newMatrix = $matrix;
-$demoNum = 0;
-	
-for ($i=$rows-1; $i > 0; $i--) { 
-	for ($y=0; $y < $cols; $y++) {
-		if ((empty($newMatrix[$i][$y]) || $newMatrix[$i][$y] == ' ') && $rows - 1) {
-				$newMatrix[$i][$y] = $newMatrix[$i-1][$y];
-				$newMatrix[$i-1][$y] = ' ';
-		}
+// drop empty spots
+for ($i=0; $i < $cols; $i++) {
+	$spaces = 0;
+	for ($y=$rows; $y >= 0; $y--) { 
+		if ($matrix[$y][$i] == " ") {
+            $spaces++;
+        } else {
+            $char = $matrix[$y][$i];
+            $matrix[$y][$i] = " ";
+            $matrix[$y+$spaces][$i] = $char;
+        }
 	}
 }
 
 echo "<table>";
-for ($i=0; $i < $rows; $i++) { 
+for ($row=0; $row < count($matrix) - 1; $row++) { 
 	echo "<tr>";
-	for ($y=0; $y < $cols; $y++) {
-		echo "<td>" . $newMatrix[$i][$y] . "</td>";
+	for ($col=0; $col < count($matrix[$row]); $col++) { 
+		echo "<td>" . htmlspecialchars($matrix[$row][$col]) . "</td>";
 	}
 	echo "</tr>";
 }

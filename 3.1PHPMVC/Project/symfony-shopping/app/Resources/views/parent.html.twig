@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Symfony</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset("public/css/bootstrap.css") }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset("public/css/jumbotron.css") }}" rel="stylesheet">
+    <link href="{{ asset("public/css/styles.css") }}" rel="stylesheet">
+    <link href="{{ asset("public/plugins/paginator/pagination.css") }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript">
+    var global_variables = {};
+    </script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="{{ path("homepage") }}">Symfony Shop</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ path("homepage") }}">Home <span class="sr-only">(current)</span></a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ path("products_index") }}">Products</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path("categories_index") }}">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path("promotions_index") }}">Promotions</a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ path("products_create") }}">Add new Product</a>
+          </li>
+      </ul>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    </div> <!-- /container -->
+
+    <script type="text/javascript" src="{{ asset("public/js/jquery.min.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("public/js/bootstrap.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("public/js/scripts.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("public/plugins/paginator/pagination.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("public/js/loader.js") }}"></script>
+  </body>
+</html>

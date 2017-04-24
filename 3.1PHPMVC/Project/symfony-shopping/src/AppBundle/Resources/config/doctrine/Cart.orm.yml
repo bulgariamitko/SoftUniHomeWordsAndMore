@@ -1,0 +1,22 @@
+AppBundle\Entity\Cart:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CartRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        productid:
+            type: integer
+        userid:
+            type: integer
+        date:
+            type: datetime
+        qtty:
+            type: integer
+        promotionid:
+            type: integer
+    lifecycleCallbacks: {  }

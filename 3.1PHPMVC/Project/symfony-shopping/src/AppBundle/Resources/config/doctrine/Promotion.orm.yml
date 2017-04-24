@@ -1,0 +1,22 @@
+AppBundle\Entity\Promotion:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PromotionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+        discount:
+            type: integer
+        productid:
+            type: integer
+        categoryid:
+            type: integer
+        userid:
+            type: integer
+    lifecycleCallbacks: {  }

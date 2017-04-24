@@ -18,20 +18,20 @@ function isWeekend($date) {
 
 $begin = new DateTime($_GET['dateOne']);
 $end = new DateTime($_GET['dateTwo']);
-$holidays = explode(PHP_EOL, urldecode(trim($_GET['holidays'])));
+$holidays = explode(PHP_EOL, $_GET['holidays']);
 
 $interval = DateInterval::createFromDateString('1 day');
-$period = new DatePeriod($begin, $interval, $end);
+$period = new DatePeriod($begin, $interval, $end->modify("+1 day"));
 
 $output = "<ol>";
 $countDays = 0;
 foreach ($period as $dt) {
-	foreach ($holidays as $holiday) {
-		if (trim($holiday) == trim($dt->format('d-m-Y'))) {
-			continue 2;
-		}
-	}
-	if (isWeekend($dt->format("d-m-Y"))) {
+	// foreach ($holidays as $holiday) {
+	// 	if (trim($holiday) == trim($dt->format('d-m-Y'))) {
+	// 		continue 2;
+	// 	}
+	// }
+	if (isWeekend($dt->format("d-m-Y")) || in_array($dt->format('d-m-Y'), $holidays)) {
 		continue;
 	}
 	$countDays++; 

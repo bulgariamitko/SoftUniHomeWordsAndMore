@@ -102,9 +102,14 @@ abstract class Animal implements SoundProducible
         return $this;
     }
 
+    public function produceSound()
+    {
+        return "Not implemented";
+    }
+
     public function __toString()
     {
-        $output = (new ReflectionClass($this))->getName()
+        $output = get_class($this)
             . " {$this->getName()} {$this->getAge()} {$this->getGender()}" . PHP_EOL
             . $this->produceSound();
         return $output;
@@ -113,95 +118,92 @@ abstract class Animal implements SoundProducible
 
 class Dog extends Animal
 {
-	const SOUND = "BauBau";
-
 	public function produceSound()
 	{
-		return self::SOUND;
+		return "BauBau";
 	}
 }
 
 class Cat extends Animal
 {
-	const SOUND = "MiauMiau";
-
 	public function produceSound()
 	{
-		return self::SOUND;
+		return "MiauMiau";
 	}
 }
 
 class Frog extends Animal
 {
-	const SOUND = "Frogggg";
-
 	public function produceSound()
 	{
-		return self::SOUND;
+		return "Frogggg";
 	}
 }
 
-class Kittens extends Cat
+class Kitten extends Cat
 {
-	const SOUND = "Miau";
+    const DEFAULT_GENDER = "Female";
+
+    public function __construct($name, $age)
+    {
+        parent::__construct($name, $age, self::DEFAULT_GENDER);
+    }
 
 	public function produceSound()
 	{
-		return self::SOUND;
+		return "Miau";
 	}
 }
 
 class Tomcat extends Cat
 {
-	const SOUND = "Give me one million b***h";
+    const DEFAULT_GENDER = "Male";
+
+    public function __construct($name, $age)
+    {
+        parent::__construct($name, $age, self::DEFAULT_GENDER);
+    }
 
 	public function produceSound()
 	{
-		return self::SOUND;
+		return "Give me one million b***h";
 	}
 }
 
-$line = trim(fgets(STDIN));
-$animals = [];
+$animal = trim(fgets(STDIN));
 
-while ($line != "Beast!") {
+while ($animal != "Beast!") {
 	$data = explode(" ", trim(fgets(STDIN)));
 	if (count($data) != 3) {
 		throw new Exception("Invalid input!");
 	}
 	try {
-		switch ($line) {
+		switch ($animal) {
 			case 'Dog':
-				$dog = new Dog(...$data);
-				$animals[] = $dog;
+				$animal = new Dog(...$data);
 				break;
 			case 'Cat':
-				$cat = new Cat(...$data);
-				$animals[] = $cat;
+				$animal = new Cat(...$data);
 				break;
 			case 'Frog':
-				$frog = new Frog(...$data);
-				$animals[] = $frog;
+				$animal = new Frog(...$data);
 				break;
-			case 'Kittens':
-				$kittens = new Kittens(...$data);
-				$animals[] = $kittens;
+			case 'Kitten':
+				$animal = new Kitten(...$data);
 				break;
 			case 'Tomcat':
-				$tomcat = new Tomcat(...$data);
-				$animals[] = $tomcat;
+				$animal = new Tomcat(...$data);
 				break;
 			default:
-				throw new Exception("Not implemented!");
-				break;
+                throw new Exception("Invalid input!");
+				break 2;
 		}
 	} catch (Exception $e) {
-		echo $e->getMessage();
+		echo $e->getMessage() . PHP_EOL;
+        break;
 	}
 
-	$line = trim(fgets(STDIN));
-}
+    echo $animal . PHP_EOL;
 
-foreach ($animals as $animal) {
-	echo $animal . PHP_EOL;
+	$animal = trim(fgets(STDIN));
 }
