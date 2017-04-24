@@ -2,8 +2,11 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,6 +22,7 @@ class ProductsController extends Controller
 {
     /**
      * @Route("/Products/Category/{id}", name="list_products_by_category")
+     * @Method("GET")
      * @param $id
      * @return Response
      */
@@ -33,7 +37,8 @@ class ProductsController extends Controller
     }
 
     /**
-     * @Route("/Products/list",name="products_index")
+     * @Route("/Products/list", name="products_index")
+     * @Method("GET")
      */
     public function indexAction()
     {
@@ -46,6 +51,8 @@ class ProductsController extends Controller
 
     /**
      * @Route("/Products/create",name="products_create")
+     * @Method("GET")
+     * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      * @return Response
      */
@@ -110,7 +117,7 @@ class ProductsController extends Controller
             ->add('name', TextType::class)
             ->add('image', FileType::class)
             ->add('description', TextareaType::class)
-            ->add('price', NumberType::class)
+            ->add('price', MoneyType::class, ['currency' => 'BGN'])
             ->add('save', SubmitType::class, array('label' => 'Create Product'))
             ->getForm();
         return $form;

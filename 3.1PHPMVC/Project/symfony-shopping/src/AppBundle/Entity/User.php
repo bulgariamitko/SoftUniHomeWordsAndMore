@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -9,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
- * @UniqueEntity(fields="email", message="Email already taken")
+ * @UniqueEntity(fields="username", message="Username already taken")
  */
 class User implements UserInterface
 {
@@ -23,9 +24,8 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank()
-     * @Assert\Email()
      */
-    private $email;
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
@@ -36,7 +36,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="decimal", precision=10, scale=2)
      */
-    private $wallet = 0.00;
+    private $wallet = 100.00;
 
     /**
      * @Assert\NotBlank()
@@ -52,7 +52,17 @@ class User implements UserInterface
      */
     private $password;
 
-    // other properties and methods
+    /**
+     * @var Role[]|ArrayCollection
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Role", inversedBy="users")
+     * @ORM\JoinTable(name="user_roles", joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}, inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")})
+     */
+    private $roles;
+
+    function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
 
     public function getEmail()
     {
@@ -111,7 +121,14 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        return array_map(function (Role $role) {
+            return $role->getName();
+        }, $this->roles->toArray());
+    }
+
+    public function addRoles(Role $role)
+    {
+        $this->roles->add($role);
     }
 
     /**
@@ -155,5 +172,21 @@ class User implements UserInterface
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 }

@@ -34,6 +34,7 @@
           <li class="nav-item">
               <a class="nav-link" href="{{ path("products_index") }}">Products</a>
           </li>
+          {% if app.user.username is defined and app.user.roles[0] == 'ROLE_ADMIN' %}
         <li class="nav-item">
           <a class="nav-link" href="{{ path("categories_index") }}">Categories</a>
         </li>
@@ -43,7 +44,19 @@
           <li class="nav-item">
               <a class="nav-link" href="{{ path("products_create") }}">Add new Product</a>
           </li>
+          {% endif %}
       </ul>
+        {% if app.user.username is defined %}
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">Hi, {{ app.user.username }} ({{ app.user.roles[0] }})</li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('logout') }}">Logout</a></li>
+            </ul>
+        {% else %}
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item"><a class="nav-link" href="{{ path('our_login') }}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('user_register_form') }}">Register</a></li>
+            </ul>
+        {% endif %}
     </nav>
 
     {% block content %}

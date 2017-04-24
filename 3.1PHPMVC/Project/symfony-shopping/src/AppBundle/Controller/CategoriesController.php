@@ -2,7 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +20,8 @@ class CategoriesController extends Controller
 {
     /**
      * @Route("/Categories/index",name="categories_index")
+     * @Method("GET")
+     * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      * @return Response
      */
@@ -69,8 +73,10 @@ class CategoriesController extends Controller
     }
 
     /**
-    * @Route("/Categories/singleCategory", name="single_category")
-    */
+     * @Route("/Categories/singleCategory", name="single_category")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\JsonResponse|Response
+     */
     public function getSingleCategory(Request $request)
     {
         $req = $request->request->all();

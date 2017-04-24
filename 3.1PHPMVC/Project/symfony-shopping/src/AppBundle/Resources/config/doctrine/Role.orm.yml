@@ -1,0 +1,19 @@
+AppBundle\Entity\Role:
+    type: entity
+    manyToMany:
+        users:
+            targetEntity: AppBundle\Entity\User
+            mappedBy: roles
+    table: null
+    repositoryClass: AppBundle\Repository\RoleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

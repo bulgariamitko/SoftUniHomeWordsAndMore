@@ -3,6 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Promotion;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -16,6 +18,8 @@ class PromotionsController extends CategoriesController
 {
     /**
      * @Route("/Promotions/create", name="promotions_index")
+     * @Method("GET")
+     * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      * @return Response
      */

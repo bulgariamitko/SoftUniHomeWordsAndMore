@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,6 +12,7 @@ class CartController extends Controller
 {
     /**
      * @Route("/cart/add/{id_product}", name="cart_add")
+     * @Security("has_role('ROLE_USER')")
      * @Method("POST")
      * @param Request $request
      * @param $id_product
