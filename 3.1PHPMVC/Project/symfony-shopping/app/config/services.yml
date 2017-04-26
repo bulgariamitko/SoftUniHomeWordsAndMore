@@ -8,3 +8,11 @@ services:
         class: AppBundle\Controller\CategoriesController
     app.products_controller:
         class: AppBundle\Controller\ProductsController
+    twig.extension:
+        # Register the class (The namespace must match)
+        class: Extensions\TwigExtensions
+        # Inject doctrine as first parameter
+        arguments:
+            doctrine : '@doctrine'
+        tags:
+            -  { name: twig.extension }

@@ -19,8 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class CategoriesController extends Controller
 {
     /**
-     * @Route("/Categories/index",name="categories_index")
-     * @Method("GET")
+     * @Route("/Categories/index", name="categories_index")
      * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      * @return Response
@@ -29,7 +28,6 @@ class CategoriesController extends Controller
     {
         Debug::enable();
         $form = $this->bootUpForm();
-//        print "<pre>";
 //        \Doctrine\Common\Util\Debug::dump($form);
 //        exit;
         $form->handleRequest($request);
@@ -68,12 +66,14 @@ class CategoriesController extends Controller
         $categories_names = $this->fetchCategoriesNames();
         return $this->render('pages/categories.html.twig', array(
             'form' => $form->createView(),
-            "categories_names" => json_encode($categories_names)
+            'categories_names' => json_encode($categories_names)
         ));
     }
 
     /**
      * @Route("/Categories/singleCategory", name="single_category")
+     * @Method("POST")
+     * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\JsonResponse|Response
      */
@@ -91,8 +91,12 @@ class CategoriesController extends Controller
     }
 
     /**
-    * @Route("/Categories/deleteCategory", name="delete_category")
-    */
+     * @Route("/Categories/deleteCategory", name="delete_category")
+     * @Method("POST")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @param Request $request
+     * @return Response
+     */
     public function deleteCategory(Request $request)
     {
         $req = $request->request->all();
@@ -103,6 +107,7 @@ class CategoriesController extends Controller
             $cat_result = json_decode($this->serializeResponse($category));
             $em->remove($category); // returns null
             $em->flush(); // returns null
+            $this->addFlash('notice',$cat_result->name . " Deleted..");
             return new Response($cat_result->name . " Deleted..");
         }
         return new Response("Required params missing.");

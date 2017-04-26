@@ -189,4 +189,12 @@ class User implements UserInterface
     {
         $this->username = $username;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

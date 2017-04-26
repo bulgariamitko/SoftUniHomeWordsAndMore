@@ -1,0 +1,38 @@
+{% extends 'parent.html.twig' %}
+
+{% block content %}
+
+<div class="container make-some-space">
+	<div class="row">
+		{# Create a new Product #}
+		<div class="col-md-4">
+			<h1 class="punch-line" align="center">Add new Product</h1>
+			<hr class="line">
+			
+			{% for flash_message in app.session.flashBag.get('notice') %}
+			    <div class="flash-notice">
+			        {{ flash_message }}
+			    </div>
+			{% endfor %}
+		
+			{{ form_start(form, {method : 'POST'}) }}
+			{{ form_widget(form) }}
+			{{ form_end(form) }}
+        </div>
+            {# Products List #}
+			<div class="col-md-6 offset-md-2">
+				<h1 class="punch-line" align="center">Products List</h1>
+				<hr class="line">
+				<ul class="list-group" id="products-list">
+				</ul>
+				<div class="pagination-container"></div>
+			</div>
+	</div>
+
+	<script type="text/javascript">
+        global_variables.product_names = {{ product_names|raw }};
+        {#global_variables.edit_path = "{{ path("single_category") }}";#}
+        global_variables.delete_path = "{{ path("delete_product") }}";
+        global_variables.page_hash = "{{ app.request.pathInfo }}";
+	</script>
+{% endblock %}

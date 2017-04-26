@@ -7,7 +7,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Products;
@@ -30,7 +29,7 @@ class ProductsController extends Controller
     {
         $products = $this->getDoctrine()->getRepository("AppBundle:Products")->findBy(array('categoryId' => $id));
         $category = $this->getDoctrine()->getRepository("AppBundle:Categories")->find($id);
-        return $this->render("pages/p-list.html.twig",[
+        return $this->render("pages/product-list.html.twig",[
             "products" => $products,
             "category" => $category
         ]);
@@ -43,15 +42,13 @@ class ProductsController extends Controller
     public function indexAction()
     {
         $products = $this->getDoctrine()->getRepository("AppBundle:Products")->findAll();
-//        $category = $this->getDoctrine()->getRepository("AppBundle:Categories")->findBy(array('categoryId' => $id));
-        return $this->render("pages/p-list.html.twig",[
-            "products" => $products
+        return $this->render("pages/product-list.html.twig",[
+            "products" => $products,
         ]);
     }
 
     /**
      * @Route("/Products/create",name="products_create")
-     * @Method("GET")
      * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      * @return Response
@@ -88,11 +85,35 @@ class ProductsController extends Controller
 //             return $this->redirectToRoute('task_success');
         }
 
-        return $this->render('pages/p-create.html.twig', array(
+        $product_names = $this->fetchProductsNames();
+        return $this->render('pages/product-create.html.twig', array(
             'form' => $form->createView(),
+            'product_names' => json_encode($product_names)
         ));
     }
 
+    /**
+     * @Route("/Products/deleteProduct", name="delete_product")
+     * @Method("POST")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @param Request $request
+     * @return Response
+     */
+    public function deleteProduct(Request $request)
+    {
+        $req = $request->request->all();
+        if (!empty($req) && isset($req["id"])) {
+            $id = $req["id"];
+            $em = $this->getDoctrine()->getManager();
+            $category = $em->getRepository('AppBundle:Products')->find($id);
+            $cat_result = json_decode($this->serializeResponse($category));
+            $em->remove($category); // returns null
+            $em->flush(); // returns null
+            $this->addFlash('notice',$cat_result->name . " Deleted..");
+            return new Response($cat_result->name . " Deleted..");
+        }
+        return new Response("Required params missing.");
+    }
 
     /**
      * @param string $categoryId
@@ -102,22 +123,27 @@ class ProductsController extends Controller
      * @param integer $price
      * @return mixed
      */
-    public function bootUpForm($categoryId = "", $name = "", $image = "", $description = "", $price = 0)
+    public function bootUpForm($categoryId = "", $name = "", $image = "", $description = "", $price = 0, $promotionId = 0)
     {
-        $category = new Products();
-        $category->setCategoryId($categoryId);
-        $category->setName($name);
-        $category->setImage($image);
-        $category->setDescription($description);
-        $category->setPrice($price);
-        $category_names = $this->fetchNames('Categories', 'categories');
-        $choices = $this->refactorChoices($category_names);
-        $form = $this->createFormBuilder($category)
-            ->add('categoryId', ChoiceType::class, ["choices" => $choices , "label" => "Choose a Category"])
+        $product = new Products();
+        $product->setCategoryId($categoryId);
+        $product->setName($name);
+        $product->setImage($image);
+        $product->setDescription($description);
+        $product->setPrice($price);
+        $product->setPrice($promotionId);
+
+        $categoryNames = $this->fetchNames('Categories', 'categories');
+        $chooseCategory = $this->refactorChoices($categoryNames);
+        $promotionNames = $this->fetchNames('Promotion', 'promotion');
+        $choosePromotion = $this->refactorChoices($promotionNames);
+        $form = $this->createFormBuilder($product)
+            ->add('categoryId', ChoiceType::class, ["choices" => $chooseCategory, "label" => "Choose a Category"])
             ->add('name', TextType::class)
             ->add('image', FileType::class)
             ->add('description', TextareaType::class)
             ->add('price', MoneyType::class, ['currency' => 'BGN'])
+            ->add('promotionId', ChoiceType::class, ["choices" => $choosePromotion, "label" => "Choose a Promotion"])
             ->add('save', SubmitType::class, array('label' => 'Create Product'))
             ->getForm();
         return $form;
@@ -127,6 +153,7 @@ class ProductsController extends Controller
     {
         $prep_choices = [];
         if (is_array($choices) && !empty($choices)) {
+            $prep_choices[0] = "Choose";
             foreach ($choices as $key => $value) {
                 $prep_choices[$value["id"]] = $value["name"];
             }
@@ -134,17 +161,9 @@ class ProductsController extends Controller
         return array_flip($prep_choices);
     }
 
-    public function fetchProductsNames()
+    public function serializeResponse($object)
     {
-        $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery(
-            'SELECT products.name, products.id 
-            FROM AppBundle:Products products'
-        );
-        dump($query);
-        exit;
-        // ->setMaxResults(2); Put limit on the results..
-        return $query->getResult();
+        return $this->get('serializer')->serialize($object, 'json');
     }
 
     /**
@@ -159,6 +178,17 @@ class ProductsController extends Controller
             'SELECT ' . $find . '.name, ' . $find . '.id 
             FROM AppBundle:' . $class . ' ' . $find
         );
+        return $query->getResult();
+    }
+
+    public function fetchProductsNames()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT products.name, products.id 
+            FROM AppBundle:Products products'
+        );
+        // ->setMaxResults(2); Put limit on the results..
         return $query->getResult();
     }
 }

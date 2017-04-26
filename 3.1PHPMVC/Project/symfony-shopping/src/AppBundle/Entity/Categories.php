@@ -38,7 +38,7 @@ class Categories
     /**
      * @ORM\Column(type="integer",length=10)
      */
-    private $promotionid;
+    private $promotionid = 0;
 
 
     /**

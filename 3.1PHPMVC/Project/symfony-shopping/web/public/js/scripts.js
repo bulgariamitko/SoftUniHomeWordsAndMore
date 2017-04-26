@@ -11,7 +11,7 @@ var symfonyController = {
 			this.generic.deleteCategory(id);
 		}
 	}
-}
+};
 
 symfonyController.generic = {
 	getAForm : function(id){
@@ -25,6 +25,7 @@ symfonyController.generic = {
 		});	
 	},
 	handleEditResponse : function(data,id){
+		console.log(data);
 		if (data.status) {
 			var result = data.result;
 			result = JSON.parse(result);
@@ -37,7 +38,7 @@ symfonyController.generic = {
 			 	symfonyController.cat_favicon.val(result.favicon);
 			 	symfonyController.cat_description.val(result.description);
 			 	$("button#form_save").text("Update");
-			 	if ($("input[id=update_category]").length == 0) {
+			 	if ($("input[id=update_category]").length === 0) {
 			 		symfonyController.form.append(hidden_input);
 			 		symfonyController.form.append(hidden_input_id);
 			 	}else{
@@ -60,16 +61,15 @@ symfonyController.generic = {
 	},
 	pagingTemplate : function(data){
 		var html = "";
-		$.each(data,function(index, category) {
-			var delete_url = "/symfony/web/app_dev.php/Categories/deleteCategory";
-			html+= '<li class="list-group-item"><span class="float-xs-left">' + category.name + '</span> <span class="float-xs-right">';
-			html+= "<button type='button' onclick='symfonyController.edit("+category.id+")' class='btn btn-info control-buttons'><i class='fa fa-edit'></i></button>";
-			html+= '<button type="button" onclick="symfonyController.delete('+category.id+')" class="btn btn-danger control-buttons"><i class="fa fa-trash"></i></button>';
+		$.each(data,function(index, entity) {
+			html+= '<li class="list-group-item"><span class="float-xs-left">' + entity.name + '</span> <span class="float-xs-right">';
+			html+= "<button type='button' onclick='symfonyController.edit("+entity.id+")' class='btn btn-info control-buttons'><i class='fa fa-edit'></i></button>";
+			html+= '<button type="button" onclick="symfonyController.delete('+entity.id+')" class="btn btn-danger control-buttons"><i class="fa fa-trash"></i></button>';
 			html+='</span> </li>';
 		});
 		return html;
 	}
-}
+};
 
 symfonyController.paginator = function(){
 	var dataContainer = $("#categories-list");
@@ -77,14 +77,12 @@ symfonyController.paginator = function(){
 	    dataSource: global_variables.category_names,
 	    className: 'paginationjs-theme-blue paginationjs-big',
 	    pageSize : 5,
-	    callback: function(data, pagination) {
-	        // template method of yourself
+	    callback: function(data) {
 	        var html = symfonyController.generic.pagingTemplate(data);
 	        dataContainer.html(html);
 	    }
 	})
-
-}
+};
 
 symfonyController.paginator2 = function(){
     var dataContainer = $("#promotions-list");
@@ -92,11 +90,23 @@ symfonyController.paginator2 = function(){
         dataSource: global_variables.promotion_names,
         className: 'paginationjs-theme-blue paginationjs-big',
         pageSize : 5,
-        callback: function(data, pagination) {
-            // template method of yourself
+        callback: function(data) {
             var html = symfonyController.generic.pagingTemplate(data);
             dataContainer.html(html);
         }
     })
+};
 
-}
+symfonyController.paginator3 = function(){
+    var dataContainer = $("#products-list");
+    console.log(dataContainer);
+    $('.pagination-container').pagination({
+        dataSource: global_variables.product_names,
+        className: 'paginationjs-theme-blue paginationjs-big',
+        pageSize : 5,
+        callback: function(data) {
+            var html = symfonyController.generic.pagingTemplate(data);
+            dataContainer.html(html);
+        }
+    })
+};

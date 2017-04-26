@@ -18,7 +18,6 @@ class PromotionsController extends CategoriesController
 {
     /**
      * @Route("/Promotions/create", name="promotions_index")
-     * @Method("GET")
      * @Security("has_role('ROLE_ADMIN')")
      * @param Request $request
      * @return Response
@@ -32,7 +31,7 @@ class PromotionsController extends CategoriesController
         if ($form->isSubmitted() && $form->isValid()) {
             $submitted_form = $request->request->all();
             if (isset($submitted_form["update_category"]) && $submitted_form["update_category"] == "1") {
-                $this->updateCategory($submitted_form);
+                $this->updatePromotion($submitted_form);
                 return $this->redirectToRoute("promotions_index");
             } else {
                 try {
@@ -50,8 +49,8 @@ class PromotionsController extends CategoriesController
 
         } elseif ($form->isSubmitted() && !$form->isValid()) {
             $submitted_form = $request->request->all();
-            if (isset($submitted_form["update_category"]) && $submitted_form["update_category"] == "1") {
-                $issue_update_status = 1;
+            if (isset($submitted_form["update_promotions"]) && $submitted_form["update_promotions"] == "2") {
+                $issue_update_status = 2;
                 $notice = "Please click the corresponding category edit again in order to process a successful query. And type in a valid form. This feature will be fixed soon.";
             }
         }
@@ -67,6 +66,49 @@ class PromotionsController extends CategoriesController
     }
 
     /**
+     * @Route("/Promotions/singlePromotion", name="single_promotion")
+     * @Method("POST")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\JsonResponse|Response
+     */
+    public function getSinglePromotion(Request $request)
+    {
+        $req = $request->request->all();
+        if (!empty($req) && isset($req["id"])) {
+            $id = $req["id"];
+            $em = $this->getDoctrine()->getManager()->find("AppBundle:Promotion",$id);
+            $em = $this->serializeResponse($em);
+            $em = [ "status" => 2,"result" => $em];
+            return $this->json($em);
+        }
+        return new Response("Required Params Missing!");
+    }
+
+    /**
+     * @Route("/Promotions/deletePromotion", name="delete_promotion")
+     * @Method("POST")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @param Request $request
+     * @return Response
+     */
+    public function deletePromotion(Request $request)
+    {
+        $req = $request->request->all();
+        if (!empty($req) && isset($req["id"])) {
+            $id = $req["id"];
+            $em = $this->getDoctrine()->getManager();
+            $category = $em->getRepository('AppBundle:Promotion')->find($id);
+            $cat_result = json_decode($this->serializeResponse($category));
+            $em->remove($category); // returns null
+            $em->flush(); // returns null
+            $this->addFlash('notice',$cat_result->name . " Deleted..");
+            return new Response($cat_result->name . " Deleted..");
+        }
+        return new Response("Required params missing.");
+    }
+
+    /**
      * @param string $name
      * @param integer $discount
      * @param integer $productid
@@ -76,19 +118,19 @@ class PromotionsController extends CategoriesController
      */
     public function bootUpForm($name ='', $discount = 0, $productid = 0, $categoryid = 0, $userid = 0)
     {
-        $product_names = $this->fetchNames('Products', 'products');
-        $products_choices = $this->refactorChoices($product_names);
-        $category_names = $this->fetchNames('Categories', 'categories');
-        $category_choices = $this->refactorChoices($category_names);
-        $user_names = $this->fetchNames('User', 'user');
-        $user_choices = $this->refactorChoices($user_names);
-
         $promotion = new Promotion();
         $promotion->setName($name);
         $promotion->setDiscount($discount);
         $promotion->setProductid($productid);
         $promotion->setCategoryid($categoryid);
         $promotion->setUserid($userid);
+
+        $product_names = $this->fetchNames('Products', 'products');
+        $products_choices = $this->refactorChoices($product_names);
+        $category_names = $this->fetchNames('Categories', 'categories');
+        $category_choices = $this->refactorChoices($category_names);
+        $user_names = $this->fetchNames('User', 'user');
+        $user_choices = $this->refactorChoices($user_names);
 
         $form = $this->createFormBuilder($promotion)
             ->add('name', TextType::class)
@@ -126,5 +168,29 @@ class PromotionsController extends CategoriesController
             FROM AppBundle:' . $class . ' ' . $find
         );
         return $query->getResult();
+    }
+
+    public function updatePromotion($form)
+    {
+        if (isset($form["update_category_id"])) {
+            $id = $form["update_category_id"];
+            $em = $this->getDoctrine()->getManager();
+            $promotion = $em->getRepository('AppBundle:Promotion')->find($id);
+            if (!$promotion) {
+                throw $this->createNotFoundException(
+                    'No category found for id '.$id
+                );
+            }
+            $form = $form["form"];
+            $promotion->setName($form["name"]);
+            $promotion->setDiscount($form["discount"]);
+            $promotion->setProductid($form["productId"]);
+            $promotion->setCategoryid($form["categoryId"]);
+            $promotion->setUserid($form["userId"]);
+            if ($em->flush()) {
+                return 1;
+            }
+        }
+        return 0;
     }
 }
