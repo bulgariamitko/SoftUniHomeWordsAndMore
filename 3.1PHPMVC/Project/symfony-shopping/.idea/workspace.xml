@@ -49,13 +49,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/cart/index.html.twig">
+      <file leaf-file-name="CartController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            <state relative-caret-position="127">
+              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
+                <element signature="e#40#66#0#PHP" expanded="true" />
+                <element signature="e#759#775#1#PHP" expanded="true" />
+                <element signature="e#891#913#0#PHP" expanded="true" />
+                <element signature="e#2249#2260#0#PHP" expanded="true" />
+                <element signature="e#2771#2787#1#PHP" expanded="true" />
+                <element signature="e#2930#2946#1#PHP" expanded="true" />
+                <element signature="e#3508#3519#0#PHP" expanded="true" />
+                <element signature="e#3794#3805#0#PHP" expanded="true" />
+                <element signature="e#4275#4291#1#PHP" expanded="true" />
+                <element signature="e#4487#4498#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,8 +148,6 @@
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/p-list.html.twig" />
-        <option value="$PROJECT_DIR$/src/Extensions/TwigExtensions.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/parent.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CategoriesController.php" />
         <option value="$PROJECT_DIR$/web/public/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/p-create.html.twig" />
@@ -151,10 +158,12 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pages/product-create.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProductsController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PromotionsController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Cart.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CartController.php" />
+        <option value="$PROJECT_DIR$/src/Extensions/TwigExtensions.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/parent.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/cart/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CartController.php" />
       </list>
     </option>
   </component>
@@ -795,12 +804,12 @@
       <workItem from="1493016526454" duration="12190000" />
       <workItem from="1493040207591" duration="2337000" />
       <workItem from="1493103113010" duration="4750000" />
-      <workItem from="1493186341840" duration="23247000" />
+      <workItem from="1493186341840" duration="30583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104800000" />
+    <option name="totallyTimeSpent" value="112136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="727" extended-state="7" />
@@ -889,13 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1267,40 +1269,6 @@
             <marker date="1493129016113" expanded="true" signature="2157:2204" ph="{...}" />
             <marker date="1493129016113" expanded="true" signature="2213:2252" ph=" @param mixed $promotionid ..." />
             <marker date="1493129016113" expanded="true" signature="2303:2358" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/parent.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <marker date="1493197974587" expanded="true" signature="31:3271" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="40:1078" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1023:1068" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1088:3263" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1155:2718" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1202:1210" ph="/" />
-            <marker date="1493197974587" expanded="true" signature="1266:2069" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1303:1425" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1350:1358" ph="/" />
-            <marker date="1493197974587" expanded="true" signature="1457:1556" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1508:1522" ph="/Products/list" />
-            <marker date="1493197974587" expanded="true" signature="1568:2058" ph="{% if app.user.username is defined and app.user.roles[0] == 'ROLE_ADMIN' ...%}" />
-            <marker date="1493197974587" expanded="true" signature="1672:1769" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1719:1735" ph="/Categories/index" />
-            <marker date="1493197974587" expanded="true" signature="1799:1896" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1846:1862" ph="/Promotions/create" />
-            <marker date="1493197974587" expanded="true" signature="1928:2035" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="1979:1994" ph="products/create" />
-            <marker date="1493197974587" expanded="true" signature="2079:2708" ph="{% if app.user.username is defined ...%}" />
-            <marker date="1493197974587" expanded="true" signature="2166:2381" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="2336:2342" ph="/logout" />
-            <marker date="1493197974587" expanded="true" signature="2451:2687" ph="..." />
-            <marker date="1493197974587" expanded="true" signature="2525:2534" ph="/login" />
-            <marker date="1493197974587" expanded="true" signature="2628:2646" ph="/register" />
-            <marker date="1493197974587" expanded="true" signature="2725:2764" ph="{% block content ...%}" />
           </folding>
         </state>
       </provider>
@@ -2151,27 +2119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/categories.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="38" column="8" lean-forward="false" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="66" />
-          <folding>
-            <marker date="1492077699503" expanded="false" signature="12:28" ph="parent" />
-            <marker date="1492077699503" expanded="true" signature="34:1238" ph="{% block content ...%}" />
-            <marker date="1492077699503" expanded="true" signature="94:898" ph="..." />
-            <marker date="1492077699503" expanded="true" signature="114:890" ph="..." />
-            <marker date="1492077699503" expanded="true" signature="180:609" ph="..." />
-            <marker date="1492077699503" expanded="true" signature="285:463" ph="{% for flash_message in app.session.flashBag.get('notice') ...%}" />
-            <marker date="1492077699503" expanded="true" signature="377:433" ph="..." />
-            <marker date="1492077699503" expanded="true" signature="682:881" ph="..." />
-            <marker date="1492077699503" expanded="true" signature="816:826" ph="..." />
-            <marker date="1492077699503" expanded="true" signature="932:1222" ph="..." />
-            <marker date="1492077699503" expanded="true" signature="1051:1066" ph="/Categories/singleCategory" />
-            <marker date="1492077699503" expanded="true" signature="1123:1138" ph="/Categories/deleteCategory" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/js/loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -2217,47 +2164,6 @@
             <marker date="1493203163794" expanded="true" signature="3264:3686" ph="{...}" />
             <marker date="1493203163794" expanded="true" signature="3385:3683" ph="{&quot;dataSource&quot;: global_variables.product_names...}" />
             <marker date="1493203163794" expanded="true" signature="3557:3677" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/promotions.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="36" column="72" lean-forward="true" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="72" />
-          <folding>
-            <marker date="1493147824876" expanded="false" signature="12:28" ph="parent" />
-            <marker date="1493147824876" expanded="true" signature="34:1149" ph="{% block content ...%}" />
-            <marker date="1493147824876" expanded="true" signature="93:801" ph="..." />
-            <marker date="1493147824876" expanded="true" signature="112:794" ph="..." />
-            <marker date="1493147824876" expanded="true" signature="168:526" ph="..." />
-            <marker date="1493147824876" expanded="true" signature="262:418" ph="{% for flash_message in app.session.flashBag.get('notice') ...%}" />
-            <marker date="1493147824876" expanded="true" signature="356:401" ph="..." />
-            <marker date="1493147824876" expanded="true" signature="593:786" ph="..." />
-            <marker date="1493147824876" expanded="true" signature="724:733" ph="..." />
-            <marker date="1493147824876" expanded="true" signature="838:1133" ph="..." />
-            <marker date="1493147824876" expanded="true" signature="957:973" ph="/Promotions/singlePromotion" />
-            <marker date="1493147824876" expanded="true" signature="1030:1046" ph="/Promotions/deletePromotion" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/product-create.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="34" column="63" lean-forward="false" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-          <folding>
-            <marker date="1493204920735" expanded="false" signature="12:28" ph="parent" />
-            <marker date="1493204920735" expanded="true" signature="34:1139" ph="{% block content ...%}" />
-            <marker date="1493204920735" expanded="true" signature="93:1124" ph="..." />
-            <marker date="1493204920735" expanded="true" signature="112:800" ph="..." />
-            <marker date="1493204920735" expanded="true" signature="166:527" ph="..." />
-            <marker date="1493204920735" expanded="true" signature="258:414" ph="{% for flash_message in app.session.flashBag.get('notice') ...%}" />
-            <marker date="1493204920735" expanded="true" signature="352:397" ph="..." />
-            <marker date="1493204920735" expanded="true" signature="597:792" ph="..." />
-            <marker date="1493204920735" expanded="true" signature="727:737" ph="..." />
-            <marker date="1493204920735" expanded="true" signature="834:1123" ph="..." />
-            <marker date="1493204920735" expanded="true" signature="1025:1039" ph="/Products/deleteProduct" />
           </folding>
         </state>
       </provider>
@@ -2370,45 +2276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="54" column="137" lean-forward="false" selection-start-line="54" selection-start-column="137" selection-end-line="54" selection-end-column="137" />
-          <folding>
-            <marker date="1493212318880" expanded="false" signature="12:28" ph="parent" />
-            <marker date="1493212318880" expanded="true" signature="34:3446" ph="{% block content ...%}" />
-            <marker date="1493212318880" expanded="true" signature="54:102" ph="{% set images_dir = asset(&quot;/uploads/images/&quot;) ...%}" />
-            <marker date="1493212318880" expanded="true" signature="142:3387" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="257:409" ph="{% if category is defined ...%}" />
-            <marker date="1493212318880" expanded="true" signature="438:600" ph="{## {% for flash_message in app.session.flashBag.get('notice') %}...##}" />
-            <marker date="1493212318880" expanded="true" signature="618:716" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="733:3380" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="779:3347" ph="..." />
-            <marker date="1493212318880" expanded="false" signature="810:823" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="824:3337" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="958:3114" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="1142:1159" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="1160:1679" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="1188:1291" ph="{% set promotionId = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].id ...%}" />
-            <marker date="1493212318880" expanded="true" signature="1318:1425" ph="{% set promotionName = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].name ...%}" />
-            <marker date="1493212318880" expanded="true" signature="1452:1567" ph="{% set promotionDiscount = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].discount ...%}" />
-            <marker date="1493212318880" expanded="true" signature="1735:2225" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="1763:2083" ph="{% for promotion in findBiggerPromotion(product.promotionid, product.categoryId, app.user.id) ...%}" />
-            <marker date="1493212318880" expanded="true" signature="1890:2044" ph="{% if promotion.id != 0 ...%}" />
-            <marker date="1493212318880" expanded="true" signature="2261:2656" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="2302:2332" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="2333:2417" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="2458:2489" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="2490:2629" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="2703:2711" ph="/cart/add/{id_user}" />
-            <marker date="1493212318880" expanded="true" signature="2815:3089" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="2924:2936" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="3159:3314" ph="..." />
-            <marker date="1493212318880" expanded="true" signature="3420:3430" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Cart.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -2470,34 +2337,198 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Extensions/TwigExtensions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="44" />
+        <state relative-caret-position="373">
+          <caret line="87" column="63" lean-forward="false" selection-start-line="87" selection-start-column="63" selection-end-line="87" selection-end-column="63" />
           <folding>
-            <marker date="1493197859886" expanded="false" signature="9:85" ph=" Created by PhpStorm. ..." />
-            <marker date="1493197859886" expanded="true" signature="116:190" ph="..." />
-            <marker date="1493197859886" expanded="true" signature="236:2278" ph="{...}" />
-            <marker date="1493197859886" expanded="true" signature="273:502" ph="{...}" />
-            <marker date="1493197859886" expanded="true" signature="301:494" ph="..." />
-            <marker date="1493197859886" expanded="true" signature="635:684" ph="{...}" />
-            <marker date="1493197859886" expanded="true" signature="725:871" ph="..." />
-            <marker date="1493197859886" expanded="true" signature="809:828" ph="Promotion" />
-            <marker date="1493197859886" expanded="true" signature="881:990" ph=" @param $productProId ..." />
-            <marker date="1493197859886" expanded="true" signature="1076:2050" ph="..." />
-            <marker date="1493197859886" expanded="true" signature="1192:1211" ph="Promotion" />
-            <marker date="1493197859886" expanded="true" signature="1416:1436" ph="Categories" />
-            <marker date="1493197859886" expanded="true" signature="1543:1606" ph="..." />
-            <marker date="1493197859886" expanded="true" signature="1673:1687" ph="User" />
-            <marker date="1493197859886" expanded="true" signature="1778:1833" ph="..." />
-            <marker date="1493197859886" expanded="true" signature="2082:2141" ph="{...}" />
-            <marker date="1493197859886" expanded="true" signature="2202:2275" ph="{...}" />
+            <marker date="1493277206655" expanded="false" signature="9:85" ph=" Created by PhpStorm. ..." />
+            <marker date="1493277206655" expanded="true" signature="116:217" ph="..." />
+            <marker date="1493277206655" expanded="true" signature="263:2814" ph="{...}" />
+            <marker date="1493277206655" expanded="true" signature="300:605" ph="{...}" />
+            <marker date="1493277206655" expanded="true" signature="328:597" ph="..." />
+            <marker date="1493277206655" expanded="true" signature="738:787" ph="{...}" />
+            <marker date="1493277206655" expanded="true" signature="828:974" ph="..." />
+            <marker date="1493277206655" expanded="true" signature="912:931" ph="Promotion" />
+            <marker date="1493277206655" expanded="true" signature="984:1093" ph=" @param $productProId ..." />
+            <marker date="1493277206655" expanded="true" signature="1179:2153" ph="..." />
+            <marker date="1493277206655" expanded="true" signature="1295:1314" ph="Promotion" />
+            <marker date="1493277206655" expanded="true" signature="1519:1539" ph="Categories" />
+            <marker date="1493277206655" expanded="true" signature="1646:1709" ph="..." />
+            <marker date="1493277206655" expanded="true" signature="1776:1790" ph="User" />
+            <marker date="1493277206655" expanded="true" signature="1881:1936" ph="..." />
+            <marker date="1493277206655" expanded="true" signature="2185:2244" ph="{...}" />
+            <marker date="1493277206655" expanded="true" signature="2305:2378" ph="{...}" />
+            <marker date="1493277206655" expanded="true" signature="2420:2812" ph="{...}" />
+            <marker date="1493277206655" expanded="true" signature="2532:2550" ph="Products" />
+            <marker date="1493277206655" expanded="true" signature="2678:2697" ph="Promotion" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="64" />
+          <folding>
+            <marker date="1492085409408" expanded="false" signature="12:28" ph="parent" />
+            <marker date="1492085409408" expanded="true" signature="35:1567" ph="{% block content ...%}" />
+            <marker date="1492085409408" expanded="true" signature="175:323" ph="..." />
+            <marker date="1492085409408" expanded="true" signature="205:312" ph="..." />
+            <marker date="1492085409408" expanded="true" signature="353:1134" ph="..." />
+            <marker date="1492085409408" expanded="true" signature="524:640" ph="..." />
+            <marker date="1492085409408" expanded="true" signature="676:1123" ph="..." />
+            <marker date="1492085409408" expanded="true" signature="758:1076" ph="..." />
+            <marker date="1492085409408" expanded="true" signature="850:908" ph="..." />
+            <marker date="1492085409408" expanded="false" signature="1047:1054" ph="»" />
+            <marker date="1492085409408" expanded="true" signature="1180:1550" ph="..." />
+            <marker date="1492085409408" expanded="true" signature="1212:1537" ph="..." />
+            <marker date="1492085409408" expanded="false" signature="1350:1365" ph="products/create" />
+            <marker date="1492085409408" expanded="false" signature="1451:1465" ph="/Products/list" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/promotions.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="36" column="72" lean-forward="true" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="72" />
+          <folding>
+            <marker date="1493147824876" expanded="false" signature="12:28" ph="parent" />
+            <marker date="1493147824876" expanded="true" signature="34:1149" ph="{% block content ...%}" />
+            <marker date="1493147824876" expanded="true" signature="93:801" ph="..." />
+            <marker date="1493147824876" expanded="true" signature="112:794" ph="..." />
+            <marker date="1493147824876" expanded="true" signature="168:526" ph="..." />
+            <marker date="1493147824876" expanded="true" signature="262:418" ph="{% for flash_message in app.session.flashBag.get('notice') ...%}" />
+            <marker date="1493147824876" expanded="true" signature="356:401" ph="..." />
+            <marker date="1493147824876" expanded="true" signature="593:786" ph="..." />
+            <marker date="1493147824876" expanded="true" signature="724:733" ph="..." />
+            <marker date="1493147824876" expanded="true" signature="838:1133" ph="..." />
+            <marker date="1493147824876" expanded="true" signature="957:973" ph="/Promotions/singlePromotion" />
+            <marker date="1493147824876" expanded="true" signature="1030:1046" ph="/Promotions/deletePromotion" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/parent.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="38" column="86" lean-forward="false" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+          <folding>
+            <marker date="1493278551383" expanded="true" signature="31:3531" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="40:1078" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1023:1068" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1088:3523" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1155:2978" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1202:1210" ph="/" />
+            <marker date="1493278551383" expanded="true" signature="1266:2292" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1303:1425" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1350:1358" ph="/" />
+            <marker date="1493278551383" expanded="true" signature="1457:1556" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1508:1522" ph="/Products/list" />
+            <marker date="1493278551383" expanded="true" signature="1568:1780" ph="{% if app.user.username is defined ...%}" />
+            <marker date="1493278551383" expanded="true" signature="1638:1757" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1689:1698" ph="/cart/show/{id_user}" />
+            <marker date="1493278551383" expanded="true" signature="1791:2281" ph="{% if app.user.username is defined and app.user.roles[0] == 'ROLE_ADMIN' ...%}" />
+            <marker date="1493278551383" expanded="true" signature="1895:1992" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="1942:1958" ph="/Categories/index" />
+            <marker date="1493278551383" expanded="true" signature="2022:2119" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="2069:2085" ph="/Promotions/create" />
+            <marker date="1493278551383" expanded="true" signature="2151:2258" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="2202:2217" ph="products/create" />
+            <marker date="1493278551383" expanded="true" signature="2302:2968" ph="{% if app.user.username is defined ...%}" />
+            <marker date="1493278551383" expanded="true" signature="2389:2641" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="2596:2602" ph="/logout" />
+            <marker date="1493278551383" expanded="true" signature="2711:2947" ph="..." />
+            <marker date="1493278551383" expanded="true" signature="2785:2794" ph="/login" />
+            <marker date="1493278551383" expanded="true" signature="2888:2906" ph="/register" />
+            <marker date="1493278551383" expanded="true" signature="2985:3024" ph="{% block content ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/product-create.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="34" column="63" lean-forward="false" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+          <folding>
+            <marker date="1493204920735" expanded="false" signature="12:28" ph="parent" />
+            <marker date="1493204920735" expanded="true" signature="34:1139" ph="{% block content ...%}" />
+            <marker date="1493204920735" expanded="true" signature="93:1124" ph="..." />
+            <marker date="1493204920735" expanded="true" signature="112:800" ph="..." />
+            <marker date="1493204920735" expanded="true" signature="166:527" ph="..." />
+            <marker date="1493204920735" expanded="true" signature="258:414" ph="{% for flash_message in app.session.flashBag.get('notice') ...%}" />
+            <marker date="1493204920735" expanded="true" signature="352:397" ph="..." />
+            <marker date="1493204920735" expanded="true" signature="597:792" ph="..." />
+            <marker date="1493204920735" expanded="true" signature="727:737" ph="..." />
+            <marker date="1493204920735" expanded="true" signature="834:1123" ph="..." />
+            <marker date="1493204920735" expanded="true" signature="1025:1039" ph="/Products/deleteProduct" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/categories.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-130">
+          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <marker date="1492077699503" expanded="false" signature="12:28" ph="parent" />
+            <marker date="1492077699503" expanded="true" signature="34:1238" ph="{% block content ...%}" />
+            <marker date="1492077699503" expanded="true" signature="94:898" ph="..." />
+            <marker date="1492077699503" expanded="true" signature="114:890" ph="..." />
+            <marker date="1492077699503" expanded="true" signature="180:609" ph="..." />
+            <marker date="1492077699503" expanded="true" signature="285:463" ph="{% for flash_message in app.session.flashBag.get('notice') ...%}" />
+            <marker date="1492077699503" expanded="true" signature="377:433" ph="..." />
+            <marker date="1492077699503" expanded="true" signature="682:881" ph="..." />
+            <marker date="1492077699503" expanded="true" signature="816:826" ph="..." />
+            <marker date="1492077699503" expanded="true" signature="932:1222" ph="..." />
+            <marker date="1492077699503" expanded="true" signature="1051:1066" ph="/Categories/singleCategory" />
+            <marker date="1492077699503" expanded="true" signature="1123:1138" ph="/Categories/deleteCategory" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="48" column="53" lean-forward="false" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding>
+            <marker date="1493279687177" expanded="false" signature="12:28" ph="parent" />
+            <marker date="1493279687177" expanded="true" signature="34:3454" ph="{% block content ...%}" />
+            <marker date="1493279687177" expanded="true" signature="54:102" ph="{% set images_dir = asset(&quot;/uploads/images/&quot;) ...%}" />
+            <marker date="1493279687177" expanded="true" signature="142:3395" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="257:409" ph="{% if category is defined ...%}" />
+            <marker date="1493279687177" expanded="true" signature="438:600" ph="{## {% for flash_message in app.session.flashBag.get('notice') %}...##}" />
+            <marker date="1493279687177" expanded="true" signature="618:716" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="733:3388" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="779:3355" ph="..." />
+            <marker date="1493279687177" expanded="false" signature="810:823" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="824:3345" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="958:3122" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="1142:1159" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="1160:1679" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="1188:1291" ph="{% set promotionId = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].id ...%}" />
+            <marker date="1493279687177" expanded="true" signature="1318:1425" ph="{% set promotionName = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].name ...%}" />
+            <marker date="1493279687177" expanded="true" signature="1452:1567" ph="{% set promotionDiscount = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].discount ...%}" />
+            <marker date="1493279687177" expanded="true" signature="1735:2225" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="1763:2083" ph="{% for promotion in findBiggerPromotion(product.promotionid, product.categoryId, app.user.id) ...%}" />
+            <marker date="1493279687177" expanded="true" signature="1890:2044" ph="{% if promotion.id != 0 ...%}" />
+            <marker date="1493279687177" expanded="true" signature="2261:2664" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="2302:2332" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="2333:2421" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="2462:2493" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="2494:2637" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="2711:2719" ph="/cart/add/{id_user}" />
+            <marker date="1493279687177" expanded="true" signature="2823:3097" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="2932:2944" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="3167:3322" ph="..." />
+            <marker date="1493279687177" expanded="true" signature="3428:3438" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CategoriesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="39" column="45" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="45" />
+        <state relative-caret-position="286">
+          <caret line="107" column="12" lean-forward="true" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="51" />
           <folding>
             <marker date="1493201478566" expanded="true" signature="44:706" ph="..." />
             <marker date="1493201478566" expanded="true" signature="753:6573" ph="{...}" />
@@ -2543,37 +2574,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CartController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/cart/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="59" column="20" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="59" selection-end-column="20" />
+        <state relative-caret-position="335">
+          <caret line="33" column="59" lean-forward="false" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="64" />
           <folding>
-            <marker date="1493217508292" expanded="true" signature="44:342" ph="..." />
-            <marker date="1493217508292" expanded="true" signature="383:3530" ph="{...}" />
-            <marker date="1493217508292" expanded="true" signature="393:631" ph=" @Route(&quot;/cart/show/{id_user}&quot;, name=&quot;cart_show&quot;) ..." />
-            <marker date="1493217508292" expanded="true" signature="693:2198" ph="{...}" />
-            <marker date="1493217508292" expanded="true" signature="809:823" ph="Cart" />
-            <marker date="1493217508292" expanded="true" signature="859:908" ph="..." />
-            <marker date="1493217508292" expanded="true" signature="911:1944" ph="//..." />
-            <marker date="1493217508292" expanded="true" signature="1974:2190" ph="..." />
-            <marker date="1493217508292" expanded="true" signature="1975:1995" ph="cart/index" />
-            <marker date="1493217508292" expanded="true" signature="2004:2189" ph="..." />
-            <marker date="1493217508292" expanded="true" signature="2034:2180" ph="//..." />
-            <marker date="1493217508292" expanded="true" signature="2207:2444" ph=" @Route(&quot;/cart/add/{id_user}&quot;, name=&quot;cart_add&quot;) ..." />
-            <marker date="1493217508292" expanded="true" signature="2504:3528" ph="{...}" />
-            <marker date="1493217508292" expanded="true" signature="2718:3225" ph="..." />
-            <marker date="1493217508292" expanded="true" signature="3249:3439" ph="..." />
-            <marker date="1493217508292" expanded="true" signature="3480:3489" ph="/cart/show/{id_user}" />
+            <marker date="1493282835806" expanded="true" signature="12:28" ph="parent" />
+            <marker date="1493282835806" expanded="true" signature="34:3076" ph="{% block content ...%}" />
+            <marker date="1493282835806" expanded="true" signature="58:106" ph="{% set images_dir = asset(&quot;/uploads/images/&quot;) ...%}" />
+            <marker date="1493282835806" expanded="true" signature="149:3059" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="175:3048" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="189:381" ph="{% for flash_message in app.session.flashBag.get('notice') ...%}" />
+            <marker date="1493282835806" expanded="true" signature="292:355" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="439:3033" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="555:3015" ph="{% if cart is not empty ...%}" />
+            <marker date="1493282835806" expanded="true" signature="602:627" ph="{% set totalAmount = 0 ...%}" />
+            <marker date="1493282835806" expanded="true" signature="683:2479" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="715:1265" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="744:1232" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="1297:2450" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="1323:2418" ph="{% for ca in cart ...%}" />
+            <marker date="1493282835806" expanded="true" signature="1375:2380" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="1500:1528" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="1934:2067" ph="{% set totalAmount = totalAmount + ((showCart(ca)[0].price * ((100 - showCart(ca)[1].discount) / 100)) * ca.qtty)|number_format(2) ...%}" />
+            <marker date="1493282835806" expanded="true" signature="2269:2280" ph="/cart/delete/{id_order}" />
+            <marker date="1493282835806" expanded="true" signature="2511:2529" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="2567:2587" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="2661:2671" ph="/cart/order/{id_user}" />
+            <marker date="1493282835806" expanded="true" signature="2741:2870" ph="..." />
+            <marker date="1493282835806" expanded="true" signature="2929:2948" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/cart/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="127">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
+            <element signature="e#40#66#0#PHP" expanded="true" />
+            <element signature="e#759#775#1#PHP" expanded="true" />
+            <element signature="e#891#913#0#PHP" expanded="true" />
+            <element signature="e#2249#2260#0#PHP" expanded="true" />
+            <element signature="e#2771#2787#1#PHP" expanded="true" />
+            <element signature="e#2930#2946#1#PHP" expanded="true" />
+            <element signature="e#3508#3519#0#PHP" expanded="true" />
+            <element signature="e#3794#3805#0#PHP" expanded="true" />
+            <element signature="e#4275#4291#1#PHP" expanded="true" />
+            <element signature="e#4487#4498#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

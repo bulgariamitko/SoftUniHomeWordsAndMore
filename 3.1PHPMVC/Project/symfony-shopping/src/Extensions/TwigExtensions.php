@@ -8,6 +8,7 @@
 
 namespace Extensions;
 
+use AppBundle\Entity\Cart;
 use AppBundle\Entity\Promotion;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -18,6 +19,7 @@ class TwigExtensions extends \Twig_Extension
         return array(
             new \Twig_SimpleFunction('findPromotion', array($this, 'findPromotion')),
             new \Twig_SimpleFunction('findBiggerPromotion', array($this, 'findBiggerPromotion')),
+            new \Twig_SimpleFunction('showCart', array($this, 'showCart')),
         );
     }
 
@@ -75,4 +77,16 @@ class TwigExtensions extends \Twig_Extension
         return strcmp($b->getDiscount(), $a->getDiscount());
     }
 
+    public function showCart(Cart $cart)
+    {
+        $em = $this->doctrine->getManager();
+        // product
+        $productEm = $em->getRepository('AppBundle:Products');
+        $product = $productEm->find($cart->getProductid());
+        // promotion
+        $promotionEm = $em->getRepository('AppBundle:Promotion');
+        $promotion = $promotionEm->find($cart->getPromotionid());
+
+        return [$product, $promotion];
+    }
 }

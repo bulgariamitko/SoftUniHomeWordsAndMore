@@ -1,14 +1,56 @@
 {% extends 'parent.html.twig' %}
 
 {% block content %}
-
+    {% set images_dir = asset("/uploads/images/") %}
     <div class="container make-some-space">
         <div class="row">
+            {% for flash_message in app.session.flashBag.get('notice') %}
+                <div class="flash-notice">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
             {# Cart #}
-            <div class="col-md-4">
+            <div class="col-md-12">
                 <h1 class="punch-line" align="center">Cart</h1>
                 <hr class="line">
-                {{ dump(cart) }}
+                {% if cart is not empty %}
+                    {% set totalAmount = 0 %}
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Picture</th>
+                            <th scope="col">Product name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Discount</th>
+                            <th scope="col">Final cost</th>
+                            <th scope="col">Options</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for ca in cart %}
+                            <tr>
+                                <td>{{ ca.date|date("d/m/Y h:m:i") }}</td>
+                                <td><img style="height: 100px; width: 150px;" src="{{ images_dir ~ showCart(ca)[0].image }}" alt="Card image cap"></td>
+                                <td>{{ showCart(ca)[0].name }}</td>
+                                <td>{{ ca.qtty }}</td>
+                                <td>{{ showCart(ca)[0].price }} лв.</td>
+                                <td>{{ showCart(ca)[1].name }} - {{ showCart(ca)[1].discount }}%</td>
+                                {% set totalAmount = totalAmount + ((showCart(ca)[0].price * ((100 - showCart(ca)[1].discount) / 100)) * ca.qtty)|number_format(2) %}
+                                <td>{{ ((showCart(ca)[0].price * ((100 - showCart(ca)[1].discount) / 100)) * ca.qtty)|number_format(2) }} лв.</td>
+                                <td><a href="{{ path('cart_delete', {'id_order' : ca.id}) }}" class="btn btn-danger">Delete</a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <p style="text-align: right;">Total amount of order: <span style="font-size: xx-large;">{{ totalAmount }}</span></p>
+                    <form action="{{ path('cart_order', {'id_user' : app.user.id, 'total' : totalAmount}) }}" method="POST">
+                        <input type="submit" class="btn btn-block btn-primary" value="Make order" />
+                    </form>
+                {% else %}
+                    <p style="text-align: center;">Please add item to the cart first</p>
+                {% endif %}
             </div>
         </div>
     </div>
