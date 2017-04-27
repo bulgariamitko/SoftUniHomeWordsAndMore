@@ -28,7 +28,7 @@
         <div class="col-md-4 shoppers offset-md-1">
           <h2><i class="{{ category.favicon }}"></i> {{ category.name }}</h2>
           <p>{{ category.description|slice(0,100) ~ "..." }}
-          <p>{{ category.id }}</p>
+          {#<p>{{ category.id }}</p>#}
           <p><a class="btn btn-success" href="/Products/Category/{{ category.id }}" role="button">Visit products &raquo;</a></p>
         </div>
           

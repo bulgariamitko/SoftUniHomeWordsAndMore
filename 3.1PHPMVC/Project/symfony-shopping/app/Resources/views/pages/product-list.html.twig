@@ -45,12 +45,16 @@
                           {#{{ dump(findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)) }}#}
                       </p>
 					  Price: <p class="card-text">
-                          <span style="text-decoration: line-through;">
-                              {{ product.price }} лв.
-                          </span>
-                          <span style="font-size: x-large; color: red;">
-                              {{ (product.price * ((100 - promotionDiscount) / 100))|number_format(2) }} лв.
-                          </span>
+                          {% if promotionId == 0 %}
+                              <span>{{ product.price }} лв.</span>
+                          {% else %}
+                              <span style="text-decoration: line-through;">
+                                  {{ product.price }} лв.
+                              </span>
+                              <span style="font-size: x-large; color: red;">
+                                  {{ (product.price * ((100 - promotionDiscount) / 100))|number_format(2) }} лв.
+                              </span>
+                          {% endif %}
                       </p>
                       <form action="{{ path('cart_add', {'id_user' : app.user.id, 'id_product' : product.id, 'id_promotion' : promotionId}) }}" method="POST">
                           Quantity: <input type="number" name="qtty" min="1" value="1" class="qtty" style="width: 45px;">

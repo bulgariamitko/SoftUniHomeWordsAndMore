@@ -49,22 +49,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CartController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CartController.php">
+      <file leaf-file-name="product-list.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="286">
+              <caret line="47" column="46" lean-forward="false" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
               <folding>
-                <element signature="e#40#66#0#PHP" expanded="true" />
-                <element signature="e#759#775#1#PHP" expanded="true" />
-                <element signature="e#891#913#0#PHP" expanded="true" />
-                <element signature="e#2249#2260#0#PHP" expanded="true" />
-                <element signature="e#2771#2787#1#PHP" expanded="true" />
-                <element signature="e#2930#2946#1#PHP" expanded="true" />
-                <element signature="e#3508#3519#0#PHP" expanded="true" />
-                <element signature="e#3794#3805#0#PHP" expanded="true" />
-                <element signature="e#4275#4291#1#PHP" expanded="true" />
-                <element signature="e#4487#4498#0#PHP" expanded="true" />
+                <element signature="e#1135#1160#0#HTML" expanded="true" />
+                <element signature="e#2455#2493#0#HTML" expanded="true" />
+                <element signature="e#2627#2666#0#HTML" expanded="true" />
+                <element signature="e#2929#2937#0#Twig" expanded="true" />
+                <element signature="e#3143#3163#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,7 +124,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pages/promotion-create.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/categories.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/users/register.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/User/UserInterface.php" />
@@ -161,9 +155,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Cart.php" />
         <option value="$PROJECT_DIR$/src/Extensions/TwigExtensions.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/parent.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/cart/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CartController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig" />
       </list>
     </option>
   </component>
@@ -804,12 +799,12 @@
       <workItem from="1493016526454" duration="12190000" />
       <workItem from="1493040207591" duration="2337000" />
       <workItem from="1493103113010" duration="4750000" />
-      <workItem from="1493186341840" duration="30583000" />
+      <workItem from="1493186341840" duration="31998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112136000" />
+    <option name="totallyTimeSpent" value="113551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="727" extended-state="7" />
@@ -1044,51 +1039,6 @@
           <folding>
             <marker date="1491903132764" expanded="true" signature="43:169" ph=" PromotionRepository ..." />
             <marker date="1491903132764" expanded="true" signature="236:240" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Products.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="207" column="35" lean-forward="false" selection-start-line="207" selection-start-column="35" selection-end-line="207" selection-end-column="35" />
-          <folding>
-            <marker date="1491987997808" expanded="false" signature="40:127" ph="..." />
-            <marker date="1491987997808" expanded="true" signature="132:254" ph=" Products ..." />
-            <marker date="1491987997808" expanded="true" signature="271:3542" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="281:415" ph=" @var int ..." />
-            <marker date="1491987997808" expanded="true" signature="443:527" ph=" @var int ..." />
-            <marker date="1491987997808" expanded="true" signature="563:785" ph=" @var string ..." />
-            <marker date="1491987997808" expanded="true" signature="815:937" ph=" @var string ..." />
-            <marker date="1491987997808" expanded="true" signature="968:1164" ph=" @var string ..." />
-            <marker date="1491987997808" expanded="true" signature="1201:1305" ph=" @var string ..." />
-            <marker date="1491987997808" expanded="true" signature="1336:1434" ph=" @var string ..." />
-            <marker date="1491987997808" expanded="true" signature="1471:1517" ph=" Get id ..." />
-            <marker date="1491987997808" expanded="true" signature="1547:1585" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="1594:1694" ph=" Set categoryId ..." />
-            <marker date="1491987997808" expanded="true" signature="1743:1819" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="1828:1882" ph=" Get categoryId ..." />
-            <marker date="1491987997808" expanded="true" signature="1920:1966" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="1975:2062" ph=" Set name ..." />
-            <marker date="1491987997808" expanded="true" signature="2099:2163" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="2172:2223" ph=" Get name ..." />
-            <marker date="1491987997808" expanded="true" signature="2255:2295" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="2304:2393" ph=" Set image ..." />
-            <marker date="1491987997808" expanded="true" signature="2432:2498" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="2507:2559" ph=" Get image ..." />
-            <marker date="1491987997808" expanded="true" signature="2592:2633" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="2642:2743" ph=" Set description ..." />
-            <marker date="1491987997808" expanded="true" signature="2794:2872" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="2881:2939" ph=" Get description ..." />
-            <marker date="1491987997808" expanded="true" signature="2978:3025" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="3034:3062" ph=" @return string ..." />
-            <marker date="1491987997808" expanded="true" signature="3095:3136" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="3145:3179" ph=" @param string $price ..." />
-            <marker date="1491987997808" expanded="true" signature="3218:3261" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="3270:3298" ph=" @return string ..." />
-            <marker date="1491987997808" expanded="true" signature="3337:3384" ph="{...}" />
-            <marker date="1491987997808" expanded="true" signature="3393:3433" ph=" @param string $promotionid ..." />
-            <marker date="1491987997808" expanded="true" signature="3484:3539" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2168,61 +2118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="166" column="5" lean-forward="false" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
-          <folding>
-            <marker date="1493205669689" expanded="true" signature="44:782" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="827:6999" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="837:982" ph=" @Route(&quot;/Products/Category/{id}&quot;, name=&quot;list_products_by_category&quot;) ..." />
-            <marker date="1493205669689" expanded="true" signature="1032:1398" ph="{...}" />
-            <marker date="1493205669689" expanded="false" signature="1096:1114" ph="Products" />
-            <marker date="1493205669689" expanded="false" signature="1211:1231" ph="Categories" />
-            <marker date="1493205669689" expanded="true" signature="1275:1390" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="1276:1304" ph="pages/product-list" />
-            <marker date="1493205669689" expanded="true" signature="1307:1389" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="1407:1490" ph=" @Route(&quot;/Products/list&quot;, name=&quot;products_index&quot;) ..." />
-            <marker date="1493205669689" expanded="true" signature="1526:1739" ph="{...}" />
-            <marker date="1493205669689" expanded="false" signature="1590:1608" ph="Products" />
-            <marker date="1493205669689" expanded="true" signature="1652:1731" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="1653:1681" ph="pages/product-list" />
-            <marker date="1493205669689" expanded="true" signature="1684:1730" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="1748:1909" ph=" @Route(&quot;/Products/create&quot;,name=&quot;products_create&quot;) ..." />
-            <marker date="1493205669689" expanded="true" signature="1962:3393" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="2102:3147" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="2311:2408" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="2691:2893" ph="//..." />
-            <marker date="1493205669689" expanded="true" signature="3233:3385" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="3234:3264" ph="pages/product-create" />
-            <marker date="1493205669689" expanded="true" signature="3273:3384" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="3402:3593" ph=" @Route(&quot;/Products/deleteProduct&quot;, name=&quot;delete_product&quot;) ..." />
-            <marker date="1493205669689" expanded="true" signature="3647:4286" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="3743:4222" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="3872:3890" ph="Products" />
-            <marker date="1493205669689" expanded="true" signature="4295:4473" ph=" @param string $categoryId ..." />
-            <marker date="1493205669689" expanded="true" signature="4598:5786" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="5229:5324" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="5344:5367" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="5387:5411" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="5431:5465" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="5485:5533" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="5553:5651" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="5671:5732" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="5836:6150" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="5924:6101" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="6016:6091" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="6198:6279" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="6288:6356" ph=" @param $class ..." />
-            <marker date="1493205669689" expanded="true" signature="6405:6659" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="6496:6615" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="6701:6997" ph="{...}" />
-            <marker date="1493205669689" expanded="true" signature="6792:6895" ph="..." />
-            <marker date="1493205669689" expanded="true" signature="6806:6885" ph="SELECT produ... AppBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PromotionsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -2315,26 +2210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <marker date="1491995299081" expanded="false" signature="44:218" ph="..." />
-            <marker date="1491995299081" expanded="true" signature="262:1294" ph="{...}" />
-            <marker date="1491995299081" expanded="true" signature="272:336" ph=" @Route(&quot;/&quot;, name=&quot;homepage&quot;) ..." />
-            <marker date="1491995299081" expanded="true" signature="372:1291" ph="{...}" />
-            <marker date="1491995299081" expanded="true" signature="406:746" ph="..." />
-            <marker date="1491995299081" expanded="true" signature="431:578" ph="..." />
-            <marker date="1491995299081" expanded="true" signature="605:736" ph="..." />
-            <marker date="1491995299081" expanded="false" signature="858:878" ph="Categories" />
-            <marker date="1491995299081" expanded="true" signature="1002:1283" ph="..." />
-            <marker date="1491995299081" expanded="false" signature="1003:1018" ph="index" />
-            <marker date="1491995299081" expanded="true" signature="1022:1282" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Extensions/TwigExtensions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -2360,29 +2235,6 @@
             <marker date="1493277206655" expanded="true" signature="2420:2812" ph="{...}" />
             <marker date="1493277206655" expanded="true" signature="2532:2550" ph="Products" />
             <marker date="1493277206655" expanded="true" signature="2678:2697" ph="Promotion" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="64" />
-          <folding>
-            <marker date="1492085409408" expanded="false" signature="12:28" ph="parent" />
-            <marker date="1492085409408" expanded="true" signature="35:1567" ph="{% block content ...%}" />
-            <marker date="1492085409408" expanded="true" signature="175:323" ph="..." />
-            <marker date="1492085409408" expanded="true" signature="205:312" ph="..." />
-            <marker date="1492085409408" expanded="true" signature="353:1134" ph="..." />
-            <marker date="1492085409408" expanded="true" signature="524:640" ph="..." />
-            <marker date="1492085409408" expanded="true" signature="676:1123" ph="..." />
-            <marker date="1492085409408" expanded="true" signature="758:1076" ph="..." />
-            <marker date="1492085409408" expanded="true" signature="850:908" ph="..." />
-            <marker date="1492085409408" expanded="false" signature="1047:1054" ph="»" />
-            <marker date="1492085409408" expanded="true" signature="1180:1550" ph="..." />
-            <marker date="1492085409408" expanded="true" signature="1212:1537" ph="..." />
-            <marker date="1492085409408" expanded="false" signature="1350:1365" ph="products/create" />
-            <marker date="1492085409408" expanded="false" signature="1451:1465" ph="/Products/list" />
           </folding>
         </state>
       </provider>
@@ -2486,45 +2338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="48" column="53" lean-forward="false" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
-          <folding>
-            <marker date="1493279687177" expanded="false" signature="12:28" ph="parent" />
-            <marker date="1493279687177" expanded="true" signature="34:3454" ph="{% block content ...%}" />
-            <marker date="1493279687177" expanded="true" signature="54:102" ph="{% set images_dir = asset(&quot;/uploads/images/&quot;) ...%}" />
-            <marker date="1493279687177" expanded="true" signature="142:3395" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="257:409" ph="{% if category is defined ...%}" />
-            <marker date="1493279687177" expanded="true" signature="438:600" ph="{## {% for flash_message in app.session.flashBag.get('notice') %}...##}" />
-            <marker date="1493279687177" expanded="true" signature="618:716" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="733:3388" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="779:3355" ph="..." />
-            <marker date="1493279687177" expanded="false" signature="810:823" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="824:3345" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="958:3122" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="1142:1159" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="1160:1679" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="1188:1291" ph="{% set promotionId = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].id ...%}" />
-            <marker date="1493279687177" expanded="true" signature="1318:1425" ph="{% set promotionName = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].name ...%}" />
-            <marker date="1493279687177" expanded="true" signature="1452:1567" ph="{% set promotionDiscount = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].discount ...%}" />
-            <marker date="1493279687177" expanded="true" signature="1735:2225" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="1763:2083" ph="{% for promotion in findBiggerPromotion(product.promotionid, product.categoryId, app.user.id) ...%}" />
-            <marker date="1493279687177" expanded="true" signature="1890:2044" ph="{% if promotion.id != 0 ...%}" />
-            <marker date="1493279687177" expanded="true" signature="2261:2664" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="2302:2332" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="2333:2421" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="2462:2493" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="2494:2637" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="2711:2719" ph="/cart/add/{id_user}" />
-            <marker date="1493279687177" expanded="true" signature="2823:3097" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="2932:2944" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="3167:3322" ph="..." />
-            <marker date="1493279687177" expanded="true" signature="3428:3438" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CategoriesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -2609,19 +2422,205 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="387">
+          <caret line="56" column="49" lean-forward="false" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
           <folding>
-            <element signature="e#40#66#0#PHP" expanded="true" />
-            <element signature="e#759#775#1#PHP" expanded="true" />
-            <element signature="e#891#913#0#PHP" expanded="true" />
-            <element signature="e#2249#2260#0#PHP" expanded="true" />
-            <element signature="e#2771#2787#1#PHP" expanded="true" />
-            <element signature="e#2930#2946#1#PHP" expanded="true" />
-            <element signature="e#3508#3519#0#PHP" expanded="true" />
-            <element signature="e#3794#3805#0#PHP" expanded="true" />
-            <element signature="e#4275#4291#1#PHP" expanded="true" />
-            <element signature="e#4487#4498#0#PHP" expanded="true" />
+            <marker date="1493283436544" expanded="true" signature="44:342" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="383:5253" ph="{...}" />
+            <marker date="1493283436544" expanded="true" signature="393:600" ph=" @Route(&quot;/cart/show/{id_user}&quot;, name=&quot;cart_show&quot;) ..." />
+            <marker date="1493283436544" expanded="true" signature="644:968" ph="{...}" />
+            <marker date="1493283436544" expanded="true" signature="760:774" ph="Cart" />
+            <marker date="1493283436544" expanded="true" signature="810:859" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="891:960" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="892:912" ph="cart/index" />
+            <marker date="1493283436544" expanded="true" signature="921:959" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="977:1214" ph=" @Route(&quot;/cart/add/{id_user}&quot;, name=&quot;cart_add&quot;) ..." />
+            <marker date="1493283436544" expanded="true" signature="1274:2974" ph="{...}" />
+            <marker date="1493283436544" expanded="true" signature="1647:1661" ph="Cart" />
+            <marker date="1493283436544" expanded="true" signature="1697:1773" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="1804:2086" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="2035:2044" ph="/cart/show/{id_user}" />
+            <marker date="1493283436544" expanded="true" signature="2094:2967" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="2144:2645" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="2669:2871" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="2916:2925" ph="/cart/show/{id_user}" />
+            <marker date="1493283436544" expanded="true" signature="2983:3224" ph=" @Route(&quot;/cart/order/{id_user}&quot;, name=&quot;cart_order&quot;) ..." />
+            <marker date="1493283436544" expanded="true" signature="3284:4566" ph="{...}" />
+            <marker date="1493283436544" expanded="true" signature="3448:3462" ph="Cart" />
+            <marker date="1493283436544" expanded="true" signature="3498:3547" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="3607:3621" ph="User" />
+            <marker date="1493283436544" expanded="true" signature="3688:4273" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="3888:3935" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="4184:4262" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="4185:4194" ph="/cart/show/{id_user}" />
+            <marker date="1493283436544" expanded="true" signature="4203:4261" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="4281:4559" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="4470:4548" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="4471:4480" ph="/cart/show/{id_user}" />
+            <marker date="1493283436544" expanded="true" signature="4489:4547" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="4575:4788" ph=" @Route(&quot;/cart/delete/{id_order}&quot;, name=&quot;cart_delete&quot;) ..." />
+            <marker date="1493283436544" expanded="true" signature="4832:5251" ph="{...}" />
+            <marker date="1493283436544" expanded="true" signature="4952:4966" ph="Cart" />
+            <marker date="1493283436544" expanded="true" signature="5163:5243" ph="..." />
+            <marker date="1493283436544" expanded="true" signature="5164:5173" ph="/cart/show/{id_user}" />
+            <marker date="1493283436544" expanded="true" signature="5182:5242" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Products.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1754">
+          <caret line="207" column="35" lean-forward="false" selection-start-line="207" selection-start-column="35" selection-end-line="207" selection-end-column="35" />
+          <folding>
+            <marker date="1491987997808" expanded="false" signature="40:127" ph="..." />
+            <marker date="1491987997808" expanded="true" signature="132:254" ph=" Products ..." />
+            <marker date="1491987997808" expanded="true" signature="271:3542" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="281:415" ph=" @var int ..." />
+            <marker date="1491987997808" expanded="true" signature="443:527" ph=" @var int ..." />
+            <marker date="1491987997808" expanded="true" signature="563:785" ph=" @var string ..." />
+            <marker date="1491987997808" expanded="true" signature="815:937" ph=" @var string ..." />
+            <marker date="1491987997808" expanded="true" signature="968:1164" ph=" @var string ..." />
+            <marker date="1491987997808" expanded="true" signature="1201:1305" ph=" @var string ..." />
+            <marker date="1491987997808" expanded="true" signature="1336:1434" ph=" @var string ..." />
+            <marker date="1491987997808" expanded="true" signature="1471:1517" ph=" Get id ..." />
+            <marker date="1491987997808" expanded="true" signature="1547:1585" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="1594:1694" ph=" Set categoryId ..." />
+            <marker date="1491987997808" expanded="true" signature="1743:1819" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="1828:1882" ph=" Get categoryId ..." />
+            <marker date="1491987997808" expanded="true" signature="1920:1966" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="1975:2062" ph=" Set name ..." />
+            <marker date="1491987997808" expanded="true" signature="2099:2163" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="2172:2223" ph=" Get name ..." />
+            <marker date="1491987997808" expanded="true" signature="2255:2295" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="2304:2393" ph=" Set image ..." />
+            <marker date="1491987997808" expanded="true" signature="2432:2498" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="2507:2559" ph=" Get image ..." />
+            <marker date="1491987997808" expanded="true" signature="2592:2633" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="2642:2743" ph=" Set description ..." />
+            <marker date="1491987997808" expanded="true" signature="2794:2872" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="2881:2939" ph=" Get description ..." />
+            <marker date="1491987997808" expanded="true" signature="2978:3025" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="3034:3062" ph=" @return string ..." />
+            <marker date="1491987997808" expanded="true" signature="3095:3136" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="3145:3179" ph=" @param string $price ..." />
+            <marker date="1491987997808" expanded="true" signature="3218:3261" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="3270:3298" ph=" @return string ..." />
+            <marker date="1491987997808" expanded="true" signature="3337:3384" ph="{...}" />
+            <marker date="1491987997808" expanded="true" signature="3393:3433" ph=" @param string $promotionid ..." />
+            <marker date="1491987997808" expanded="true" signature="3484:3539" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProductsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="29" />
+          <folding>
+            <marker date="1493205669689" expanded="true" signature="44:782" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="827:6999" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="837:982" ph=" @Route(&quot;/Products/Category/{id}&quot;, name=&quot;list_products_by_category&quot;) ..." />
+            <marker date="1493205669689" expanded="true" signature="1032:1398" ph="{...}" />
+            <marker date="1493205669689" expanded="false" signature="1096:1114" ph="Products" />
+            <marker date="1493205669689" expanded="false" signature="1211:1231" ph="Categories" />
+            <marker date="1493205669689" expanded="true" signature="1275:1390" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="1276:1304" ph="pages/product-list" />
+            <marker date="1493205669689" expanded="true" signature="1307:1389" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="1407:1490" ph=" @Route(&quot;/Products/list&quot;, name=&quot;products_index&quot;) ..." />
+            <marker date="1493205669689" expanded="true" signature="1526:1739" ph="{...}" />
+            <marker date="1493205669689" expanded="false" signature="1590:1608" ph="Products" />
+            <marker date="1493205669689" expanded="true" signature="1652:1731" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="1653:1681" ph="pages/product-list" />
+            <marker date="1493205669689" expanded="true" signature="1684:1730" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="1748:1909" ph=" @Route(&quot;/Products/create&quot;,name=&quot;products_create&quot;) ..." />
+            <marker date="1493205669689" expanded="true" signature="1962:3393" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="2102:3147" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="2311:2408" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="2691:2893" ph="//..." />
+            <marker date="1493205669689" expanded="true" signature="3233:3385" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="3234:3264" ph="pages/product-create" />
+            <marker date="1493205669689" expanded="true" signature="3273:3384" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="3402:3593" ph=" @Route(&quot;/Products/deleteProduct&quot;, name=&quot;delete_product&quot;) ..." />
+            <marker date="1493205669689" expanded="true" signature="3647:4286" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="3743:4222" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="3872:3890" ph="Products" />
+            <marker date="1493205669689" expanded="true" signature="4295:4473" ph=" @param string $categoryId ..." />
+            <marker date="1493205669689" expanded="true" signature="4598:5786" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="5229:5324" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="5344:5367" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="5387:5411" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="5431:5465" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="5485:5533" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="5553:5651" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="5671:5732" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="5836:6150" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="5924:6101" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="6016:6091" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="6198:6279" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="6288:6356" ph=" @param $class ..." />
+            <marker date="1493205669689" expanded="true" signature="6405:6659" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="6496:6615" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="6701:6997" ph="{...}" />
+            <marker date="1493205669689" expanded="true" signature="6792:6895" ph="..." />
+            <marker date="1493205669689" expanded="true" signature="6806:6885" ph="SELECT produ... AppBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <marker date="1491995299081" expanded="false" signature="44:218" ph="..." />
+            <marker date="1491995299081" expanded="true" signature="262:1294" ph="{...}" />
+            <marker date="1491995299081" expanded="true" signature="272:336" ph=" @Route(&quot;/&quot;, name=&quot;homepage&quot;) ..." />
+            <marker date="1491995299081" expanded="true" signature="372:1291" ph="{...}" />
+            <marker date="1491995299081" expanded="true" signature="406:746" ph="..." />
+            <marker date="1491995299081" expanded="true" signature="431:578" ph="..." />
+            <marker date="1491995299081" expanded="true" signature="605:736" ph="..." />
+            <marker date="1491995299081" expanded="false" signature="858:878" ph="Categories" />
+            <marker date="1491995299081" expanded="true" signature="1002:1283" ph="..." />
+            <marker date="1491995299081" expanded="false" signature="1003:1018" ph="index" />
+            <marker date="1491995299081" expanded="true" signature="1022:1282" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding>
+            <marker date="1493284315935" expanded="false" signature="12:28" ph="parent" />
+            <marker date="1493284315935" expanded="true" signature="35:1571" ph="{% block content ...%}" />
+            <marker date="1493284315935" expanded="true" signature="175:323" ph="..." />
+            <marker date="1493284315935" expanded="true" signature="205:312" ph="..." />
+            <marker date="1493284315935" expanded="true" signature="353:1138" ph="..." />
+            <marker date="1493284315935" expanded="true" signature="524:640" ph="..." />
+            <marker date="1493284315935" expanded="true" signature="676:1127" ph="..." />
+            <marker date="1493284315935" expanded="true" signature="758:1080" ph="..." />
+            <marker date="1493284315935" expanded="true" signature="850:947" ph="..." />
+            <marker date="1493284315935" expanded="false" signature="1051:1058" ph="»" />
+            <marker date="1493284315935" expanded="true" signature="1184:1554" ph="..." />
+            <marker date="1493284315935" expanded="true" signature="1216:1541" ph="..." />
+            <marker date="1493284315935" expanded="false" signature="1354:1369" ph="products/create" />
+            <marker date="1493284315935" expanded="false" signature="1455:1469" ph="/Products/list" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/product-list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="47" column="46" lean-forward="false" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+          <folding>
+            <element signature="e#1135#1160#0#HTML" expanded="true" />
+            <element signature="e#2455#2493#0#HTML" expanded="true" />
+            <element signature="e#2627#2666#0#HTML" expanded="true" />
+            <element signature="e#2929#2937#0#Twig" expanded="true" />
+            <element signature="e#3143#3163#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

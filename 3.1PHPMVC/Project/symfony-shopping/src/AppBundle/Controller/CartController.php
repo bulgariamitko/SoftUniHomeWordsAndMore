@@ -41,30 +41,44 @@ class CartController extends Controller
      */
     public function addToCart(Request $request, $id_user)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        // get the data from the form
         $qtty = $request->request->get('qtty');
         $productId = $request->query->get('id_product');
         $promotionId = $request->query->get('id_promotion');
-        // try to add to DB
-        try {
-            // set Cart
-            $cart = new Cart();
-            $cart->setProductid($productId);
-            $cart->setUserid($id_user);
-            $cart->setDate(new \DateTime());
-            $cart->setQtty($qtty);
-            $cart->setPromotionid($promotionId);
 
-            // add to DB
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($cart);
-            $em->flush();
+        // find if there is already a product for this user in the cart
+        $cartEm = $em->getRepository('AppBundle:Cart');
+        $cart = $cartEm->findBy(
+            array('userid' => $id_user, 'productid' => $productId)
+        );
+        if (!empty($cart)) {
+            $this->addFlash('notice','This product is already added in the cart. If you want to change the quantity of it, please first delete it from the cart and then add it again!');
 
-            $this->addFlash('notice','A new Product have been added to the database!');
-        } catch (Exception $e) {
-            $this->addFlash('notice','Failed to add a new product to cart. Check errors log!');
-            throw new Exception($e->getMessage() . "<br>" . $e->getTraceAsString());
+            return $this->redirectToRoute("cart_show", array('id_user' => $id_user));
+        } else {
+            // try to add to DB
+            try {
+                // set Cart
+                $cart = new Cart();
+                $cart->setProductid($productId);
+                $cart->setUserid($id_user);
+                $cart->setDate(new \DateTime());
+                $cart->setQtty($qtty);
+                $cart->setPromotionid($promotionId);
+
+                // add to DB
+                $em->persist($cart);
+                $em->flush();
+
+                $this->addFlash('notice','A new Product have been added to the database!');
+            } catch (Exception $e) {
+                $this->addFlash('notice','Failed to add a new product to cart. Check errors log!');
+                throw new Exception($e->getMessage() . "<br>" . $e->getTraceAsString());
+            }
+            return $this->redirectToRoute("cart_show", array('id_user' => $id_user));
         }
-        return $this->redirectToRoute("cart_show", array('id_user' => $id_user));
     }
 
     /**
