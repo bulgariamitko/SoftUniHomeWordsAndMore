@@ -27,4 +27,9 @@ AppBundle\Entity\Products:
         promotionid:
             type: integer
             length: 10
+        qtty:
+            type: integer
+            length: 5
+        visibility:
+            type: boolean
     lifecycleCallbacks: {  }

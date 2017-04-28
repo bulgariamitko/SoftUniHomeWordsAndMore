@@ -25,7 +25,7 @@ class DefaultController extends Controller
         ]
         ];
         // visit doctrine docs to find out more..
-        $categories = $this->getDoctrine()->getRepository("AppBundle:Categories")->findBy([],[],2,null);
+        $categories = $this->getDoctrine()->getRepository("AppBundle:Categories")->findAll();
         
         // replace this example code with whatever you need
         return $this->render('index.html.twig', [

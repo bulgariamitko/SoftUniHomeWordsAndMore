@@ -37,8 +37,8 @@
                                 <td>{{ ca.qtty }}</td>
                                 <td>{{ showCart(ca)[0].price }} лв.</td>
                                 <td>{{ showCart(ca)[1].name }} - {{ showCart(ca)[1].discount }}%</td>
-                                {% set totalAmount = totalAmount + ((showCart(ca)[0].price * ((100 - showCart(ca)[1].discount) / 100)) * ca.qtty)|number_format(2) %}
-                                <td>{{ ((showCart(ca)[0].price * ((100 - showCart(ca)[1].discount) / 100)) * ca.qtty)|number_format(2) }} лв.</td>
+                                {% set totalAmount = (totalAmount + (showCart(ca)[0].price * ((100 - showCart(ca)[1].discount) / 100)) * ca.qtty)|number_format(2, '.', '') %}
+                                <td>{{ ((showCart(ca)[0].price * ((100 - showCart(ca)[1].discount) / 100)) * ca.qtty)|number_format(2, '.', '') }} лв.</td>
                                 <td><a href="{{ path('cart_delete', {'id_order' : ca.id}) }}" class="btn btn-danger">Delete</a></td>
                             </tr>
                         {% endfor %}

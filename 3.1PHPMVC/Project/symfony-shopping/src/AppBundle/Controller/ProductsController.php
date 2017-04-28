@@ -6,6 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,7 +29,9 @@ class ProductsController extends Controller
      */
     public function listByCategoryIdAction($id)
     {
-        $products = $this->getDoctrine()->getRepository("AppBundle:Products")->findBy(array('categoryId' => $id));
+        $products = $this->getDoctrine()->getRepository("AppBundle:Products")->findBy(
+            array('categoryId' => $id, 'visibility' => 1)
+        );
         $category = $this->getDoctrine()->getRepository("AppBundle:Categories")->find($id);
         return $this->render("pages/product-list.html.twig",[
             "products" => $products,
@@ -41,15 +45,17 @@ class ProductsController extends Controller
      */
     public function indexAction()
     {
-        $products = $this->getDoctrine()->getRepository("AppBundle:Products")->findAll();
+        $products = $this->getDoctrine()->getRepository("AppBundle:Products")->findBy(
+            array('visibility' => 1)
+        );
         return $this->render("pages/product-list.html.twig",[
             "products" => $products,
         ]);
     }
 
     /**
-     * @Route("/Products/create",name="products_create")
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Route("/Products/create", name="products_create")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_EDITOR')")
      * @param Request $request
      * @return Response
      */
@@ -72,10 +78,8 @@ class ProductsController extends Controller
             $product->setImage($imageName);
             $product->setDescription($product->getDescription());
             $product->setPrice($product->getPrice());
-//            dump($product);
-//            exit;
-            // ... perform some action, such as saving the product to the database
-            // for example, if product is a Doctrine entity, save it!
+
+            // save product to db
             $em = $this->getDoctrine()->getManager();
             $em->persist($product);
             $em->flush();
@@ -95,7 +99,7 @@ class ProductsController extends Controller
     /**
      * @Route("/Products/deleteProduct", name="delete_product")
      * @Method("POST")
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_EDITOR')")
      * @param Request $request
      * @return Response
      */
@@ -120,10 +124,14 @@ class ProductsController extends Controller
      * @param string $name
      * @param string $image
      * @param string $description
-     * @param integer $price
+     * @param int $price
+     * @param int $promotionId
+     * @param int $qtty
+     * @param boolean $visibility
      * @return mixed
      */
-    public function bootUpForm($categoryId = "", $name = "", $image = "", $description = "", $price = 0, $promotionId = 0)
+    public function bootUpForm($categoryId = "", $name = "", $image = "", $description = "", $price = 0, $promotionId = 0,
+                               $qtty = 0, $visibility = true)
     {
         $product = new Products();
         $product->setCategoryId($categoryId);
@@ -131,7 +139,9 @@ class ProductsController extends Controller
         $product->setImage($image);
         $product->setDescription($description);
         $product->setPrice($price);
-        $product->setPrice($promotionId);
+        $product->setPromotionid($promotionId);
+        $product->setQtty($qtty);
+        $product->setVisibility($visibility);
 
         $categoryNames = $this->fetchNames('Categories', 'categories');
         $chooseCategory = $this->refactorChoices($categoryNames);
@@ -144,6 +154,11 @@ class ProductsController extends Controller
             ->add('description', TextareaType::class)
             ->add('price', MoneyType::class, ['currency' => 'BGN'])
             ->add('promotionId', ChoiceType::class, ["choices" => $choosePromotion, "label" => "Choose a Promotion"])
+            ->add('qtty', IntegerType::class)
+            ->add('visibility', CheckboxType::class, array(
+                'label'    => 'Show this product publicly?',
+                'required' => true,
+            ))
             ->add('save', SubmitType::class, array('label' => 'Create Product'))
             ->getForm();
         return $form;

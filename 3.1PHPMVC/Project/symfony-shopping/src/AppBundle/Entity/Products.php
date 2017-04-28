@@ -73,6 +73,20 @@ class Products
     private $promotionid;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="qtty", type="integer", length=5)
+     */
+    private $qtty;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="visibility", type="boolean")
+     */
+    private $visibility;
+
+    /**
      * Get id
      *
      * @return int
@@ -208,6 +222,39 @@ class Products
     public function setPromotionid($promotionid)
     {
         $this->promotionid = $promotionid;
+    }
+
+    /**
+     * @return string
+     */
+    public function getQtty(): string
+    {
+        return $this->qtty;
+    }
+
+    /**
+     * @param string $qtty
+     */
+    public function setQtty(string $qtty)
+    {
+        $this->qtty = $qtty;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getVisibility(): bool
+    {
+
+        return $this->visibility;
+    }
+
+    /**
+     * @param bool $visibility
+     */
+    public function setVisibility(bool $visibility)
+    {
+        $this->visibility = $visibility;
     }
 
 }

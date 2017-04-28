@@ -30,51 +30,52 @@
 				  <div class="card-block">
 				    <h4 class="card-title">{{ product.name }}</h4>
 				    <p class="card-text">{{ product.description }}</p>
-                      Active Promotion: <p class="card-text" style="font-weight: 600;">
-                          {% set promotionId = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].id %}
-                          {% set promotionName = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].name %}
-                          {% set promotionDiscount = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].discount %}
-                          <span>{{ promotionName }} - {{ promotionDiscount }}%</span>
-                      </p>
-                      Promotions: <p class="card-text">
-                          {% for promotion in findBiggerPromotion(product.promotionid, product.categoryId, app.user.id) %}
-                              {% if promotion.id != 0 %}
-                                {{ promotion.name }} - {{ promotion.discount }}% <br>
-                              {% endif %}
-                          {% endfor %}
-                          {#{{ dump(findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)) }}#}
-                      </p>
+                      {% if app.user is not empty %}
+                          Active Promotion: <p class="card-text" style="font-weight: 600;">
+                              {% set promotionId = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].id %}
+                              {% set promotionName = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].name %}
+                              {% set promotionDiscount = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].discount %}
+                              <span>{{ promotionName }} - {{ promotionDiscount }}%</span>
+                          </p>
+                              Promotions: <p class="card-text">
+                              {% for promotion in findBiggerPromotion(product.promotionid, product.categoryId, app.user.id) %}
+                                  {% if promotion.id != 0 %}
+                                      {{ promotion.name }} - {{ promotion.discount }}% <br>
+                                  {% endif %}
+                              {% endfor %}
+                              {#{{ dump(findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)) }}#}
+                          </p>
+                      {% endif %}
+                      Available: <p class="card-text">{{ product.qtty }}</p>
 					  Price: <p class="card-text">
-                          {% if promotionId == 0 %}
-                              <span>{{ product.price }} лв.</span>
+                          {% if app.user is not empty %}
+                              {% if promotionId == 0 %}
+                                  <span>{{ product.price }} лв.</span>
+                              {% else %}
+                                  <span style="text-decoration: line-through;">
+                                      {{ product.price }} лв.
+                                  </span>
+                                  <span style="font-size: x-large; color: red;">
+                                      {{ (product.price * ((100 - promotionDiscount) / 100))|number_format(2) }} лв.
+                                  </span>
+                              {% endif %}
                           {% else %}
-                              <span style="text-decoration: line-through;">
-                                  {{ product.price }} лв.
-                              </span>
-                              <span style="font-size: x-large; color: red;">
-                                  {{ (product.price * ((100 - promotionDiscount) / 100))|number_format(2) }} лв.
-                              </span>
+                              <span>{{ product.price }} лв.</span>
                           {% endif %}
                       </p>
-                      <form action="{{ path('cart_add', {'id_user' : app.user.id, 'id_product' : product.id, 'id_promotion' : promotionId}) }}" method="POST">
-                          Quantity: <input type="number" name="qtty" min="1" value="1" class="qtty" style="width: 45px;">
-                          <br>
-                          <input type="submit" class="btn btn-info" value="Add Product" />
-                      </form>
+                      {% if app.user is not empty and product.qtty > 0 %}
+                          <form action="{{ path('cart_add', {'id_user' : app.user.id, 'id_product' : product.id, 'id_promotion' : promotionId}) }}" method="POST">
+                              Quantity: <input type="number" name="qtty" min="1" max="{{ product.qtty }}" value="1" class="qtty" style="width: 45px;">
+                              <br>
+                              <input type="submit" class="btn btn-info" value="Add Product" />
+                          </form>
+                      {% else %}
+                          <p>Sorry you cant add this product to the cart. No quantity or you must login.</p>
+                      {% endif %}
                   </div>
-                    <div class="card-block">
-                        {#<a href="{{ path("cart_add", { 'id_product': product.id }) }}" class="btn btn-info">Add Product</a>#}
-                    </div>
                 </div>
 			</div>
 			{% endfor %}
-
-		
-			
-
 	</div>
 </div>
-
-<script type="text/javascript">
-</script>
 {% endblock %}

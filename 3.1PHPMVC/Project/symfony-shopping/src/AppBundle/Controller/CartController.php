@@ -13,7 +13,7 @@ class CartController extends Controller
 {
     /**
      * @Route("/cart/show/{id_user}", name="cart_show")
-     * @Security("has_role('ROLE_USER')")
+     * @Security("is_authenticated()")
      * @Method("GET")
      * @param $id_user
      * @return \Symfony\Component\HttpFoundation\Response
@@ -33,7 +33,7 @@ class CartController extends Controller
 
     /**
      * @Route("/cart/add/{id_user}", name="cart_add")
-     * @Security("has_role('ROLE_USER')")
+     * @Security("is_authenticated()")
      * @Method("POST")
      * @param Request $request
      * @param $id_user
@@ -47,6 +47,15 @@ class CartController extends Controller
         $qtty = $request->request->get('qtty');
         $productId = $request->query->get('id_product');
         $promotionId = $request->query->get('id_promotion');
+
+        // find if the qtty of the product is more of the qtty available
+        $product = $em->getRepository('AppBundle:Products')->find($productId);
+
+        if ($qtty > $product->getQtty()) {
+            $this->addFlash('notice','This product dont have such amount of quantity and you cant add it. Please try to add less quantity!');
+
+            return $this->redirectToRoute("cart_show", array('id_user' => $id_user));
+        }
 
         // find if there is already a product for this user in the cart
         $cartEm = $em->getRepository('AppBundle:Cart');
@@ -83,7 +92,7 @@ class CartController extends Controller
 
     /**
      * @Route("/cart/order/{id_user}", name="cart_order")
-     * @Security("has_role('ROLE_USER')")
+     * @Security("is_authenticated()")
      * @Method("POST")
      * @param Request $request
      * @param $id_user
@@ -103,11 +112,15 @@ class CartController extends Controller
         if ($user->getWallet() - $total >= 0) {
             // minus the total order money from the user wallet
             $user->setWallet($user->getWallet() - $total);
-            // delete products in order
+            // loop over all products in the order
             foreach ($cart as $ca) {
+                // find prodcut
+                $product = $em->getRepository('AppBundle:Products')->find($ca->getProductid());
+                $product->setQtty($product->getQtty() - $ca->getQtty());
+                // delete products in order
                 $em->remove($ca);
+                // execute
             }
-            // execute
             $em->flush();
             $this->addFlash('notice','The order have been completed! Don\'t expect anything send as this is just a demo project for my exam in SoftUni!');
 
@@ -125,7 +138,7 @@ class CartController extends Controller
 
     /**
      * @Route("/cart/delete/{id_order}", name="cart_delete")
-     * @Security("has_role('ROLE_USER')")
+     *@Security("is_authenticated()")
      * @Method("GET")
      * @param $id_order
      * @return \Symfony\Component\HttpFoundation\Response

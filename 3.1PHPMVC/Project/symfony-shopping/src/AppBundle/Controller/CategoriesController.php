@@ -20,18 +20,14 @@ class CategoriesController extends Controller
 {
     /**
      * @Route("/Categories/index", name="categories_index")
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_EDITOR')")
      * @param Request $request
      * @return Response
      */
     public function indexAction(Request $request)
     {
-        Debug::enable();
         $form = $this->bootUpForm();
-//        \Doctrine\Common\Util\Debug::dump($form);
-//        exit;
         $form->handleRequest($request);
-        $issue_update_status = 0;
 
         if ($form->isSubmitted() && $form->isValid()) {
             $submitted_form = $request->request->all();
@@ -51,16 +47,11 @@ class CategoriesController extends Controller
                     throw new Exception($e->getMessage() . "<br>" . $e->getTraceAsString());
                 }
             }
-
         } elseif ($form->isSubmitted() && !$form->isValid()) {
             $submitted_form = $request->request->all();
             if (isset($submitted_form["update_category"]) && $submitted_form["update_category"] == "1") {
-                $issue_update_status = 1;
-                $notice = "Please click the corresponding category edit again in order to process a successful query. And type in a valid form. This feature will be fixed soon.";
+                $this->addFlash("notice", 'Please click the corresponding category edit again in order to process a successful query. And type in a valid form. This feature will be fixed soon.');
             }
-        }
-        if ($issue_update_status) {
-            $this->addFlash("notice",$notice);
         }
 
         $categories_names = $this->fetchCategoriesNames();
@@ -73,7 +64,7 @@ class CategoriesController extends Controller
     /**
      * @Route("/Categories/singleCategory", name="single_category")
      * @Method("POST")
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_EDITOR')")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\JsonResponse|Response
      */
@@ -93,7 +84,7 @@ class CategoriesController extends Controller
     /**
      * @Route("/Categories/deleteCategory", name="delete_category")
      * @Method("POST")
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_EDITOR')")
      * @param Request $request
      * @return Response
      */
@@ -104,6 +95,10 @@ class CategoriesController extends Controller
             $id = $req["id"];
             $em = $this->getDoctrine()->getManager();
             $category = $em->getRepository('AppBundle:Categories')->find($id);
+            $products = $em->getRepository('AppBundle:Products')->findBy(array('categoryId' => $category->getId()));
+            foreach ($products as $pro) {
+                $em->remove($pro);
+            }
             $cat_result = json_decode($this->serializeResponse($category));
             $em->remove($category); // returns null
             $em->flush(); // returns null
