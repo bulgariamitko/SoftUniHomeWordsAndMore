@@ -31,7 +31,7 @@
 
 	<script type="text/javascript">
         global_variables.product_names = {{ product_names|raw }};
-        {#global_variables.edit_path = "{{ path("single_category") }}";#}
+        global_variables.edit_path = "{{ path("single_product") }}";
         global_variables.delete_path = "{{ path("delete_product") }}";
         global_variables.page_hash = "{{ app.request.pathInfo }}";
 	</script>

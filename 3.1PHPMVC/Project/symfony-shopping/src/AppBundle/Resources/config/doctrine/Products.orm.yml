@@ -1,6 +1,10 @@
 AppBundle\Entity\Products:
     type: entity
     table: null
+    oneToMany:
+        comment:
+            targetEntity: AppBundle\Entity\Comment
+            mappedBy: products
     repositoryClass: AppBundle\Repository\ProductsRepository
     id:
         id:

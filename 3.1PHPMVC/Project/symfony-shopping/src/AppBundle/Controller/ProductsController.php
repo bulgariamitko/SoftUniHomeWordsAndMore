@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
@@ -65,28 +66,36 @@ class ProductsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $product = $form->getData();
-//            dump($product);
-            $image = $product->getImage();
-            $imageName = md5(uniqid()).'.'.$image->guessExtension();
-            $image->move(
-                $this->getParameter('images_directory'),
-                $imageName
-            );
-            $product->setCategoryId($product->getCategoryId());
-            $product->setName($product->getName());
-            $product->setImage($imageName);
-            $product->setDescription($product->getDescription());
-            $product->setPrice($product->getPrice());
+            $submitted_form = $request->request->all();
+            if (isset($submitted_form["update_category"]) && $submitted_form["update_category"] == "1") {
+                $this->updateProduct($submitted_form);
+                return $this->redirectToRoute("products_create");
+            } else {
+                try {
+                    $product = $form->getData();
+                    /** @var Products $product */
+                    $image = $product->getImage();
+                    $imageName = md5(uniqid()).'.'.$image->guessExtension();
+                    $image->move(
+                        $this->getParameter('images_directory'),
+                        $imageName
+                    );
+                    $product->setCategoryId($product->getCategoryId());
+                    $product->setName($product->getName());
+                    $product->setImage($imageName);
+                    $product->setDescription($product->getDescription());
+                    $product->setPrice($product->getPrice());
 
-            // save product to db
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($product);
-            $em->flush();
-            $this->addFlash('notice','A new product is added!');
-
-
-//             return $this->redirectToRoute('task_success');
+                    // save product to db
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($product);
+                    $em->flush();
+                    $this->addFlash('notice','A new product is added!');
+                } catch (Exception $e) {
+                    $this->addFlash('notice','Failed to add a new product. Check errors log!');
+                    throw new Exception($e->getMessage() . "<br>" . $e->getTraceAsString());
+                }
+            }
         }
 
         $product_names = $this->fetchProductsNames();
@@ -94,6 +103,26 @@ class ProductsController extends Controller
             'form' => $form->createView(),
             'product_names' => json_encode($product_names)
         ));
+    }
+
+    /**
+     * @Route("/Products/singleProduct", name="single_product")
+     * @Method("POST")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_EDITOR')")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\JsonResponse|Response
+     */
+    public function getSingleCategory(Request $request)
+    {
+        $req = $request->request->all();
+        if (!empty($req) && isset($req["id"])) {
+            $id = $req["id"];
+            $em = $this->getDoctrine()->getManager()->find("AppBundle:Products",$id);
+            $em = $this->serializeResponse($em);
+            $em = [ "status" => 1,"result" => $em];
+            return $this->json($em);
+        }
+        return new Response("Required Params Missing!");
     }
 
     /**
@@ -150,16 +179,13 @@ class ProductsController extends Controller
         $form = $this->createFormBuilder($product)
             ->add('categoryId', ChoiceType::class, ["choices" => $chooseCategory, "label" => "Choose a Category"])
             ->add('name', TextType::class)
-            ->add('image', FileType::class)
+            ->add('image', FileType::class, ['required' => false])
             ->add('description', TextareaType::class)
             ->add('price', MoneyType::class, ['currency' => 'BGN'])
             ->add('promotionId', ChoiceType::class, ["choices" => $choosePromotion, "label" => "Choose a Promotion"])
             ->add('qtty', IntegerType::class)
-            ->add('visibility', CheckboxType::class, array(
-                'label'    => 'Show this product publicly?',
-                'required' => true,
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Create Product'))
+            ->add('visibility', CheckboxType::class, ['label' => 'Show this product publicly?', 'required' => false])
+            ->add('save', SubmitType::class, ['label' => 'Create Product'])
             ->getForm();
         return $form;
     }
@@ -205,5 +231,40 @@ class ProductsController extends Controller
         );
         // ->setMaxResults(2); Put limit on the results..
         return $query->getResult();
+    }
+
+    public function updateProduct($form)
+    {
+        if (isset($form["update_category_id"])) {
+            $id = $form["update_category_id"];
+            $em = $this->getDoctrine()->getManager();
+            $product = $em->getRepository('AppBundle:Products')->find($id);
+
+            if (!$product) {
+                throw $this->createNotFoundException(
+                    'No product found for id '.$id
+                );
+            }
+            $form = $form["form"];
+            $product->setCategoryId($form["categoryId"]);
+            $product->setName($form["name"]);
+//            $image = $form["image"];
+//            $imageName = md5(uniqid()).'.'.$image->guessExtension();
+//            $image->move(
+//                $this->getParameter('images_directory'),
+//                $imageName
+//            );
+//            $product->setImage($imageName);
+            $product->setDescription($form["description"]);
+            $product->setPrice($form["price"]);
+            $product->setPromotionid($form["promotionId"]);
+            $product->setQtty($form["qtty"]);
+            $product->setVisibility($form["visibility"] ?? 0);
+            if ($em->flush()) {
+                return 1;
+            }
+
+        }
+        return 0;
     }
 }

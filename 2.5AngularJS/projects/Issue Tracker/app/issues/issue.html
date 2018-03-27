@@ -1,0 +1,36 @@
+<h1>Issue page</h1>
+<div class="col-md-6">
+	<span class="project">{{issue.IssueKey}}</span> <a ng-if="loginedInUser === project.Lead.Username || loginedInUser === issue.Assignee.Username" href="#/issues/{{issue.Id}}/edit/" class="btn btn-success">Edit</a> <br>
+	<strong>Title</strong> {{issue.Title}}<br>
+	<strong>Description</strong> {{issue.Description}}<br>
+	<strong>AssigneeId</strong> (current id: {{issue.Assignee.Id}}) {{issue.Assignee.Username}}<br>
+	<strong>PriorityId</strong> (current id: {{issue.Id}}) {{issue.Priority.Name}}<br>
+	<strong>DueDate</strong> {{issue.DueDate}}<br>
+	Author: {{issue.Author.Username}} <br>
+	Project: {{issue.Project.Name}} <br>
+	Status: {{issue.Status.Name}} <br>
+	Labels: <span ng-repeat="label in issue.Labels">{{label.Name}}, </span> <br>
+
+
+</div>
+<div ng-if="issue.Status.Name != 'Closed'" class="col-md-6">
+	Available statuses: <br>
+	<div ng-repeat="status in issue.AvailableStatuses">
+			<span>-----{{status.Name}}</span>
+		 	<button ng-if="loginedInUser === issue.Assignee.Username" class="btn btn-lg btn-success" ng-click="changeStatus(status.Id)">Change</button>
+	</div>
+</div>
+<div class="row"></div>
+<h3>Comments:</h3>
+<div ng-repeat="comment in comments | orderBy:'-CreatedOn'">
+	{{comment.Author.Username}} - {{comment.CreatedOn}} 
+	<div>{{comment.Text}}</div>
+</div>
+<div class="row"></div>
+<form name="addCommentForm">
+	<div ng-if="loginedInUser === project.Lead.Username || loginedInUser === issue.Assignee.Username">
+		<label for="text">Text:</label>
+		<input type="textarea" id="text" ng-model="addComment.text" class="form-control" required></input> <br>
+		<button class="btn btn-lg btn-success" ng-disabled="addCommentForm.$invalid" ng-click="comment(addComment)">Add Comment</button>
+	</div>
+</form>

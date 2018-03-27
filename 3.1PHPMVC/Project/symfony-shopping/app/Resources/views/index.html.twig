@@ -41,7 +41,9 @@
         <div class="container">
           <h1 class="display-4">{{ mumbotron["title"] }}</h1>
           <p>{{ mumbotron["sub_title"] }}</p>
-          <a href="{{ path("products_create") }}" class="btn btn-secondary btn-lg">Add a Product</a>
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_EDITOR') %}
+                <a href="{{ path("products_create") }}" class="btn btn-secondary btn-lg">Add a Product</a>
+            {% endif %}
           <a href="{{ path("products_index") }}" class="btn btn-secondary btn-lg">Visit Products</a>
         </div>
       </div>

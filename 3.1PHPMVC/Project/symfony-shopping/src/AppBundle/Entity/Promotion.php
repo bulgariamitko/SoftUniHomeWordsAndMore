@@ -160,4 +160,3 @@ class Promotion
         $this->name = $name;
     }
 }
-

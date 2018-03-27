@@ -1,0 +1,5 @@
+shoppinglist/bindingModel/ProductBindingModel.class
+shoppinglist/entity/Product.class
+shoppinglist/ShoppingListApplication.class
+shoppinglist/repository/ProductRepository.class
+shoppinglist/controller/ProductController.class

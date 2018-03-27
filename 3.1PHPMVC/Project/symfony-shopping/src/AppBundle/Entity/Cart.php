@@ -168,4 +168,3 @@ class Cart
         return $this->promotionid;
     }
 }
-

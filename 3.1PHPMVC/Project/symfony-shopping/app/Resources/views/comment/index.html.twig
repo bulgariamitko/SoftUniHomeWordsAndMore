@@ -1,0 +1,35 @@
+{% extends 'parent.html.twig' %}
+
+{% block content %}
+
+    <div class="container make-some-space">
+    <div class="row">
+        {# Create a new Product #}
+        <div class="col-md-12">
+            <h1 class="punch-line" align="center">Add new Comment</h1>
+            <hr class="line">
+
+            {% for flash_message in app.session.flashBag.get('notice') %}
+                <div class="flash-notice">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            <div>
+                {{ form_start(form, {method : 'POST'}) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="punch-line" align="center">All comments</h1>
+            {% for comment in comments %}
+                <div style="border: 1px solid darkcyan; margin-bottom: 50px;">
+                    <p>User: {{ comment.user.name }}</p>
+                    <p>Text: {{ comment.text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

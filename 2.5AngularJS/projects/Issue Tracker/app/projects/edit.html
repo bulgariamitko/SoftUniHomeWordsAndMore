@@ -1,0 +1,19 @@
+<h1 class="info">Edit Project</h1>
+<form name="editProjectForm">
+	<label for="name">Name</label>
+	<input type="text" id="name" ng-model="editProject.name" class="form-control" required></input> <br>
+	<label for="description">Description</label>
+	<input type="text" id="description" ng-model="editProject.description" class="form-control" required></input> <br>
+	<label for="projectKey">ProjectKey</label>
+	<input type="text" id="projectKey" ng-model="editProject.projectKey" class="form-control" required disabled></input> <br>
+	<label for="leadId">LeadID</label>
+	<select class="form-control" id="leadId" ng-model="editProject.leadId" required>
+		<option ng-repeat="user in allUsers | orderBy: 'Username'" value="{{user.Id}}">{{user.Username}}</option>
+	</select> <br>
+	<label for="priorities">Priorities (separated by comma)</label>
+	<input type="text" id="priorities" ng-model="editProject.priorities" class="form-control"></input> <br>
+	<label for="labels">Labels (separated by comma)</label>
+	<input type="text" id="labels" ng-model="editProject.labels" class="form-control"></input> <br>
+	
+	<button class="btn btn-lg btn-success" ng-disabled="editProjectForm.$invalid" ng-click="project(editProject)">Edit Project</button>
+</form>

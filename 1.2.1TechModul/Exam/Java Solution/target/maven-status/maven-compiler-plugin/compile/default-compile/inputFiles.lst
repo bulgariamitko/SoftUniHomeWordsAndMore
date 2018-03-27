@@ -1,0 +1,5 @@
+/var/www/html/SoftUniHomeWordsAndMore/1.2.1TechModul/Exam/Java Solution/src/main/java/shoppinglist/ShoppingListApplication.java
+/var/www/html/SoftUniHomeWordsAndMore/1.2.1TechModul/Exam/Java Solution/src/main/java/shoppinglist/bindingModel/ProductBindingModel.java
+/var/www/html/SoftUniHomeWordsAndMore/1.2.1TechModul/Exam/Java Solution/src/main/java/shoppinglist/entity/Product.java
+/var/www/html/SoftUniHomeWordsAndMore/1.2.1TechModul/Exam/Java Solution/src/main/java/shoppinglist/repository/ProductRepository.java
+/var/www/html/SoftUniHomeWordsAndMore/1.2.1TechModul/Exam/Java Solution/src/main/java/shoppinglist/controller/ProductController.java

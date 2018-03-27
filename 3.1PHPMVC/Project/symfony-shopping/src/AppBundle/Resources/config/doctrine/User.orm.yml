@@ -1,17 +1,21 @@
 AppBundle\Entity\User:
     type: entity
+    oneToMany:
+            comment:
+                targetEntity: AppBundle\Entity\Comment
+                mappedBy: user
     manyToMany:
-        roles:
-            targetEntity: AppBundle\Entity\Role
-            inversedBy: users
-            joinTable:
-                name: users_roles
-                joinColumns:
-                    user_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    role_id:
-                        referencedColumnName: id
+            roles:
+                targetEntity: AppBundle\Entity\Role
+                inversedBy: users
+                joinTable:
+                    name: users_roles
+                    joinColumns:
+                        user_id:
+                            referencedColumnName: id
+                    inverseJoinColumns:
+                        role_id:
+                            referencedColumnName: id
     table: null
     repositoryClass: AppBundle\Repository\UserRepository
     id:
@@ -39,3 +43,5 @@ AppBundle\Entity\User:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+#@var Role[]|ArrayCollection

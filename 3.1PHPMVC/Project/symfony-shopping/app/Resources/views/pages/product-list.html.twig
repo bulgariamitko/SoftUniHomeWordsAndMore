@@ -22,15 +22,17 @@
 			{% if loop.index0 > 1 and loop.index0 % 3 == 0 %}
 				</div><div class="row">
 			{% endif %}
-			
-
 			<div class="col-md-4">
 				<div class="card" style="width: 20rem;">
 				  <img class="card-img-top img-fluid" src="{{ images_dir ~ product.image }}" alt="Card image cap">
 				  <div class="card-block">
 				    <h4 class="card-title">{{ product.name }}</h4>
 				    <p class="card-text">{{ product.description }}</p>
+                      {% if app.user %}
+                          <a href="{{ path('show_comments', {'id_product': product.id}) }}" class="btn btn-info">View/Add Comments</a>
+                      {% endif %}
                       {% if app.user is not empty %}
+                          <br>
                           Active Promotion: <p class="card-text" style="font-weight: 600;">
                               {% set promotionId = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].id %}
                               {% set promotionName = findBiggerPromotion(product.promotionid, product.categoryId, app.user.id)[0].name %}
@@ -67,7 +69,7 @@
                           <form action="{{ path('cart_add', {'id_user' : app.user.id, 'id_product' : product.id, 'id_promotion' : promotionId}) }}" method="POST">
                               Quantity: <input type="number" name="qtty" min="1" max="{{ product.qtty }}" value="1" class="qtty" style="width: 45px;">
                               <br>
-                              <input type="submit" class="btn btn-info" value="Add Product" />
+                              <input type="submit" class="btn btn-primary btn-block" value="Add Product" />
                           </form>
                       {% else %}
                           <p>Sorry you cant add this product to the cart. No quantity or you must login.</p>
